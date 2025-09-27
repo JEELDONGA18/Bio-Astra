@@ -4,22 +4,21 @@ import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContai
 const TrendChart = ({ data }) => {
   // Sample data for demonstration
   const sampleData = [
-      { year: 2010, publications: 5 },
-  { year: 2011, publications: 9 },
-  { year: 2012, publications: 9 },
-  { year: 2013, publications: 13 },
-  { year: 2014, publications: 21 },
-  { year: 2015, publications: 16 },
-  { year: 2016, publications: 16 },
-  { year: 2017, publications: 29 },
-  { year: 2018, publications: 23 },
-  { year: 2019, publications: 23 },
-  { year: 2020, publications: 32 },
-  { year: 2021, publications: 31 },
-  { year: 2022, publications: 28 },
-  { year: 2023, publications: 21 },
-  { year: 2024, publications: 69 },
-
+      { year: 2010, publications: 10 },
+      { year: 2011, publications: 12 },
+      { year: 2012, publications: 13 },
+      { year: 2013, publications: 23 },
+      { year: 2014, publications: 32 },
+      { year: 2015, publications: 30 },
+      { year: 2016, publications: 23 },
+      { year: 2017, publications: 47 },
+      { year: 2018, publications: 45 },
+      { year: 2019, publications: 37 },
+      { year: 2020, publications: 54 },
+      { year: 2021, publications: 61 },
+      { year: 2022, publications: 57 },
+      { year: 2023, publications: 49 },
+      { year: 2024, publications: 114 },
   ];
 
   const chartData = data || sampleData;
