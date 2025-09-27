@@ -4,7 +4,7 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
 import FindYourInterest from './pages/FindYourInterest';
-import Chatbot from './pages/Chatbot';
+import ResearchPage from './pages/ResearchPage';
 import Impact from './pages/Impact';
 import OSDR from './pages/OSDR';
 import NSLSL from './pages/NSLSL';
@@ -27,7 +27,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/find-your-interest" element={<FindYourInterest />} />
-              <Route path="/chatbot" element={<Chatbot />} />
+              <Route path="/research/:pmcid" element={<ResearchPage />} />
               <Route path="/impact" element={<Impact />} />
               <Route path="/osdr" element={<OSDR />} />
               <Route path="/nslsl" element={<NSLSL />} />

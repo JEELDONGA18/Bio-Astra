@@ -1,9 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import TrendChart from '../components/TrendChart';
 
 const FindYourInterest = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
   const [searchResults, setSearchResults] = useState([]);
   const [isSearching, setIsSearching] = useState(false);
+  const [showRestoredMessage, setShowRestoredMessage] = useState(false);
   const [searchParams, setSearchParams] = useState({
     title: '',
     author: '',
@@ -11,6 +15,45 @@ const FindYourInterest = () => {
     keywords: '',
     timeRange: 'all'
   });
+
+  // Load search state from localStorage on component mount
+  useEffect(() => {
+    const savedSearchResults = localStorage.getItem('searchResults');
+    const savedSearchParams = localStorage.getItem('searchParams');
+    
+    if (savedSearchResults) {
+      try {
+        const parsedResults = JSON.parse(savedSearchResults);
+        if (parsedResults.length > 0) {
+          setSearchResults(parsedResults);
+          setShowRestoredMessage(true);
+          // Hide the message after 5 seconds
+          setTimeout(() => setShowRestoredMessage(false), 5000);
+        }
+      } catch (error) {
+        console.error('Error parsing saved search results:', error);
+      }
+    }
+    
+    if (savedSearchParams) {
+      try {
+        setSearchParams(JSON.parse(savedSearchParams));
+      } catch (error) {
+        console.error('Error parsing saved search params:', error);
+      }
+    }
+  }, []);
+
+  // Save search state to localStorage whenever it changes
+  useEffect(() => {
+    if (searchResults.length > 0) {
+      localStorage.setItem('searchResults', JSON.stringify(searchResults));
+    }
+  }, [searchResults]);
+
+  useEffect(() => {
+    localStorage.setItem('searchParams', JSON.stringify(searchParams));
+  }, [searchParams]);
 
   // Sample search results for demonstration
   const sampleResults = [
@@ -50,11 +93,36 @@ const FindYourInterest = () => {
     e.preventDefault();
     setIsSearching(true);
     
-    // Simulate API call
-    setTimeout(() => {
-      setSearchResults(sampleResults);
+    try {
+      const response = await fetch('http://localhost:5000/api/search', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          type: searchParams.category || 'all',
+          query: searchParams.title || searchParams.author || searchParams.keywords,
+          filters: {
+            year: searchParams.timeRange !== 'all' ? searchParams.timeRange : null,
+            category: searchParams.category || null
+          }
+        })
+      });
+      
+      const data = await response.json();
+      
+      if (data.success) {
+        setSearchResults(data.results);
+      } else {
+        console.error('Search failed:', data.error);
+        setSearchResults([]);
+      }
+    } catch (error) {
+      console.error('Search error:', error);
+      setSearchResults([]);
+    } finally {
       setIsSearching(false);
-    }, 1000);
+    }
   };
 
   const handleInputChange = (field, value) => {
@@ -64,14 +132,31 @@ const FindYourInterest = () => {
     }));
   };
 
+  const clearSearchResults = () => {
+    setSearchResults([]);
+    localStorage.removeItem('searchResults');
+  };
+
+  const clearAllSearch = () => {
+    setSearchResults([]);
+    setSearchParams({
+      title: '',
+      author: '',
+      category: '',
+      keywords: '',
+      timeRange: 'all'
+    });
+    localStorage.removeItem('searchResults');
+    localStorage.removeItem('searchParams');
+  };
+
   const categories = [
     'All Categories',
-    'Plant Biology',
-    'Human Biology',
-    'Microbiology',
-    'Animal Biology',
-    'Biotechnology',
-    'Life Support Systems'
+    'Cross-Cutting Themes & Technologies',
+    'Animal Studies',
+    'Human & Human Cell Studies',
+    'Plant Studies',
+    'Microbial Studies',
   ];
 
   const timeRanges = [
@@ -190,8 +275,8 @@ const FindYourInterest = () => {
               />
             </div>
 
-            {/* Search Button */}
-            <div className="flex justify-center">
+            {/* Search Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button
                 type="submit"
                 disabled={isSearching}
@@ -214,9 +299,64 @@ const FindYourInterest = () => {
                   </div>
                 )}
               </button>
+              
+              {searchResults.length > 0 && (
+                <button
+                  type="button"
+                  onClick={clearSearchResults}
+                  className="btn-secondary text-lg px-6 py-3"
+                >
+                  <div className="flex items-center">
+                    <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                    Clear Results
+                  </div>
+                </button>
+              )}
+              
+              <button
+                type="button"
+                onClick={clearAllSearch}
+                className="border border-gray-500 text-gray-300 hover:bg-gray-600 text-lg px-6 py-3 rounded transition-colors duration-200"
+              >
+                <div className="flex items-center">
+                  <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                  </svg>
+                  Reset All
+                </div>
+              </button>
             </div>
           </form>
         </div>
+
+        {/* Restored Results Notification */}
+        {showRestoredMessage && (
+          <div className="mb-6 p-4 bg-cosmos-cyan/20 border border-cosmos-cyan/50 rounded-lg">
+            <div className="flex items-center">
+              <svg className="w-5 h-5 text-cosmos-cyan mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <div>
+                <p className="text-cosmos-cyan font-medium">
+                  Previous search results restored
+                </p>
+                <p className="text-gray-300 text-sm">
+                  Your last search results have been restored. You can continue browsing or perform a new search.
+                </p>
+              </div>
+              <button
+                onClick={() => setShowRestoredMessage(false)}
+                className="ml-auto text-cosmos-cyan hover:text-white transition-colors duration-200"
+              >
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        )}
 
         {/* Trend Chart */}
         <div className="mb-8">
@@ -230,71 +370,34 @@ const FindYourInterest = () => {
               Search Results ({searchResults.length} publications found)
             </h2>
             
-            <div className="space-y-6">
-              {searchResults.map((result) => (
-                <div key={result.id} className="bg-gray-700 rounded-lg p-6 border border-gray-600">
-                  <div className="flex flex-col lg:flex-row lg:justify-between lg:items-start mb-4">
+            <div className="space-y-4">
+              {searchResults.map((result, index) => (
+                <div key={result.pmcid || index} className="bg-gray-700 rounded-lg p-4 border border-gray-600 hover:border-cosmos-cyan/50 transition-colors duration-200">
+                  <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4">
                     <div className="flex-1">
-                      <h3 className="text-xl font-semibold text-white mb-2">
+                      <h3 className="text-lg font-semibold text-white mb-2 line-clamp-2">
                         {result.title}
                       </h3>
-                      <div className="flex flex-wrap items-center gap-4 text-sm text-gray-400 mb-3">
-                        <span className="flex items-center">
-                          <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                          </svg>
-                          {result.author}
-                        </span>
-                        <span className="flex items-center">
-                          <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
-                          </svg>
-                          {result.category}
-                        </span>
+                      <div className="flex items-center gap-4 text-sm text-gray-400">
                         <span className="flex items-center">
                           <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                           </svg>
                           {result.year}
                         </span>
+                        <span className="text-xs text-gray-500">
+                          PMCID: {result.pmcid}
+                        </span>
                       </div>
                     </div>
-                    <div className="mt-4 lg:mt-0 lg:ml-6">
-                      <span className="inline-block bg-cosmos-cyan text-white px-3 py-1 rounded-full text-sm font-medium">
-                        {result.year}
-                      </span>
-                    </div>
-                  </div>
-                  
-                  <p className="text-gray-300 mb-4 leading-relaxed">
-                    {result.abstract}
-                  </p>
-                  
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {result.keywords.map((keyword, index) => (
-                      <span
-                        key={index}
-                        className="bg-gray-600 text-gray-300 px-2 py-1 rounded text-sm"
+                    <div className="flex-shrink-0">
+                      <button 
+                        onClick={() => navigate(`/research/${result.pmcid}`)}
+                        className="btn-primary text-sm px-6 py-2"
                       >
-                        {keyword}
-                      </span>
-                    ))}
-                  </div>
-                  
-                  <div className="flex flex-col sm:flex-row gap-3">
-                    <button className="btn-primary text-sm px-4 py-2">
-                      View Full Text
-                    </button>
-                    <button className="btn-secondary text-sm px-4 py-2">
-                      Download PDF
-                    </button>
-                    <button className="border border-gray-500 text-gray-300 hover:bg-gray-600 px-4 py-2 rounded text-sm transition-colors duration-200">
-                      Cite
-                    </button>
-                  </div>
-                  
-                  <div className="mt-3 text-xs text-gray-500">
-                    DOI: {result.doi}
+                        View Full Text
+                      </button>
+                    </div>
                   </div>
                 </div>
               ))}

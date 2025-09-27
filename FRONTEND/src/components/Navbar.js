@@ -8,7 +8,6 @@ const Navbar = ({ darkMode, toggleTheme }) => {
   const navLinks = [
     { name: 'Home', path: '/' },
     { name: 'Find Your Interest', path: '/find-your-interest' },
-    { name: 'Chatbot', path: '/chatbot' },
     { name: 'Impact', path: '/impact' },
     { name: 'OSDR', path: '/osdr' },
     { name: 'NSLSL', path: '/nslsl' },
