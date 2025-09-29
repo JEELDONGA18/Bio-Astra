@@ -1,24 +1,62 @@
 import React from "react";
 
 const About = () => {
+  const ccEmails = [
+    "bintu.kadhiwala@scet.ac.in",
+    "meetpaladiya.co23d2@scet.ac.in",
+    "vishalshingala.co23d2@scet.ac.in",
+    "dhyeydesai.co23d2@scet.ac.in",
+    "dhrumilkhatiwala.co23d2@scet.ac.in",
+    "parthgevariya.co23d2@scet.ac.in",
+  ].join(",");
+
+  const buildMailto = (subject, body = "") => {
+    const to = "jeeldonga.co23d2@scet.ac.in";
+    const params = new URLSearchParams({
+      cc: ccEmails,
+      subject,
+      body,
+    });
+    return `mailto:${to}?${params.toString()}`;
+  };
+
+  const handleContactClick = () => {
+    const mailto = buildMailto(
+      "Bio-Astra Contact",
+      "Hello Bio-Astra Team,"
+    );
+    window.location.href = mailto;
+  };
+
+  const handleReportClick = () => {
+    const mailto = buildMailto(
+      "Bio-Astra Issue Report",
+      "Hello Bio-Astra Team,%0D%0A%0D%0AI would like to report the following issue:%0D%0A- Description:%0D%0A- Steps to reproduce:%0D%0A- Expected behavior:%0D%0A- Actual behavior:%0D%0A%0D%0AThanks!"
+    );
+    window.location.href = mailto;
+  };
+
   const teamMembers = [
     {
-      name: "Dr. Sarah Chen",
-      role: "Project Lead & Data Scientist",
-      bio: "Dr. Chen leads the Bio-Astra Dashboard development with expertise in machine learning and space biology data analysis. She has over 8 years of experience in NASA research programs and holds a Ph.D. in Computational Biology from MIT.",
-      image: "👩‍💻",
+      name: "Jeel Donga",
+      role: "Backend Developer",
+      bio: "Jeel specializes in backend development and API systems for the dashboard. He has extensive experience in database design, with a focus on handling large-scale scientific datasets.",
+      image: "👨‍💻",
+      link: "https://www.linkedin.com/in/jeel-hasmukhbhai-donga-226441290/",
       expertise: [
-        "Machine Learning",
-        "Data Analysis",
-        "Space Biology",
-        "Project Management",
+        "API Development",
+        "Python",
+        "Flask",
+        "NASA APIs",
+        "Gemini APIs",
       ],
     },
-    {
-      name: "Alex Rodriguez",
+        {
+      name: "Meet Paladiya",
       role: "Frontend Developer",
-      bio: "Alex specializes in React.js development and user experience design. He's passionate about creating intuitive interfaces for scientific data visualization and has contributed to several NASA open-source projects.",
+      bio: "Meet specializes in React.js development and user experience design. He's passionate about creating intuitive interfaces for scientific data visualization..",
       image: "👨‍💻",
+      link: "https://www.linkedin.com/in/meet-paladiya-953052271/",
       expertise: [
         "React.js",
         "UI/UX Design",
@@ -27,67 +65,73 @@ const About = () => {
       ],
     },
     {
-      name: "Dr. Maria Gonzalez",
-      role: "Backend Developer",
-      bio: "Dr. Gonzalez develops the backend infrastructure and API systems for the dashboard. She has extensive experience in cloud computing and database design, with a focus on handling large-scale scientific datasets.",
-      image: "👩‍🔬",
-      expertise: [
-        "Backend Development",
-        "Cloud Computing",
-        "Database Design",
-        "API Development",
-      ],
-    },
-    {
-      name: "James Wilson",
-      role: "Data Engineer",
-      bio: "James handles data pipeline development and integration with NASA databases. He ensures data quality and implements automated processing workflows for real-time data updates.",
+      name: "Vishal Shingala",
+      role: "Data & Insights Lead",
+      bio: "Vishal handles data pipeline development and integration with NASA databases. He ensures data quality and implements automated processing workflows for real-time data updates.",
       image: "👨‍🔧",
+      link: "https://www.linkedin.com/in/vishal-shingala-382a20295/",
       expertise: [
-        "Data Engineering",
-        "ETL Pipelines",
-        "Database Integration",
-        "Automation",
+        "Python",
+        "Data Processing",
+        "Data Visualization",
+        "Chart.js",
       ],
     },
     {
-      name: "Dr. Emily Johnson",
-      role: "Research Consultant",
-      bio: "Dr. Johnson provides domain expertise in space biology research and ensures the dashboard meets the needs of the scientific community. She has 15+ years of experience in NASA space biology programs.",
-      image: "👩‍🚀",
+      name: "Dhyey Desai",
+      role: "Research & Storytelling Strategist",
+      bio: "Dhyey provides domain expertise by researching NASA content and crafting clear narratives to connect complex scientific data with end users. He ensures the information presented is accurate and accessible to the target audience.",
+      image: "👨‍🔬",
+      link: "https://www.linkedin.com/in/dhyey-desai-625256286/",
       expertise: [
-        "Space Biology",
-        "Research Methodology",
-        "Scientific Communication",
-        "NASA Programs",
+        "Space Data Research",
+        "Documentation",
+        "Technical Writing",
       ],
     },
     {
-      name: "Dr. Emily Johnson",
-      role: "Research Consultant",
-      bio: "Dr. Johnson provides domain expertise in space biology research and ensures the dashboard meets the needs of the scientific community. She has 15+ years of experience in NASA space biology programs.",
-      image: "👩‍🚀",
+      name: "Dhrumil Khatiwala",
+      role: "Quality & Reliability Champion",
+      bio: "Dhrumil ensures the quality and reliability of every feature by rigorously testing and refining the application, delivering a smooth and user-friendly experience for hackathon judges. He brings extensive expertise in software testing and quality assurance.",
+      image: "🕵️‍♂️",
+      // No LinkedIn provided; will use email link
+      link: "mailto:dhrumilkhatiwala.co23d2@scet.ac.in",
       expertise: [
-        "Space Biology",
-        "Research Methodology",
-        "Scientific Communication",
-        "NASA Programs",
+        "Software Testing",
+        "Bug Tracking",
+        "Performance Analysis",
+      ],
+    },
+    {
+      name: "Parth Gevariya",
+      role: "Project Representation & Documentation Lead",
+      bio: "Parth ensures the project is well-presented online via GitHub README, project website, and documentation, highlighting features and impact.",
+      image: "👨‍💼",
+      link: "https://www.linkedin.com/in/parth-gevariya-3b2a592aa/",
+      expertise: [
+        "GitHub Documentation",
+        "Website Content",
+        "Project Presentation",
+        "Communication",
       ],
     },
   ];
 
   const mentor = {
-    name: "Dr. Robert Kim",
-    role: "Senior Research Scientist & Mentor",
-    bio: "Dr. Kim serves as the project mentor, providing guidance on NASA research programs and space biology applications. He has over 20 years of experience at NASA and has led numerous space biology research initiatives.",
-    image: "👨‍🚀",
+    name: "Dr. Bintu Kadhiwala",
+    role: "Program Leadership",
+    bio: "Dr. Bintu Kadhiwala is an Assistant Professor of Computer Engineering at SCET, Surat, with over 19 years of experience. He holds a Ph.D. from SVNIT, Surat, specializing in data mining, privacy-preserving data publishing, algorithms, and information security.",
+    image: "👨‍🏫",
+    link: "https://www.linkedin.com/in/prof-dr-bintu-kadhiwala-69729782/",
     expertise: [
-      "NASA Research",
-      "Space Biology",
-      "Mentorship",
-      "Program Leadership",
+      "Domain Expertise",
+      "Technical Guidance",
+      "Team Mentoring",
+      "Project Strategy",
+      "Review & Feedback",
+      "Hackathon Insights",
     ],
-    affiliation: "NASA Ames Research Center",
+    affiliation: "SCET, Surat",
   };
 
   const technologies = [
@@ -98,7 +142,7 @@ const About = () => {
     { name: "Chart.js", category: "Visualization" },
     { name: "NASA APIs", category: "Data Sources" },
     { name: "Gemini APIs", category: "ChatBot" },
-
+    { name: "Vercel & Render", category: "Deployment" },
   ];
 
   return (
@@ -154,13 +198,27 @@ const About = () => {
               Project Mentor
             </h2>
             <div className="max-w-2xl mx-auto">
-              <div className="text-6xl mb-6">{mentor.image}</div>
+              <a
+                href={mentor.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                title={`Open LinkedIn: ${mentor.name}`}
+                className="inline-block"
+              >
+                <div className="text-6xl mb-6">{mentor.image}</div>
+              </a>
               <h3 className="text-2xl font-semibold text-white mb-2">
-                {mentor.name}
+                <a
+                  href={mentor.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title={`Open LinkedIn: ${mentor.name}`}
+                  className="hover:underline"
+                >
+                  {mentor.name}
+                </a>
               </h3>
-              <div className="text-cosmos-cyan font-medium mb-2">
-                {mentor.role}
-              </div>
+              <div className="text-cosmos-cyan font-medium mb-2">{mentor.role}</div>
               <div className="text-gray-400 text-sm mb-4">
                 {mentor.affiliation}
               </div>
@@ -187,9 +245,25 @@ const About = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {teamMembers.map((member, index) => (
               <div key={index} className="card text-center">
-                <div className="text-6xl mb-4">{member.image}</div>
+                <a
+                  href={member.link}
+                  target={member.link?.startsWith('http') ? "_blank" : undefined}
+                  rel={member.link?.startsWith('http') ? "noopener noreferrer" : undefined}
+                  title={`Open profile: ${member.name}`}
+                  className="inline-block"
+                >
+                  <div className="text-6xl mb-4">{member.image}</div>
+                </a>
                 <h3 className="text-xl font-semibold text-white mb-2">
-                  {member.name}
+                  <a
+                    href={member.link}
+                    target={member.link?.startsWith('http') ? "_blank" : undefined}
+                    rel={member.link?.startsWith('http') ? "noopener noreferrer" : undefined}
+                    title={`Open profile: ${member.name}`}
+                    className="hover:underline"
+                  >
+                    {member.name}
+                  </a>
                 </h3>
                 <div className="text-cosmos-cyan font-medium mb-4">
                   {member.role}
@@ -217,7 +291,7 @@ const About = () => {
           <h2 className="text-3xl font-bold text-white mb-8 text-center">
             Technologies & Tools
           </h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-4 ">
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-4">
             {technologies.map((tech, index) => (
               <div key={index} className="card text-center">
                 <div className="text-2xl mb-2">🔧</div>
@@ -322,10 +396,18 @@ const About = () => {
             community.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="btn-primary text-lg px-8 py-4">
+            <button
+              className="btn-primary text-lg px-8 py-4"
+              onClick={handleContactClick}
+              title="Email Bio-Astra Team"
+            >
               Contact Us
             </button>
-            <button className="btn-secondary text-lg px-8 py-4">
+            <button
+              className="btn-secondary text-lg px-8 py-4"
+              onClick={handleReportClick}
+              title="Report an issue via email"
+            >
               Report Issues
             </button>
           </div>
