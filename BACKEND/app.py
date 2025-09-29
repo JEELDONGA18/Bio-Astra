@@ -324,6 +324,9 @@ def load_search_data():
 def load_research_data():
     research_path = os.path.join(os.path.dirname(__file__), 'RESEARCH_PAPER_DATA')
     research_data = {}
+    seen_ids = set()
+    derived_id_count = 0
+    duplicate_id_count = 0
     
     if os.path.exists(research_path):
         for filename in os.listdir(research_path):
@@ -335,10 +338,30 @@ def load_research_data():
                     if isinstance(data, list):
                         # If it's an array, process each item
                         for item in data:
-                            pmcid = item.get('PMCId', item.get('pmcid', ''))
-                            if pmcid:
-                                # Convert the data to our expected format
-                                research_data[pmcid] = {
+                            # Resolve a stable identifier for the entry
+                            pmcid = item.get('PMCId') or item.get('pmcid')
+                            if not pmcid:
+                                link = item.get('Link', '') or ''
+                                match = re.search(r'(PMC\d+)', link)
+                                if match:
+                                    pmcid = match.group(1)
+                                    derived_id_count += 1
+                            if not pmcid:
+                                # Fallback synthetic id to keep the record
+                                derived_id_count += 1
+                                base_id = 'NO_PMC'
+                                pmcid = base_id
+                            
+                            # Avoid accidental overwrites when IDs repeat
+                            unique_id = pmcid
+                            suffix = 1
+                            while unique_id in research_data:
+                                duplicate_id_count += 1
+                                suffix += 1
+                                unique_id = f"{pmcid}-{suffix}"
+                            
+                            # Convert the data to our expected format
+                            research_data[unique_id] = {
                                     'pmcid': pmcid,
                                     'title': item.get('Title', ''),
                                     'authors': item.get('Authors', []),
@@ -371,9 +394,23 @@ def load_research_data():
                                 }
                     else:
                         # If it's a single object, process it directly
-                        pmcid = data.get('PMCId', data.get('pmcid', ''))
-                        if pmcid:
-                            research_data[pmcid] = data
+                        pmcid = data.get('PMCId') or data.get('pmcid')
+                        if not pmcid:
+                            link = data.get('Link', '') or ''
+                            match = re.search(r'(PMC\d+)', link)
+                            if match:
+                                pmcid = match.group(1)
+                                derived_id_count += 1
+                        if not pmcid:
+                            derived_id_count += 1
+                            pmcid = 'NO_PMC'
+                        unique_id = pmcid
+                        suffix = 1
+                        while unique_id in research_data:
+                            duplicate_id_count += 1
+                            suffix += 1
+                            unique_id = f"{pmcid}-{suffix}"
+                        research_data[unique_id] = data
     
     return research_data
 
