@@ -12,6 +12,7 @@ from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
 from reportlab.lib.units import inch
 from reportlab.lib import colors
 import tempfile
+import io
 import uuid
 import hashlib
 
@@ -211,18 +212,13 @@ def create_chat_pdf(chat_data, paper_title="Research Paper Discussion", user_id=
     """
     Create a PDF from chat conversation data with custom filename
     """
-    # Create temporary file with custom name
+    # Create in-memory PDF buffer and filename
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     filename = f"Bio_Astra_{timestamp}.pdf"
-    
-    # Create temp directory if it doesn't exist
-    temp_dir = os.path.join(os.path.dirname(__file__), 'temp_exports')
-    os.makedirs(temp_dir, exist_ok=True)
-    
-    temp_file_path = os.path.join(temp_dir, filename)
+    pdf_buffer = io.BytesIO()
     
     # Create PDF document
-    doc = SimpleDocTemplate(temp_file_path, pagesize=A4, 
+    doc = SimpleDocTemplate(pdf_buffer, pagesize=A4, 
                           rightMargin=72, leftMargin=72, 
                           topMargin=72, bottomMargin=18)
     
@@ -306,8 +302,9 @@ def create_chat_pdf(chat_data, paper_title="Research Paper Discussion", user_id=
     
     # Build PDF
     doc.build(story)
+    pdf_buffer.seek(0)
     
-    return temp_file_path, filename
+    return pdf_buffer, filename
 
 # Load search data
 def load_search_data():
@@ -782,24 +779,15 @@ def export_chat():
                 "error": "No chat messages found for this session"
             }), 400
         
-        # Create PDF with custom filename
-        pdf_path, filename = create_chat_pdf(chat_messages, paper_title, user_id)
+        # Create PDF in-memory and stream to client
+        pdf_buffer, filename = create_chat_pdf(chat_messages, paper_title, user_id)
         
-        # Send file with proper headers for direct download
-        response = send_file(
-            pdf_path,
+        return send_file(
+            pdf_buffer,
             as_attachment=True,
             download_name=filename,
             mimetype='application/pdf'
         )
-        
-        # Clean up the temporary file after sending
-        try:
-            os.remove(pdf_path)
-        except Exception as cleanup_error:
-            print(f"Warning: Could not remove temporary file {pdf_path}: {cleanup_error}")
-        
-        return response
         
     except Exception as e:
         print(f"Export error: {str(e)}")
