@@ -112,7 +112,18 @@ const FindYourInterest = () => {
       const data = await response.json();
       
       if (data.success) {
-        setSearchResults(data.results);
+        let results = data.results || [];
+        const q = (searchParams.title || searchParams.author || searchParams.keywords || '').toLowerCase();
+        if (q && q.trim()) {
+          results = results.filter(r => {
+            const inTitle = (r.title || '').toLowerCase().includes(q);
+            const inAuthor = (r.author || '').toLowerCase().includes(q);
+            const inCategory = (r.category || '').toLowerCase().includes(q);
+            const inKeywords = Array.isArray(r.keywords) ? r.keywords.join(' ').toLowerCase().includes(q) : (r.keywords || '').toLowerCase().includes(q);
+            return inTitle || inAuthor || inCategory || inKeywords;
+          });
+        }
+        setSearchResults(results);
       } else {
         console.error('Search failed:', data.error);
         setSearchResults([]);

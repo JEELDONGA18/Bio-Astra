@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import TrendChart from "../components/TrendChart";
+import CategoryPieChart from "../components/CategoryPieChart";
 
 const Home = () => {
   return (
@@ -166,10 +167,6 @@ const Home = () => {
         </div>
       </section>
 
-      <div className="my-10 ">
-        <TrendChart />
-      </div>
-
       {/* Features Section */}
       <section className="py-20 bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -291,6 +288,13 @@ const Home = () => {
         </div>
       </section>
 
+      <div className="my-10 ">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+          <TrendChart />
+          <CategoryPieChart />
+        </div>
+      </div>
+      
       {/* CTA Section */}
       <section className="py-20 bg-cosmos-gradient">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">

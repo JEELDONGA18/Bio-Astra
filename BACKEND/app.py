@@ -383,7 +383,7 @@ def load_research_data():
                                         }
                                     ],
                                     'knowledge_graph': {
-                                        'authors': [{'name': 'Research Team', 'expertise': [item.get('Category', 'Space Biology')], 'publications': 1, 'collaborations': 1}],
+                                        'authors': [{'name': 'Authors', 'expertise': [item.get('Category', 'Space Biology')], 'publications': 1, 'collaborations': 1}],
                                         'keywords': [{'term': keyword, 'frequency': 1, 'related_terms': []} for keyword in item.get('Keywords', [])],
                                         'category': {
                                             'name': item.get('Category', 'Space Biology'),
@@ -421,13 +421,13 @@ research_data = load_research_data()
 print(f"Loaded {len(search_data)} search types")
 print(f"Loaded {len(research_data)} research papers")
 if research_data:
-    print(f"Sample PMCIDs: {list(research_data.keys())[:5]}")
+    # print(f"Sample PMCIDs: {list(research_data.keys())[:5]}")
     # Show available categories
     categories = set()
     for paper_data in research_data.values():
         if paper_data.get('category'):
             categories.add(paper_data['category'])
-    print(f"Available categories: {sorted(list(categories))}")
+    # print(f"Available categories: {sorted(list(categories))}")
 if search_data:
     print(f"Search types: {list(search_data.keys())}")
     for key, value in search_data.items():
@@ -519,23 +519,37 @@ def search():
         
         results = []
         
+        # Prepare query tokens for substring matching
+        tokens = []
+        if query and query.strip():
+            tokens = [t for t in re.split(r"\s+", query.strip()) if t]
+
+        # Helper: case-insensitive includes
+        def contains_any_token(text, tokens_list):
+            if not text or not tokens_list:
+                return False
+            lower_text = str(text).lower()
+            return any(tok.lower() in lower_text for tok in tokens_list)
+
         # Search through research data
         for pmcid, paper_data in research_data.items():
             # Check if this paper matches our criteria
             matches = False
             
             # If we have a query, check if it matches title, abstract, or keywords
-            if query and query.strip():
-                # Handle keywords as either string or list
+            if tokens:
                 keywords = paper_data.get('keywords', [])
-                if isinstance(keywords, list):
-                    keywords_match = any(query.lower() in str(keyword).lower() for keyword in keywords)
-                else:
-                    keywords_match = query.lower() in str(keywords).lower()
-                
-                matches = (query.lower() in paper_data.get('title', '').lower() or 
-                          query.lower() in paper_data.get('abstract', '').lower() or 
-                          keywords_match)
+                if not isinstance(keywords, list):
+                    keywords = [keywords]
+                keywords_text = ' '.join(str(k) for k in keywords)
+                authors = paper_data.get('authors', [])
+                authors_text = ' '.join(str(a) for a in authors)
+                matches = (
+                    contains_any_token(paper_data.get('title', ''), tokens) or
+                    contains_any_token(keywords_text, tokens) or
+                    contains_any_token(authors_text, tokens) or
+                    contains_any_token(paper_data.get('abstract', ''), tokens)
+                )
             else:
                 # If no query, include all papers (will be filtered by other criteria)
                 matches = True
@@ -580,17 +594,19 @@ def search():
                 matches = False
                 
                 # If we have a query, check if it matches title, abstract, or keywords
-                if query and query.strip():
-                    # Handle keywords as either string or list
+                if tokens:
                     keywords = result.get('keywords', '')
                     if isinstance(keywords, list):
-                        keywords_str = ' '.join(keywords)
+                        keywords_str = ' '.join(str(k) for k in keywords)
                     else:
                         keywords_str = str(keywords)
-                    
-                    matches = (query.lower() in result.get('title', '').lower() or 
-                              query.lower() in result.get('abstract', '').lower() or 
-                              query.lower() in keywords_str.lower())
+                    author_text = str(result.get('author', ''))
+                    matches = (
+                        contains_any_token(result.get('title', ''), tokens) or
+                        contains_any_token(keywords_str, tokens) or
+                        contains_any_token(author_text, tokens) or
+                        contains_any_token(result.get('abstract', ''), tokens)
+                    )
                 else:
                     # If no query, include all results (will be filtered by other criteria)
                     matches = True
@@ -671,6 +687,13 @@ def get_categories():
         "success": True,
         "categories": sorted(list(categories))
     })
+
+@app.route('/api/category-counts')
+def get_category_counts():
+    """
+    Return a mapping of category -> count of papers.
+    """
+    return jsonify(_CATEGORY_COUNTS_CACHE)
 
 @app.route('/api/years')
 def get_years():

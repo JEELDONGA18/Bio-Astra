@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -12,17 +12,12 @@ import NASATaskBook from './pages/NASATaskBook';
 import About from './pages/About';
 
 function App() {
-  const [darkMode, setDarkMode] = useState(true);
-
-  const toggleTheme = () => {
-    setDarkMode(!darkMode);
-  };
 
   return (
-    <div className={darkMode ? 'dark' : ''}>
+    <div className={'dark'}>
       <div className="min-h-screen bg-gray-900 text-white">
         <Router>
-          <Navbar darkMode={darkMode} toggleTheme={toggleTheme} />
+          <Navbar />
           <main>
             <Routes>
               <Route path="/" element={<Home />} />

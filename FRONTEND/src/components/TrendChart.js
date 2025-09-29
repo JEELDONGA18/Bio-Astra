@@ -1,6 +1,24 @@
 import React from 'react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 
+const CustomTooltip = ({ active, payload, label }) => {
+  if (active && payload && payload.length) {
+    const item = payload[0];
+    return (
+      <div className="p-3 rounded-lg border border-gray-600 bg-gray-900 shadow-lg">
+        <div className="text-xs text-gray-400">Year</div>
+        <div className="text-sm font-semibold text-white mb-2">{label}</div>
+        <div className="flex items-center gap-2">
+          <span className="inline-block w-2 h-2 rounded-full" style={{ backgroundColor: item.color }}></span>
+          <span className="text-sm text-gray-200">Publications:</span>
+          <span className="text-sm font-bold text-cosmos-cyan">{item.value}</span>
+        </div>
+      </div>
+    );
+  }
+  return null;
+};
+
 const TrendChart = ({ data }) => {
   // Sample data for demonstration
   const sampleData = [
@@ -24,29 +42,26 @@ const TrendChart = ({ data }) => {
   const chartData = data || sampleData;
 
   return (
-    <div className="bg-gray-800 rounded-lg p-6">
+    <div className="bg-gray-800 rounded-lg p-6 m-4 shadow-xl border border-gray-700">
       <h3 className="text-xl font-semibold text-white mb-4">Publication Trends Over Time</h3>
-      <div className="h-64">
+      <div className="h-80">
         <ResponsiveContainer width="100%" height="100%">
-          <LineChart data={chartData}>
-            <CartesianGrid strokeDasharray="3 3" stroke="#374151" />
+          <LineChart data={chartData} margin={{ top: 10, right: 24, bottom: 10, left: 0 }}>
+            <CartesianGrid strokeDasharray="3 3" stroke="#374151" vertical={true} />
             <XAxis 
               dataKey="year" 
               stroke="#9CA3AF"
               fontSize={12}
+              tickLine={false}
+              axisLine={{ stroke: '#374151' }}
             />
             <YAxis 
               stroke="#9CA3AF"
               fontSize={12}
+              tickLine={false}
+              axisLine={{ stroke: '#374151' }}
             />
-            <Tooltip 
-              contentStyle={{
-                backgroundColor: '#1F2937',
-                border: '1px solid #374151',
-                borderRadius: '8px',
-                color: '#F9FAFB'
-              }}
-            />
+            <Tooltip content={<CustomTooltip />} cursor={{ stroke: '#374151' }} />
             <Line 
               type="monotone" 
               dataKey="publications" 
@@ -58,10 +73,7 @@ const TrendChart = ({ data }) => {
           </LineChart>
         </ResponsiveContainer>
       </div>
-      <p className="text-sm text-gray-400 mt-2">
-        Interactive chart showing NASA Space Biology publication trends. 
-        Click and drag to zoom, hover for details.
-      </p>
+      <p className="text-sm text-gray-400 mt-2">Hover for details.</p>
     </div>
   );
 };
