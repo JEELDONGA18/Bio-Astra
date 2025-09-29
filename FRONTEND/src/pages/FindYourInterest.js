@@ -359,9 +359,6 @@ const FindYourInterest = () => {
         )}
 
         {/* Trend Chart */}
-        <div className="mb-8">
-          <TrendChart />
-        </div>
 
         {/* Search Results */}
         {searchResults.length > 0 && (
