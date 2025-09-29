@@ -6,7 +6,7 @@ const NSLSL = () => {
     {
       title: "NASA Space Life Sciences Library",
       description: "Comprehensive digital library containing NASA's space life sciences publications, research reports, and technical documents spanning decades of space biology research.",
-      link: "https://nslsl.nasa.gov",
+      link: "https://public.ksc.nasa.gov/nslsl/",
       category: "Digital Library",
       icon: (
         <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -23,7 +23,7 @@ const NSLSL = () => {
     {
       title: "Research Archive",
       description: "Extensive archive of NASA space biology research spanning from early space missions to current International Space Station studies, including unpublished reports and data.",
-      link: "https://nslsl.nasa.gov/archive",
+      link: "https://public.ksc.nasa.gov/nslsl/",
       category: "Research Archive",
       icon: (
         <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -40,7 +40,7 @@ const NSLSL = () => {
     {
       title: "Publication Database",
       description: "Searchable database of peer-reviewed publications, conference proceedings, and technical papers from NASA space biology research programs and collaborations.",
-      link: "https://nslsl.nasa.gov/publications",
+      link: "https://data.nasa.gov/",
       category: "Publications",
       icon: (
         <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -57,7 +57,7 @@ const NSLSL = () => {
     {
       title: "Educational Resources",
       description: "Educational materials, tutorials, and learning resources for students, educators, and researchers interested in space life sciences and NASA research.",
-      link: "https://nslsl.nasa.gov/education",
+      link: "https://www.nasa.gov/learning-resources/",
       category: "Education",
       icon: (
         <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -77,25 +77,25 @@ const NSLSL = () => {
     {
       title: "Browse Collections",
       description: "Explore research collections by topic",
-      link: "https://nslsl.nasa.gov/collections",
+      link: "https://science.nasa.gov/researchers/sara/library-and-useful-links/",
       icon: "📚"
     },
     {
       title: "Search Publications",
       description: "Find specific research papers",
-      link: "https://nslsl.nasa.gov/search",
+      link: "https://science.nasa.gov/researchers/sara/library-and-useful-links/",
       icon: "🔍"
     },
     {
       title: "Download Resources",
       description: "Access educational materials",
-      link: "https://nslsl.nasa.gov/downloads",
+      link: "https://www.nasa.gov/learning-resources/",
       icon: "⬇️"
     },
     {
       title: "Submit Content",
       description: "Contribute to the library",
-      link: "https://nslsl.nasa.gov/submit",
+      link: "https://science.nasa.gov/researchers/sara/how-to-guide/nspires-submission/",
       icon: "📝"
     }
   ];
@@ -157,7 +157,7 @@ const NSLSL = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <a
-                  href="https://nslsl.nasa.gov"
+                  href="https://public.ksc.nasa.gov/nslsl/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-primary"

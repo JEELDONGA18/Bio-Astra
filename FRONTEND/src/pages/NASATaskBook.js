@@ -6,7 +6,7 @@ const NASATaskBook = () => {
     {
       title: "NASA Task Book Database",
       description: "Comprehensive database of NASA-funded research projects, including project descriptions, principal investigators, funding amounts, and research outcomes across all NASA programs.",
-      link: "https://taskbook.nasaprs.com",
+      link: "https://taskbook.nasaprs.com/tbp/welcome.cfm",
       category: "Project Database",
       icon: (
         <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -23,7 +23,7 @@ const NASATaskBook = () => {
     {
       title: "Space Biology Projects",
       description: "Specialized collection of NASA-funded space biology research projects, including current and historical studies on the effects of spaceflight on living systems.",
-      link: "https://taskbook.nasaprs.com/space-biology",
+      link: "https://science.nasa.gov/biological-physical/programs/space-biology/",
       category: "Space Biology",
       icon: (
         <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -40,7 +40,7 @@ const NASATaskBook = () => {
     {
       title: "Principal Investigator Directory",
       description: "Comprehensive directory of NASA-funded researchers, including their affiliations, research interests, and project portfolios across space life sciences.",
-      link: "https://taskbook.nasaprs.com/investigators",
+      link: "https://science.nasa.gov/researchers/new-pi-resources/",
       category: "Researchers",
       icon: (
         <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -57,7 +57,7 @@ const NASATaskBook = () => {
     {
       title: "Funding Opportunities",
       description: "Current and upcoming NASA funding opportunities for space biology research, including grant announcements, application guidelines, and submission deadlines.",
-      link: "https://taskbook.nasaprs.com/funding",
+      link: "https://science.nasa.gov/open-science/nasa-open-science-funding-opportunities/",
       category: "Funding",
       icon: (
         <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -77,25 +77,25 @@ const NASATaskBook = () => {
     {
       title: "Browse Projects",
       description: "Explore funded research projects",
-      link: "https://taskbook.nasaprs.com/projects",
+      link: "https://taskbook.nasaprs.com/tbp/welcome.cfm",
       icon: "🔬"
     },
     {
       title: "Find Researchers",
       description: "Search for principal investigators",
-      link: "https://taskbook.nasaprs.com/search",
+      link: "https://science.nasa.gov/science-people/",
       icon: "👥"
     },
     {
       title: "Funding Calendar",
       description: "Track upcoming opportunities",
-      link: "https://taskbook.nasaprs.com/calendar",
+      link: "https://science.nasa.gov/open-science/nasa-open-science-funding-opportunities/",
       icon: "📅"
     },
     {
       title: "Submit Project",
       description: "Add your research project",
-      link: "https://taskbook.nasaprs.com/submit",
+      link: "https://science.nasa.gov/researchers/sara/how-to-guide/nspires-submission/",
       icon: "📝"
     }
   ];
