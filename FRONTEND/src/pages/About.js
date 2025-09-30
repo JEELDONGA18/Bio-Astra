@@ -94,8 +94,7 @@ const About = () => {
       role: "Quality & Reliability Champion",
       bio: "Dhrumil ensures the quality and reliability of every feature by rigorously testing and refining the application, delivering a smooth and user-friendly experience for hackathon judges. He brings extensive expertise in software testing and quality assurance.",
       image: "🕵️‍♂️",
-      // No LinkedIn provided; will use email link
-      link: "mailto:dhrumilkhatiwala.co23d2@scet.ac.in",
+      link: "https://www.linkedin.com/in/dhrumil-khatiwala-4b55322b6",
       expertise: [
         "Software Testing",
         "Bug Tracking",
@@ -118,7 +117,7 @@ const About = () => {
   ];
 
   const mentor = {
-    name: "Dr. Bintu Kadhiwala",
+    name: "Prof. (Dr.) Bintu Kadhiwala",
     role: "Program Leadership",
     bio: "Dr. Bintu Kadhiwala is an Assistant Professor of Computer Engineering at SCET, Surat, with over 19 years of experience. He holds a Ph.D. from SVNIT, Surat, specializing in data mining, privacy-preserving data publishing, algorithms, and information security.",
     image: "👨‍🏫",

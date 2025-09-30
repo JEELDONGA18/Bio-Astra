@@ -26,7 +26,7 @@ const OSDR = () => {
     {
       title: "GeneLab Data System",
       description: "Advanced platform for analyzing space biology omics data, providing tools for data visualization, statistical analysis, and collaborative research.",
-      link: "https://visualization.genelab.nasa.gov/data/",
+      link: "https://genelab-data.ndc.nasa.gov/genelab/projects",
       category: "Analysis Platform",
       icon: (
         <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -60,7 +60,7 @@ const OSDR = () => {
     {
       title: "Research Data Portal",
       description: "User-friendly interface for discovering and accessing space biology datasets, with advanced search capabilities and data preview features.",
-      link: "https://science.data.nasa.gov/data-sites/biological-physical ",
+      link: "https://science.data.nasa.gov/bio-physical/ ",
       category: "Data Discovery",
       icon: (
         <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">

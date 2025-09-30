@@ -43,7 +43,7 @@ const TrendChart = ({ data }) => {
 
   return (
     <div className="bg-gray-800 rounded-lg p-6 m-4 shadow-xl border border-gray-700">
-      <h3 className="text-xl font-semibold text-white mb-4">Publication Trends Over Time</h3>
+      <h3 className="text-xl font-semibold text-white mb-4">Publications by Time</h3>
       <div className="h-80">
         <ResponsiveContainer width="100%" height="100%">
           <LineChart data={chartData} margin={{ top: 10, right: 24, bottom: 10, left: 0 }}>
