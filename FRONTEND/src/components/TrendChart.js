@@ -1,5 +1,5 @@
 import React from 'react';
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Label } from 'recharts';
 
 const CustomTooltip = ({ active, payload, label }) => {
   if (active && payload && payload.length) {
@@ -54,13 +54,17 @@ const TrendChart = ({ data }) => {
               fontSize={12}
               tickLine={false}
               axisLine={{ stroke: '#374151' }}
-            />
+            >
+              <Label value="Years" offset={-10} position="insideBottom" fill="#9CA3AF" />
+            </XAxis>
             <YAxis 
               stroke="#9CA3AF"
               fontSize={12}
               tickLine={false}
               axisLine={{ stroke: '#374151' }}
-            />
+            >
+              <Label value="No. of Research Papers" angle={-90} offset={15} position="insideLeft" fill="#9CA3AF" style={{ textAnchor: 'middle' }} />
+            </YAxis>
             <Tooltip content={<CustomTooltip />} cursor={{ stroke: '#374151' }} />
             <Line 
               type="monotone" 

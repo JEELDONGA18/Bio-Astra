@@ -11,7 +11,8 @@ const ResearchPage = () => {
   const [error, setError] = useState(null);
   const [expandedSections, setExpandedSections] = useState({
     abstract: false,
-    conclusion: false
+    conclusion: false,
+    summary: false
   });
 
   useEffect(() => {
@@ -154,6 +155,19 @@ const ResearchPage = () => {
           />
         </div>
 
+        {/* Keywords */}
+        {Array.isArray(researchData.Keywords || researchData.keywords) && (researchData.Keywords || researchData.keywords).length > 0 && (
+          <div className="card mb-8">
+            <h2 className="text-2xl font-bold text-white mb-4">Keywords</h2>
+            <div className="flex flex-wrap gap-2">
+              {(researchData.Keywords || researchData.keywords).map((kw, idx) => (
+                <span key={idx} className="inline-flex items-center px-3 py-1 rounded-full text-sm bg-gray-700 text-gray-200 border border-gray-600">
+                  {kw}
+                </span>
+              ))}
+            </div>
+          </div>
+        )}
 
         {/* Abstract */}
         {(researchData.Abstract || researchData.abstract) && (
@@ -222,6 +236,43 @@ const ResearchPage = () => {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                     </svg>
                     Read Full Conclusion
+                  </>
+                )}
+              </button>
+            </div>
+          </div>
+        )}
+
+        {/* Summary */}
+        {(researchData.Summary || researchData.summary || researchData.SUMMARY) && (
+          <div className="card mb-8">
+            <h2 className="text-2xl font-bold text-white mb-4">Summary</h2>
+            <div className="text-gray-300 leading-relaxed relative">
+              {expandedSections.summary ? (
+                <p>{researchData.Summary || researchData.summary || researchData.SUMMARY}</p>
+              ) : (
+                <div className="relative">
+                  <p className="relative z-10">{getPreviewText(researchData.Summary || researchData.summary || researchData.SUMMARY, 4)}</p>
+                  <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-b from-transparent via-gray-800/50 to-gray-800 pointer-events-none"></div>
+                </div>
+              )}
+              <button
+                onClick={() => toggleSection('summary')}
+                className="mt-4 text-cosmos-cyan hover:text-white transition-colors duration-200 flex items-center gap-2"
+              >
+                {expandedSections.summary ? (
+                  <>
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 15l7-7 7 7" />
+                    </svg>
+                    Show Less
+                  </>
+                ) : (
+                  <>
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                    Read Full Summary
                   </>
                 )}
               </button>

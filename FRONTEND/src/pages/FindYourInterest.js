@@ -6,6 +6,7 @@ const FindYourInterest = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const [searchResults, setSearchResults] = useState([]);
+  const [overviewOpenMap, setOverviewOpenMap] = useState({});
   const [isSearching, setIsSearching] = useState(false);
   const [showRestoredMessage, setShowRestoredMessage] = useState(false);
   const [searchParams, setSearchParams] = useState({
@@ -150,6 +151,7 @@ const FindYourInterest = () => {
 
   const clearAllSearch = () => {
     setSearchResults([]);
+    setOverviewOpenMap({});
     setSearchParams({
       title: '',
       author: '',
@@ -159,6 +161,19 @@ const FindYourInterest = () => {
     });
     localStorage.removeItem('searchResults');
     localStorage.removeItem('searchParams');
+  };
+
+  const getPreviewText = (text, lines = 3) => {
+    if (!text) return '';
+    const words = text.split(' ');
+    const wordsPerLine = 15;
+    const maxWords = lines * wordsPerLine;
+    if (words.length <= maxWords) return text;
+    return words.slice(0, maxWords).join(' ') + '...';
+  };
+
+  const toggleOverview = async (pmcid) => {
+    setOverviewOpenMap(prev => ({ ...prev, [pmcid]: !prev[pmcid] }));
   };
 
   const categories = [
@@ -188,6 +203,33 @@ const FindYourInterest = () => {
     { value: '2011', label: '2011' },
     { value: '2010', label: '2010' }
   ];
+
+  const OverviewLoader = ({ pmcid, onLoaded }) => {
+    useEffect(() => {
+      let isMounted = true;
+      const fetchOverview = async () => {
+        try {
+          const resp = await fetch(`http://localhost:5000/api/research/${pmcid}`);
+          const data = await resp.json();
+          if (data && data.success && isMounted) {
+            const payload = data.data || {};
+            const overviewText = payload.Overview || payload.overview || '';
+            onLoaded(overviewText || '');
+          } else if (isMounted) {
+            onLoaded('');
+          }
+        } catch (e) {
+          if (isMounted) onLoaded('');
+        }
+      };
+      fetchOverview();
+      return () => { isMounted = false; };
+    }, [pmcid, onLoaded]);
+
+    return (
+      <div className="text-gray-400 text-sm">Loading overview...</div>
+    );
+  };
 
   return (
     <div className="min-h-screen bg-gray-900 py-8">
@@ -369,8 +411,6 @@ const FindYourInterest = () => {
           </div>
         )}
 
-        {/* Trend Chart */}
-
         {/* Search Results */}
         {searchResults.length > 0 && (
           <div className="card">
@@ -398,7 +438,14 @@ const FindYourInterest = () => {
                         </span>
                       </div>
                     </div>
-                    <div className="flex-shrink-0">
+                    <div className="flex-shrink-0 flex items-center gap-2">
+                      <button
+                        type="button"
+                        onClick={() => toggleOverview(result.pmcid)}
+                        className="text-sm px-6 py-2 border border-cosmos-cyan text-cosmos-cyan bg-gray-800 hover:bg-gray-700 rounded transition-colors duration-200"
+                      >
+                        {overviewOpenMap[result.pmcid] ? 'Hide Overview' : 'Overview'}
+                      </button>
                       <button 
                         onClick={() => navigate(`/research/${result.pmcid}`)}
                         className="btn-primary text-sm px-6 py-2"
@@ -407,6 +454,43 @@ const FindYourInterest = () => {
                       </button>
                     </div>
                   </div>
+                  {overviewOpenMap[result.pmcid] && (
+                    <div className="mt-4 bg-gray-800 border border-gray-600 rounded p-3">
+                      {result.overviewFull ? (
+                        <>
+                          <p className="text-gray-200">{result.overviewFull}</p>
+                          <button
+                            type="button"
+                            onClick={() => {
+                              const half = getPreviewText(result.overviewFull, 4);
+                              setSearchResults(prev => prev.map(r => r.pmcid === result.pmcid ? { ...r, overviewPreview: half, overviewFull: r.overviewFull } : r));
+                            }}
+                            className="mt-2 text-cosmos-cyan hover:text-white transition-colors duration-200"
+                          >
+                            Show Less
+                          </button>
+                        </>
+                      ) : result.overviewPreview ? (
+                        <>
+                          <p className="text-gray-200">{result.overviewPreview}</p>
+                          <button
+                            type="button"
+                            onClick={() => setSearchResults(prev => prev.map(r => r.pmcid === result.pmcid ? { ...r, overviewFull: r.overviewFull || r.overview } : r))}
+                            className="mt-2 text-cosmos-cyan hover:text-white transition-colors duration-200"
+                          >
+                            Read Full Overview
+                          </button>
+                        </>
+                      ) : result.overviewLoaded ? (
+                        <p className="text-gray-400">Overview not available.</p>
+                      ) : (
+                        <OverviewLoader pmcid={result.pmcid} onLoaded={(overviewText) => {
+                          const preview = getPreviewText(overviewText, 4);
+                          setSearchResults(prev => prev.map(r => r.pmcid === result.pmcid ? { ...r, overview: overviewText, overviewPreview: preview, overviewLoaded: true } : r));
+                        }} />
+                      )}
+                    </div>
+                  )}
                 </div>
               ))}
             </div>
