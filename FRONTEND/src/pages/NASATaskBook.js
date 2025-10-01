@@ -6,7 +6,7 @@ const NASATaskBook = () => {
     {
       title: "NASA Task Book Database",
       description: "Comprehensive database of NASA-funded research projects, including project descriptions, principal investigators, funding amounts, and research outcomes across all NASA programs.",
-      link: "https://taskbook.nasaprs.com/tbp/welcome.cfm",
+      link: "https://taskbook.nasaprs.com/tbp/index.cfm",
       category: "Project Database",
       icon: (
         <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -21,63 +21,69 @@ const NASATaskBook = () => {
       ]
     },
     {
-      title: "Space Biology Projects",
-      description: "Specialized collection of NASA-funded space biology research projects, including current and historical studies on the effects of spaceflight on living systems.",
-      link: "https://science.nasa.gov/biological-physical/programs/space-biology/",
+      title: "Space Biology Program",
+      description: "Research program studying how microgravity, radiation, and spaceflight environments affect living systems including microbes, plants, animals, and humans.",
+      link: "https://taskbook.nasaprs.com/tbp/highlights.cfm", 
       category: "Space Biology",
       icon: (
         <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4m16 0a8 8 0 11-16 0 8 8 0 0116 0z" />
         </svg>
       ),
       features: [
-        "Space biology project catalog",
-        "Research methodology details",
-        "Publication and data links",
-        "Project timeline tracking"
+        "Biological effects of microgravity",
+        "Spaceflight experiments on living systems",
+        "Ground-based simulation studies",
+        "Project database and research outcomes"
       ]
     },
     {
-      title: "Principal Investigator Directory",
-      description: "Comprehensive directory of NASA-funded researchers, including their affiliations, research interests, and project portfolios across space life sciences.",
-      link: "https://science.nasa.gov/researchers/new-pi-resources/",
-      category: "Researchers",
+      title: "Human Research Program (HRP)",
+      description: "Database of NASA-funded human health and performance research to mitigate risks to astronauts during space exploration missions.",
+      link: "https://humanresearchroadmap.nasa.gov/",
+      category: "Human Research",
       icon: (
         <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M12 20a8 8 0 100-16 8 8 0 000 16z" />
         </svg>
       ),
       features: [
-        "Researcher profiles and CVs",
-        "Research interest matching",
-        "Collaboration opportunities",
-        "Contact information"
+        "Human health and performance studies",
+        "Countermeasure development",
+        "Risk assessment and mitigation",
+        "Searchable database of funded projects"
       ]
     },
     {
-      title: "Funding Opportunities",
-      description: "Current and upcoming NASA funding opportunities for space biology research, including grant announcements, application guidelines, and submission deadlines.",
-      link: "https://science.nasa.gov/open-science/nasa-open-science-funding-opportunities/",
-      category: "Funding",
+      title: "Biological and Physical Sciences (BPS)",
+      description: "Collection of NASA-funded research projects in biological and physical sciences to advance fundamental knowledge and support future space missions.",
+      link: "https://science.nasa.gov/biological-physical/data/",
+      category: "Physical Sciences",
       icon: (
         <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6l4 2m6-2a10 10 0 11-20 0 10 10 0 0120 0z" />
         </svg>
       ),
       features: [
-        "Active funding announcements",
-        "Application guidelines",
-        "Deadline tracking",
-        "Eligibility requirements"
+        "Biological sciences research",
+        "Physical sciences investigations",
+        "Spaceflight and ground studies",
+        "Project details and outcomes"
       ]
     }
   ];
 
   const quickLinks = [
     {
-      title: "Browse Projects",
-      description: "Explore funded research projects",
-      link: "https://taskbook.nasaprs.com/tbp/welcome.cfm",
+      title: "Search Projects",
+      description: "search for projects",
+      link: "https://taskbook.nasaprs.com/tbp/index.cfm",
+      icon: "🔍"
+    },
+    {
+      title: "Search Bibliography",
+      description: "Explore Bibliography",
+      link: "https://taskbook.nasaprs.com/tbp/index.cfm?action=bib_search",
       icon: "🔬"
     },
     {
@@ -87,15 +93,9 @@ const NASATaskBook = () => {
       icon: "👥"
     },
     {
-      title: "Funding Calendar",
-      description: "Track upcoming opportunities",
-      link: "https://science.nasa.gov/open-science/nasa-open-science-funding-opportunities/",
-      icon: "📅"
-    },
-    {
       title: "Submit Project",
       description: "Add your research project",
-      link: "https://science.nasa.gov/researchers/sara/how-to-guide/nspires-submission/",
+      link: "https://taskbook.nasaprs.com/exploration/taskbook//",
       icon: "📝"
     }
   ];
@@ -103,68 +103,65 @@ const NASATaskBook = () => {
   const projectCategories = [
     {
       title: "Human Research",
-      description: "Studies on human physiology and psychology in space",
+      description: "The challenges to human health and performance in space, focusing on risks, gaps, and research elements related to keeping astronauts safe and healthy during missions.",
       count: "150+ projects",
       funding: "$50M+"
     },
     {
-      title: "Plant Biology",
-      description: "Research on plant growth and development in space",
+      title: "Space Biology",
+      description: "Study of biological systems in space, including human adaptation and the effects of the space environment on living organisms.",
       count: "80+ projects",
       funding: "$25M+"
     },
     {
-      title: "Microbiology",
-      description: "Microbial studies in space environments",
-      count: "60+ projects",
-      funding: "$15M+"
-    },
-    {
-      title: "Animal Studies",
-      description: "Animal research for space biology insights",
+      title: "Physical Sciences",
+      description: "Fluid physics, combustion science, materials science, and fundamental physics,",
       count: "40+ projects",
       funding: "$20M+"
     }
   ];
 
-  const recentProjects = [
-    {
-      title: "Effects of Microgravity on Human Immune System",
-      pi: "Dr. Sarah Johnson",
-      institution: "NASA Johnson Space Center",
-      duration: "2022-2025",
-      funding: "$2.5M"
-    },
-    {
-      title: "Plant Growth Optimization in Space",
-      pi: "Dr. Michael Chen",
-      institution: "University of California",
-      duration: "2023-2026",
-      funding: "$1.8M"
-    },
-    {
-      title: "Microbial Communities in Space",
-      pi: "Dr. Elena Rodriguez",
-      institution: "MIT",
-      duration: "2021-2024",
-      funding: "$2.1M"
-    }
-  ];
-
   return (
-    <div className="min-h-screen bg-gray-900 py-8">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <h1 className="text-4xl font-bold text-white mb-4">
-            NASA Task Book
-          </h1>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Explore NASA's comprehensive database of funded research projects, 
-            principal investigators, and funding opportunities in space life sciences.
-          </p>
+    <div className="min-h-screen bg-gray-900">
+      {/* Hero Section with Starfield Background */}
+      <section className="relative overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
+        {/* Animated Background Stars */}
+        <div className="absolute inset-0 bg-star-field bg-[length:300px_300px] animate-pulse-slow"></div>
+        
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+          <div className="text-center">
+            <h1 className="text-5xl md:text-7xl font-bold mb-6">
+              <span className="bg-cosmos-gradient bg-clip-text text-transparent">
+                NASA Task Book
+              </span>
+            </h1>
+            <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto">
+              Explore NASA's comprehensive database of funded research projects, 
+              principal investigators, and funding opportunities in space life sciences.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a
+                href="https://taskbook.nasaprs.com/tbp/welcome.cfm"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary text-lg px-8 py-4 inline-flex items-center justify-center"
+              >
+                <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
+                </svg>
+                Access NASA Task Book
+              </a>
+            </div>
+          </div>
         </div>
 
+        {/* Floating Elements */}
+        <div className="absolute top-20 left-10 w-20 h-20 bg-cosmos-cyan/20 rounded-full animate-float"></div>
+        <div className="absolute top-40 right-20 w-16 h-16 bg-cosmos-purple/20 rounded-full animate-float" style={{animationDelay: '2s'}}></div>
+        <div className="absolute bottom-20 left-1/4 w-12 h-12 bg-cosmos-blue/20 rounded-full animate-float" style={{animationDelay: '4s'}}></div>
+      </section>
+
+      <div className="max-w-7xl my-10 mx-auto px-4 sm:px-6 lg:px-8">
         {/* Overview Section */}
         <div className="card mb-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
@@ -173,10 +170,7 @@ const NASATaskBook = () => {
                 Tracking NASA Research Excellence
               </h2>
               <p className="text-gray-300 mb-6 leading-relaxed">
-                The NASA Task Book serves as the central repository for all NASA-funded research 
-                projects, providing transparency and accountability in research funding. It 
-                tracks project progress, outcomes, and impacts across NASA's diverse research 
-                portfolio, with special emphasis on space life sciences and space biology research.
+                The NASA Task Book is an online database of research projects supported by NASA's Biological and Physical Sciences (BPS) Division and Human Research Program (HRP). Users can view project descriptions, annual progress, final reports, and bibliographical listings of publications resulting from NASA-funded studies in Space Biology, Physical Sciences, and Human Research. Visitors can also learn about the potential impact of these studies and the anticipated benefits that such research could offer to us on Earth.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <a
@@ -187,9 +181,6 @@ const NASATaskBook = () => {
                 >
                   Visit Task Book
                 </a>
-                <button className="btn-secondary">
-                  Browse Projects
-                </button>
               </div>
             </div>
             <div className="bg-cosmos-gradient/10 rounded-lg p-8 text-center">
@@ -253,54 +244,6 @@ const NASATaskBook = () => {
                   </div>
                   <div className="text-gray-500 text-xs">
                     {category.funding}
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Recent Projects */}
-        <div className="mb-16">
-          <h2 className="text-3xl font-bold text-white mb-8 text-center">
-            Recent Space Biology Projects
-          </h2>
-          <div className="space-y-4">
-            {recentProjects.map((project, index) => (
-              <div key={index} className="card">
-                <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between">
-                  <div className="flex-1">
-                    <h3 className="text-xl font-semibold text-white mb-2">
-                      {project.title}
-                    </h3>
-                    <div className="flex flex-wrap items-center gap-4 text-sm text-gray-400 mb-3">
-                      <span className="flex items-center">
-                        <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                        </svg>
-                        {project.pi}
-                      </span>
-                      <span className="flex items-center">
-                        <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                        </svg>
-                        {project.institution}
-                      </span>
-                      <span className="flex items-center">
-                        <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                        </svg>
-                        {project.duration}
-                      </span>
-                    </div>
-                  </div>
-                  <div className="mt-4 lg:mt-0 lg:ml-6">
-                    <div className="text-right">
-                      <div className="text-2xl font-bold text-cosmos-cyan mb-1">
-                        {project.funding}
-                      </div>
-                      <div className="text-sm text-gray-400">Total Funding</div>
-                    </div>
                   </div>
                 </div>
               </div>
@@ -387,9 +330,6 @@ const NASATaskBook = () => {
             >
               Browse Task Book
             </a>
-            <button className="btn-secondary text-lg px-8 py-4">
-              Find Researchers
-            </button>
           </div>
         </div>
       </div>

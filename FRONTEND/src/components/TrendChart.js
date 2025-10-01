@@ -1,5 +1,5 @@
 import React from 'react';
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Label } from 'recharts';
 
 const CustomTooltip = ({ active, payload, label }) => {
   if (active && payload && payload.length) {
@@ -43,7 +43,7 @@ const TrendChart = ({ data }) => {
 
   return (
     <div className="bg-gray-800 rounded-lg p-6 m-4 shadow-xl border border-gray-700">
-      <h3 className="text-xl font-semibold text-white mb-4">Publication Trends Over Time</h3>
+      <h3 className="text-xl font-semibold text-white mb-4">Publications by Time</h3>
       <div className="h-80">
         <ResponsiveContainer width="100%" height="100%">
           <LineChart data={chartData} margin={{ top: 10, right: 24, bottom: 10, left: 0 }}>
@@ -54,13 +54,17 @@ const TrendChart = ({ data }) => {
               fontSize={12}
               tickLine={false}
               axisLine={{ stroke: '#374151' }}
-            />
+            >
+              <Label value="Years" offset={-10} position="insideBottom" fill="#9CA3AF" />
+            </XAxis>
             <YAxis 
               stroke="#9CA3AF"
               fontSize={12}
               tickLine={false}
               axisLine={{ stroke: '#374151' }}
-            />
+            >
+              <Label value="No. of Research Papers" angle={-90} offset={15} position="insideLeft" fill="#9CA3AF" style={{ textAnchor: 'middle' }} />
+            </YAxis>
             <Tooltip content={<CustomTooltip />} cursor={{ stroke: '#374151' }} />
             <Line 
               type="monotone" 

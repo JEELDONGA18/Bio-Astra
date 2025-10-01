@@ -58,9 +58,9 @@ const OSDR = () => {
       ]
     },
     {
-      title: "Research Data Portal",
-      description: "User-friendly interface for discovering and accessing space biology datasets, with advanced search capabilities and data preview features.",
-      link: "https://science.data.nasa.gov/data-sites/biological-physical ",
+      title: "Research Data API",
+      description: "User-friendly interface for discovering and accessing space biology datasets through API, with advanced search capabilities and data preview features.",
+      link: "https://visualization.osdr.nasa.gov/biodata/api/?_gl=1*7fcx0d*_ga*MjAyMDIxMTY5NS4xNzI4MDI1NjYz*_ga_DQ6V8NKYDH*czE3NTkzMTU1MzIkbzMkZzEkdDE3NTkzMTY3NDMkajYwJGwwJGgw",
       category: "Data Discovery",
       icon: (
         <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -135,12 +135,17 @@ const OSDR = () => {
                 </svg>
                 Access OSDR
               </a>
-              <button className="btn-secondary text-lg px-8 py-4 inline-flex items-center justify-center">
+              <a
+                href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11701653/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-secondary text-lg px-8 py-4 inline-flex items-center justify-center"
+              >
                 <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                 </svg>
                 View Documentation
-              </button>
+              </a>
             </div>
           </div>
         </div>
@@ -176,9 +181,6 @@ const OSDR = () => {
                 >
                   Visit OSDR
                 </a>
-                <button className="btn-secondary">
-                  Learn More
-                </button>
               </div>
             </div>
             <div className="bg-cosmos-gradient/10 rounded-lg p-8 text-center">
@@ -240,102 +242,6 @@ const OSDR = () => {
                 </p>
               </a>
             ))}
-          </div>
-        </div>
-
-        {/* Search OSDR Datasets */}
-        <div className="card mb-16">
-          <div className="text-center">
-            <h2 className="text-3xl font-bold text-white mb-6">
-              Search OSDR Datasets
-            </h2>
-            <p className="text-gray-300 mb-8 max-w-2xl mx-auto">
-              Search and discover space biology datasets directly from OSDR. 
-              This feature will be integrated with the OSDR API for real-time data access.
-            </p>
-            <div className="max-w-2xl mx-auto">
-              <div className="flex space-x-2">
-                <input
-                  type="text"
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  placeholder="Search datasets inside OSDR..."
-                  className="flex-1 input-field"
-                />
-                <button className="btn-primary px-6 py-2">
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                  </svg>
-                </button>
-              </div>
-              <p className="text-sm text-gray-500 mt-4">
-                🔮 Future Integration: Direct API connection to OSDR search functionality
-              </p>
-            </div>
-          </div>
-        </div>
-
-        {/* Dataset Growth Trend Chart */}
-        <div className="card mb-16">
-          <h2 className="text-3xl font-bold text-white mb-8 text-center">
-            Dataset Growth Over Time
-          </h2>
-          <div className="bg-gray-800 rounded-lg p-6">
-            <div className="h-64 flex items-center justify-center">
-              <div className="text-center">
-                <div className="w-32 h-32 bg-cosmos-gradient/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <svg className="w-16 h-16 text-cosmos-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                  </svg>
-                </div>
-                <h3 className="text-xl font-semibold text-white mb-2">
-                  Interactive Trend Chart
-                </h3>
-                <p className="text-gray-400 mb-4">
-                  Visual representation of OSDR dataset growth and research activity over time
-                </p>
-                <div className="flex justify-center space-x-4 text-sm text-gray-500">
-                  <span>📈 500+ datasets</span>
-                  <span>📊 50+ institutions</span>
-                  <span>🔬 2,000+ researchers</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Statistics */}
-        <div className="card bg-cosmos-gradient/10 border-cosmos-cyan/30 mb-16">
-          <div className="text-center mb-8">
-            <h2 className="text-3xl font-bold text-white mb-4">
-              OSDR Impact Statistics
-            </h2>
-            <p className="text-gray-300">
-              Measuring the success of open science in space biology
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div className="text-center">
-              <div className="text-3xl font-bold text-cosmos-cyan mb-2">500+</div>
-              <div className="text-white font-semibold mb-1">Datasets</div>
-              <div className="text-gray-400 text-sm">Available for research</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-cosmos-cyan mb-2">2,000+</div>
-              <div className="text-white font-semibold mb-1">Researchers</div>
-              <div className="text-gray-400 text-sm">Active users worldwide</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-cosmos-cyan mb-2">50+</div>
-              <div className="text-white font-semibold mb-1">Institutions</div>
-              <div className="text-gray-400 text-sm">Partner organizations</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-cosmos-cyan mb-2">100+</div>
-              <div className="text-white font-semibold mb-1">Publications</div>
-              <div className="text-gray-400 text-sm">Based on OSDR data</div>
-            </div>
           </div>
         </div>
 
@@ -410,9 +316,14 @@ const OSDR = () => {
             >
               Access OSDR Now
             </a>
-            <button className="btn-secondary text-lg px-8 py-4">
+            <a
+              href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11701653/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-secondary text-lg px-8 py-4"
+            >
               View Documentation
-            </button>
+            </a>
           </div>
         </div>
       </div>

@@ -49,9 +49,6 @@ const ResourceCard = ({ title, description, link, category, icon, features = [] 
           </svg>
           Visit Resource
         </a>
-        <button className="border border-gray-500 text-gray-300 hover:bg-gray-600 px-4 py-2 rounded text-sm transition-colors duration-200">
-          Learn More
-        </button>
       </div>
     </div>
   );

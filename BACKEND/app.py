@@ -370,8 +370,10 @@ def load_research_data():
                                     'year': item.get('Study Year', item.get('year', 2023)),
                                     'doi': f"10.1038/spacebio.{pmcid}",
                                     'abstract': item.get('Abstract', ''),
+                                    'overview': item.get('Overview', item.get('overview', '')),
                                     'results': 'Research results and findings from the study.',
                                     'conclusion': item.get('Conclusion', 'Research conclusions and implications.'),
+                                    'summary': item.get('Summary', item.get('summary', '')),
                                     'explore_more': [
                                         {
                                             'title': 'NCBI Publication',
@@ -410,7 +412,41 @@ def load_research_data():
                             duplicate_id_count += 1
                             suffix += 1
                             unique_id = f"{pmcid}-{suffix}"
-                        research_data[unique_id] = data
+                        # Normalize single-object entries to expected format
+                        normalized = {
+                            'pmcid': pmcid,
+                            'title': data.get('Title', data.get('title', '')),
+                            'authors': data.get('Authors', data.get('authors', [])),
+                            'keywords': data.get('Keywords', data.get('keywords', [])),
+                            'category': data.get('Category', data.get('category', '')),
+                            'year': data.get('Study Year', data.get('year', 2023)),
+                            'doi': data.get('doi', f"10.1038/spacebio.{pmcid}"),
+                            'abstract': data.get('Abstract', data.get('abstract', '')),
+                            'overview': data.get('Overview', data.get('overview', '')),
+                            'results': data.get('Results', data.get('results', '')),
+                            'conclusion': data.get('Conclusion', data.get('conclusion', '')),
+                            'summary': data.get('Summary', data.get('summary', '')),
+                            'explore_more': data.get('explore_more', [
+                                {
+                                    'title': 'NCBI Publication',
+                                    'url': data.get('Link', 'https://www.ncbi.nlm.nih.gov/')
+                                },
+                                {
+                                    'title': 'Related NASA Research',
+                                    'url': 'https://www.nasa.gov/space-biology'
+                                }
+                            ]),
+                            'knowledge_graph': data.get('knowledge_graph', {
+                                'authors': [{'name': 'Authors', 'expertise': [data.get('Category', 'Space Biology')], 'publications': 1, 'collaborations': 1}],
+                                'keywords': [{'term': keyword, 'frequency': 1, 'related_terms': []} for keyword in data.get('Keywords', [])],
+                                'category': {
+                                    'name': data.get('Category', 'Space Biology'),
+                                    'subcategories': [data.get('Category', 'Space Biology')],
+                                    'related_categories': ['Space Biology', 'Research']
+                                }
+                            })
+                        }
+                        research_data[unique_id] = normalized
     
     return research_data
 
@@ -652,9 +688,28 @@ def get_research_paper(pmcid):
     try:
         if pmcid in research_data:
             paper = research_data[pmcid]
+            # Ensure legacy keys also present for compatibility
+            enriched = dict(paper)
+            if 'Overview' not in enriched and enriched.get('overview'):
+                enriched['Overview'] = enriched['overview']
+            if 'Summary' not in enriched and enriched.get('summary'):
+                enriched['Summary'] = enriched['summary']
+            if 'Abstract' not in enriched and enriched.get('abstract'):
+                enriched['Abstract'] = enriched['abstract']
+            if 'Conclusion' not in enriched and enriched.get('conclusion'):
+                enriched['Conclusion'] = enriched['conclusion']
+            if 'Keywords' not in enriched and enriched.get('keywords'):
+                enriched['Keywords'] = enriched['keywords']
+            if 'Category' not in enriched and enriched.get('category'):
+                enriched['Category'] = enriched['category']
+            if 'Study Year' not in enriched and enriched.get('year'):
+                enriched['Study Year'] = enriched['year']
+            if 'Title' not in enriched and enriched.get('title'):
+                enriched['Title'] = enriched['title']
+
             return jsonify({
                 "success": True,
-                "data": paper
+                "data": enriched
             })
         else:
             return jsonify({

@@ -372,13 +372,15 @@ const KnowledgeGraph = ({ data }) => {
   return (
     <div className="bg-gray-800 rounded-lg p-6">
       <h3 className="text-xl font-bold text-white mb-4 text-center">Knowledge Graph</h3>
-      <div className="flex justify-center">
-        <svg
-          ref={svgRef}
-          width="900"
-          height="600"
-          className="border border-gray-600 rounded-lg bg-gray-900"
-        />
+      <div className="overflow-x-auto">
+        <div className="min-w-[900px] flex justify-center">
+          <svg
+            ref={svgRef}
+            width="900"
+            height="600"
+            className="border border-gray-600 rounded-lg bg-gray-900"
+          />
+        </div>
       </div>
       
       {/* Legend */}
