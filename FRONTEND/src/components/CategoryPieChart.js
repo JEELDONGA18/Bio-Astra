@@ -16,8 +16,13 @@ const CustomTooltip = ({ active, payload }) => {
 };
 
 const COLORS = [
-  '#06b6d4', '#8b5cf6', '#22c55e', '#f59e0b', '#ef4444', '#3b82f6', '#a855f7', '#10b981', '#eab308', '#f97316',
-  '#14b8a6', '#6366f1', '#84cc16', '#e11d48', '#0ea5e9'
+  '#6366f1', // indigo
+  '#14b8a6', // teal
+  '#3b82f6', // blue
+  '#06b6d4', // cosmos-cyan
+  '#8b5cf6', // violet
+  '#0ea5e9', // sky blue
+  '#22c55e', // green (cool)
 ];
 
 const CategoryPieChart = ({ data }) => {

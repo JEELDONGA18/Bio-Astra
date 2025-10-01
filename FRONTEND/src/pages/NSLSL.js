@@ -128,19 +128,59 @@ const NSLSL = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-900 py-8">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <h1 className="text-4xl font-bold text-white mb-4">
-            NASA Space Life Sciences Library (NSLSL)
-          </h1>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Access NASA's comprehensive collection of space life sciences publications, 
-            research documents, and educational resources spanning decades of space exploration.
-          </p>
+    <div className="min-h-screen bg-gray-900">
+        {/* Hero Section with Starfield Background */}
+      <section className="relative overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
+        {/* Animated Background Stars */}
+        <div className="absolute inset-0 bg-star-field bg-[length:300px_300px] animate-pulse-slow"></div>
+        
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+          <div className="text-center">
+            <h1 className="text-5xl md:text-7xl font-bold mb-6">
+              <span className="bg-cosmos-gradient bg-clip-text text-transparent">
+                NASA Space Life Sciences Library
+              </span>
+              <br />
+              <span className="text-white">(NSLSL)</span>
+            </h1>
+            <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto">
+              Access NASA's comprehensive collection of space life sciences publications, 
+              research documents, and educational resources spanning decades of space exploration.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a
+                href="https://science.nasa.gov/biological-physical/data/osdr/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary text-lg px-8 py-4 inline-flex items-center justify-center"
+              >
+                <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
+                </svg>
+                Access NSLSL
+              </a>
+              <a
+                href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11701653/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-secondary text-lg px-8 py-4 inline-flex items-center justify-center"
+              >
+                <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                </svg>
+                View Documentation
+              </a>
+            </div>
+          </div>
         </div>
 
+        {/* Floating Elements */}
+        <div className="absolute top-20 left-10 w-20 h-20 bg-cosmos-cyan/20 rounded-full animate-float"></div>
+        <div className="absolute top-40 right-20 w-16 h-16 bg-cosmos-purple/20 rounded-full animate-float" style={{animationDelay: '2s'}}></div>
+        <div className="absolute bottom-20 left-1/4 w-12 h-12 bg-cosmos-blue/20 rounded-full animate-float" style={{animationDelay: '4s'}}></div>
+      </section>
+
+      <div className="max-w-7xl mx-auto my-10 px-4 sm:px-6 lg:px-8">
         {/* Overview Section */}
         <div className="card mb-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
@@ -157,7 +197,7 @@ const NSLSL = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <a
-                  href="https://public.ksc.nasa.gov/nslsl/"
+                  href="https://www.nasa.gov/osdr-latest-news-nasa-space-life-sciences-library-nslsl-now-available/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-primary"

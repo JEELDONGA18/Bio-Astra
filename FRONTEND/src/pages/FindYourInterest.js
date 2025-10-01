@@ -463,7 +463,7 @@ const FindYourInterest = () => {
                             type="button"
                             onClick={() => {
                               const half = getPreviewText(result.overviewFull, 4);
-                              setSearchResults(prev => prev.map(r => r.pmcid === result.pmcid ? { ...r, overviewPreview: half, overviewFull: r.overviewFull } : r));
+                              setSearchResults(prev => prev.map(r => r.pmcid === result.pmcid ? { ...r, overviewPreview: half, overviewFull: undefined } : r));
                             }}
                             className="mt-2 text-cosmos-cyan hover:text-white transition-colors duration-200"
                           >
@@ -475,7 +475,7 @@ const FindYourInterest = () => {
                           <p className="text-gray-200">{result.overviewPreview}</p>
                           <button
                             type="button"
-                            onClick={() => setSearchResults(prev => prev.map(r => r.pmcid === result.pmcid ? { ...r, overviewFull: r.overviewFull || r.overview } : r))}
+                            onClick={() => setSearchResults(prev => prev.map(r => r.pmcid === result.pmcid ? { ...r, overviewFull: r.overview || r.overviewPreview } : r))}
                             className="mt-2 text-cosmos-cyan hover:text-white transition-colors duration-200"
                           >
                             Read Full Overview
