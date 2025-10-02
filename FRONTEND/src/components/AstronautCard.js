@@ -36,7 +36,9 @@ export default function AnatomyViewer() {
   };
 
   return (
-    <div className="flex flex-col md:flex-row items-center bg-[#0d1117] text-white rounded-2xl shadow-lg p-6 gap-8">
+    <section className="relative min-h-screen bg-gradient-to-b from-slate-950 to-background py-20">
+      <div className="container mx-auto px-4">
+        <div className="flex flex-col md:flex-row items-center bg-[#0d1117] text-white rounded-2xl shadow-lg p-6 gap-8">
       {/* LEFT: 3D Model Viewer */}
       <div className="w-full md:w-1/2 h-[500px] bg-black rounded-xl cursor-pointer">
         <Canvas camera={{ position: [0, 0, 5], fov: 50 }} shadows>
@@ -95,7 +97,9 @@ export default function AnatomyViewer() {
             </p>
           </div>
         )}
+        </div>
       </div>
-    </div>
+      </div>
+    </section>
   );
 }

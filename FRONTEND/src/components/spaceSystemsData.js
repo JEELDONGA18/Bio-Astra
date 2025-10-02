@@ -1,0 +1,151 @@
+// Structured findings by physiological system for spaceflight effects
+// Exported as a plain object for easy import in UI components
+
+const spaceSystemsData = {
+  "Cardiovascular System (Heart & Vasculature)": [
+    "Spaceflight causes cardiovascular changes due to microgravity-induced redistribution of body fluids and musculoskeletal unloading.",
+    "Spaceflight may contribute to cardiac dysfunction due to oxidative stress.",
+    "In mouse cardiac tissue, spaceflight altered the expression of 37 out of 168 genes related to redox balance, cell cycle, and senescence.",
+    "Spaceflight caused a substantial upregulation of *$Cdkn1a$* (*p21*), a gene linked to cell cycle arrest, and the cell cycle/apoptosis-related gene *Myc* in mouse cardiac tissue.",
+    "Cardiomyocytes derived from human pluripotent stem cells cultured in microgravity exhibit enhanced mitochondrial biogenesis, improved calcium handling, and advanced structural maturation, presenting opportunities for treating cardiac diseases like myocardial infarctions.",
+    "Analysis of NASA's GeneLab database suggests that the gene *FYN* is a central driver for the cardiovascular response to space radiation, potentially by reducing reactive oxygen species (ROS).",
+    "Spaceflight-induced reductions in myogenic vasoconstriction and stiffness, along with increases in maximal diameter of cerebral arteries, suggest that elevations in brain blood flow may occur during spaceflight, which could contribute to increases in intracranial pressure.",
+    "A 30-day spaceflight on Bion-M1 attenuated both vasoconstrictor and vasodilator properties in mouse cerebral arteries, which may limit the range of vascular control of cerebral perfusion during stress.",
+    "Apollo lunar astronauts, who traveled beyond Earth's magnetosphere, had a cardiovascular disease (CVD) mortality rate of 43%, which was 4–5 times higher than in non-flight and low Earth orbit (LEO) astronauts.",
+    "Simulated weightlessness and space-relevant total-body irradiation in mice induced sustained vascular endothelial cell dysfunction, a condition known to lead to occlusive artery disease.",
+    "A single exposure to simulated Galactic Cosmic Radiation (GCR) in mice results in long-lasting changes in the heart and plasma proteome, with inflammation-related pathways being the most highly perturbed.",
+    "Hearts of mice exposed to simulated GCR showed an increase in neutrophil extracellular traps (NETs), which are involved in inflammation and vascular thrombosis, 12 months post-irradiation.",
+    "Spaceflight impairs vasoconstrictor responses in mouse mesenteric arteries and veins, which could compromise the maintenance of arterial pressure during orthostatic stress. This impairment is linked to the ryanodine receptor-mediated intracellular $Ca^{2+}$ release mechanism.",
+    "In rats, simulated microgravity (hindlimb unloading) for 14 days causes structural remodeling of the femur's principal nutrient artery, making it narrower and thinner-walled, which attenuates the ability to increase blood flow upon reloading.",
+    "Simulated microgravity (hindlimb unloading) leads to sex-specific cardiovascular adaptations in rats; after 14 days, females exhibited increased aortic stiffness (pulse wave velocity), while males did not.",
+    "In female rats, simulated microgravity was associated with lower levels of G protein-coupled estrogen receptor (GPER), increased oxidative stress markers, and diastolic dysfunction in the aorta.",
+    "A 30-day spaceflight on the ISS led to the activation of MAPK, PI3K-Akt, and GPCR signaling pathways in the hearts of female mice.",
+    "Immunization of mice with tetanus toxoid and CpG while on the ISS stimulates heightened inflammation in the heart, driven by the induction of the nuclear factor kappa B (NF-κB) signaling pathway.",
+    "In simulated microgravity, female rats showed elevated oxidative damage marker 8-hydroxydeoxyguanosine (8-OHdG) in left ventricular tissue after 14 days, while age-matched males did not."
+  ],
+  "Musculoskeletal System (Bone & Muscle)": [
+    "Microgravity induces pelvic bone loss in mice through increased osteoclastic activity, osteocytic osteolysis, and inhibition of the osteoblast cell cycle by *$CDKN1a/p21$*.",
+    "A 15-day space shuttle mission resulted in a 6.29% decrease in pelvic bone volume fraction and an 11.91% decrease in bone thickness in female mice.",
+    "Microgravity exposure in mice increased TRAP-positive osteoclast-covered trabecular bone surfaces by 170%.",
+    "High-resolution nanoCT of mouse pelvic bone after spaceflight revealed signs of osteocytic osteolysis, including increases in lacunar cross-sectional area (+17%), perimeter (+14%), and canalicular diameter (+6%).",
+    "Space radiation, particularly high-LET 56Fe ions at a high dose (200 cGy), caused persistent bone loss and impaired the bone-forming potential (osteoblastogenesis) of marrow cells by over 90% in mice.",
+    "In a ground-based simulation, Mars-analog loading (38% weight bearing) for 21 days caused significant muscle atrophy (-23% gastrocnemius mass) and bone deterioration in mice.",
+    "Bone and muscle loss are generally proportional to the degree of unloading, with even a small reduction to 70% of normal weight bearing causing significant deterioration in mice.",
+    "Six months of microgravity exposure led to atrophy of the multifidus muscle in astronauts, which strongly correlated with lumbar spine flattening and increased stiffness.",
+    "A 30-day spaceflight mission in mice led to a 17% reduction in the bending strength of spinal segments and altered the failure mode, with fractures occurring within the weakened vertebral bone.",
+    "Spaceflight on the Bion-M1 mission led to a 32% lower cancellous bone area in the lumbar vertebrae of ovariectomized rats.",
+    "A 37-day spaceflight in female mice resulted in significant site-specific bone loss in the femur but not in the L2 vertebrae, suggesting mechanical unloading is the primary cause of bone loss in microgravity.",
+    "Spaceflight is associated with accelerated progression of femoral head endochondral ossification, suggesting microgravity may promote premature long bone growth arrest.",
+    "A 15-day space mission caused a statistically significant increase in the bone volume of the calvaria (non-weight-bearing skull bones) in mice, suggesting fluid shifts alone can initiate bone remodeling.",
+    "In rats, simulated microgravity impairs endothelium-dependent vasodilation of the femoral principal nutrient artery, which is associated with decrements in bone perfusion.",
+    "Spending time in microgravity is known to cause significant skeletal muscle atrophy and weakness via muscle unloading.",
+    "In the soleus muscle of space-flown mice, the $Ca^{2+}$ uptake ability of the SERCA pump is severely impaired, and there is a significant increase in sarcoplasmic reticulum (SR) $Ca^{2+}$ leak.",
+    "Spaceflight consistently reduced GSK3β content in mouse muscle across four separate missions, which was linked to a reduction in type IIA muscle fibers.",
+    "In a ground-based model, muscle-specific knockdown of *Gsk3* increased muscle mass, preserved strength, and surprisingly also increased bone mineral density during unloading.",
+    "In simulated microgravity, female rats lost more muscle strength and size compared to males, and this difference was not dependent on sex steroid hormones.",
+    "After a 14-day hindlimb suspension, female rats better maintained muscle function than males, showing a more moderate reduction in grip strength."
+  ],
+  "Nervous System (Brain, Vestibular & Sensory)": [
+    "Impairment of the central nervous system (CNS) is a significant health risk for astronauts during long-duration space missions.",
+    "In mice, spaceflight induced significant alterations in neurogenesis, synaptogenesis, and synaptic transmission, particularly affecting the cortex, hippocampus, striatum, and neuroendocrine structures.",
+    "Spaceflight in mice was associated with astrocyte activation and signs of immune dysfunction in the brain, with some changes resembling those seen in neurodegenerative disorders.",
+    "After a 35-day spaceflight, mouse brains showed a decrease in the expression of genes important for oligodendrocyte differentiation and myelin sheath maintenance.",
+    "Spaceflight was found to have opposing effects on the mouse olfactory bulb (OB), negating the positive effects of an enriched environment (AEM) and leading to a greater density of apoptotic cells.",
+    "In land snails, a 30-day spaceflight led to plastic changes in the vestibular system, including enhanced negative gravitaxis and increased sensitivity of statoreceptors to acceleration.",
+    "Spaceflight induces structural synaptic plasticity in the mammalian vestibular system, with a detected decrease in synapse density in the medial extrastriola of the utricle in mice, a region associated with encoding static head position.",
+    "In rats, simulated microgravity induces contrasting structural and functional adaptations in arteries of the forelimbs and hindlimbs, with hindlimb cutaneous arteries showing impaired vasoconstriction in response to sympathetic nerve stimulation.",
+    "A 3D-clinostat model for simulating microgravity in mice induced behavioral changes (decreased activity, altered gait, enhanced fear memory) and brain transcriptome alterations related to immune and endocrine pathways that closely mimic spaceflight.",
+    "Simulated microgravity and isolation each regulate a discrete repertoire of inflammatory cytokines in the mouse hippocampus; these changes are mitigated in a mouse model that quenches mitochondrial reactive oxygen species (ROS).",
+    "A 37-day spaceflight mission resulted in decreased inflammasome activation in the brains of mice compared to ground controls.",
+    "In Drosophila, artificial gravity partially protected the CNS from adverse effects of spaceflight, including neuronal loss, glial cell count alterations, oxidative damage, and apoptosis.",
+    "In adult C. elegans, 5 days of spaceflight caused hyperbranching in PVD and touch receptor neurons and impaired the transcellular degradation of neuronal debris.",
+    "Human neural stem cells (NSCs) proliferate in space and can differentiate into young, albeit immature, neurons post-flight. These space-flown NSCs showed higher oxygen consumption and glycolysis.",
+    "Space microgravity was found to cause abnormal cell division (incomplete cytokinesis or multi-daughter cell division) in human neural stem cells.",
+    "Microgravity delays the maturation of oligodendrocyte progenitors (OPCs), the cells responsible for forming and repairing myelin.",
+    "Space-flown oligodendrocyte progenitors (OLPs) showed enhanced proliferation but also a significant increase in autophagic cell death.",
+    "During parabolic flight, human position sense (proprioception) was altered, with errors in matching and pointing tasks changing significantly between 1G, hypergravity, and microgravity."
+  ],
+  "Immune System": [
+    "Human immune responses are weakened in space, leading to increased susceptibility to infections.",
+    "Microgravity significantly impacts the immune system by disrupting T cell activation, cytokine production, and macrophage differentiation.",
+    "Spaceflight suppresses the adaptive immune response, altering the distribution and function of lymphocyte populations.",
+    "In Drosophila, spaceflight induces stress-related transcriptional changes and specifically impairs the ability to mount a Toll-mediated immune response against fungal infection.",
+    "Spaceflight impairs the induction of antigen-specific immune tolerance in mice, leading to excessive inflammatory responses with a 5-fold increase in IFN-γ and a 10-fold increase in IL-17.",
+    "Human leukocytes stimulated on the ISS showed that spaceflight alters the expression of microRNA during T-cell activation, with miR-21 expression being suppressed in microgravity.",
+    "Both spaceflight and simulated microgravity models caused an elevated neutrophil-to-lymphocyte ratio (NLR) in rodents and human leukocytes, suggesting it as a potential biomarker for in-flight immune health monitoring.",
+    "Spaceflight can have an impact on the in vitro development of macrophages from mouse bone marrow cells, with gene expression profiles suggesting increased proliferation.",
+    "Splenocytes from mice after a 13-day spaceflight mission demonstrated altered activation properties, surface molecule expression, and cytokine production in response to stimuli.",
+    "Simulated microgravity impairs human Natural Killer (NK) cell cytotoxic activity against leukemic cells, which may increase astronaut risk of leukemogenesis during prolonged missions.",
+    "In the mouse thymus, spaceflight-induced atrophy was half-recovered by both simulated Earth (1g) and lunar (1/6g) gravity, though gene expression changes were not fully recovered by 1/6g.",
+    "In mice, hindlimb unloading (simulated microgravity) led to a reduction in % CD4+ T cells in singly housed animals, but not in socially housed animals."
+  ],
+  "Ocular System (Eyes)": [
+    "Astronauts have experienced impairment in visual acuity during and after missions on the ISS, which may involve alterations in ocular structure and function.",
+    "A 35-day space mission induced significant apoptosis (cell death) in mouse retina vascular endothelial cells, an effect that was partially protected by 1g of artificial gravity.",
+    "Proteomic analysis of mouse retina after spaceflight showed that key pathways responsible for cell death, cell repair, inflammation, and metabolic stress were significantly altered.",
+    "A 35-day space mission led to disruption of the blood-retinal barrier (BRB) in mice, as indicated by increased expression of aquaporin-4 (AQP-4) and PECAM-1, and decreased expression of the tight junction protein ZO-1.",
+    "A 37-day spaceflight mission was found to decelerate the retinal epigenetic clock in mice, while also altering the methylation of genes involved in retinal diseases like macular degeneration.",
+    "After a 35-day mission, mouse retinas showed degradation of cone photoreceptors, increased oxidative stress, and significantly lower thickness of the total retina, retinal pigment epithelium, and choroid layers.",
+    "Exposure to spaceflight-relevant proton radiation (0.5 Gy) in mice induced oxidative stress-associated apoptosis in the retina and optic nerve head, and altered blood-retinal barrier integrity in the retina.",
+    "Artificial gravity provided on the ISS attenuates the transcriptomic response to microgravity in the mouse optic nerve and retina in a dose-dependent manner."
+  ],
+  "Liver (Hepatic System)": [
+    "Multi-omics analysis across multiple mouse space missions revealed a consistent pattern of lipid dysregulation in the liver.",
+    "Microgravity induces notable changes in hepatic metabolism, contributing to lipid dysregulation.",
+    "Spaceflight activates lipotoxic pathways in the mouse liver, independent of re-entry stress, leading to abnormal lipid accumulation.",
+    "Transcriptomic and proteomic analyses of space-flown mouse liver revealed altered pathways related to increased lipid metabolism, fatty acid processing, and lipid localization.",
+    "Spaceflight activates autophagy programs and the proteasome in the mouse liver, linked to decreased hepatic oxidative defense.",
+    "A 37-day space mission in mice led to a 33% increase in liver mass compared to ground controls.",
+    "In mice flown for 12 days, the liver overexpressed genes related to cellular responses to peptides, apoptosis, fat cell differentiation, and negative regulation of protein kinase.",
+    "A 37-day space mission led to a metabolic crosstalk between the liver and muscle in mice, where impaired lipid metabolism gene expression in the liver was strongly correlated with an energy-saving response and atrophy gene expression in the muscle."
+  ],
+  "Gastrointestinal System & Microbiome": [
+    "Long-duration confinement, as simulated in the Mars500 experiment, led to a depletion of major anti-inflammatory bacteria in the human gut microbiome, which correlated with symptoms of intestinal inflammation and insulin resistance.",
+    "Spaceflight in mice for 29 and 56 days caused significant changes in 44 gut microbiome species, including reductions in bile acid and butyrate metabolizing bacteria.",
+    "Changes in the murine gut microbiome during spaceflight coincided with changes to host gene expression in the colon and liver related to bile acid and energy metabolism, and immune suppression.",
+    "In astronauts, spaceflight led to a decrease in the diversity of *Streptococcus* in the salivary microbiome, while *Proteobacteria* and *Fusobacteria* increased.",
+    "Astronaut salivary microbiome richness showed a significant positive correlation with Epstein-Barr virus (EBV) viral titers.",
+    "Shotgun metagenomic sequencing showed that the microbiome of surfaces inside the ISS resembles that of the crew's skin."
+  ],
+  "Reproductive System": [
+    "Female astronauts may face an increased risk of gynecological cancer due to spaceflight hazards like ionizing radiation and microgravity.",
+    "After a 37-day spaceflight, female mice were observed at different estrous cycle stages, indicating they likely continued to undergo ovarian cyclicity and may have remained fertile.",
+    "In space-flown female mice, ovarian progesterone levels were lower compared to baseline, while estradiol levels were unchanged.",
+    "Spaceflight induced changes in insulin and estrogen signaling in both rodents and humans, suggesting effects on metabolic and reproductive endocrinology."
+  ],
+  "Endocrine & Metabolic Systems": [
+    "Spaceflight induces changes in insulin and estrogen signaling in both rodents and humans.",
+    "In murine liver, spaceflight led to inhibition of insulin and estrogen receptor signaling, with concomitant hepatic insulin resistance and steatosis.",
+    "Leptin signaling in bone marrow-derived immune cells is a key driver of pro-inflammatory macrophage recruitment to adipose tissue in obesity, establishing a link between the adipokine leptin and systemic inflammation.",
+    "After 37 days of spaceflight, female mice showed differential expression of genes in brown adipose tissue (BAT) consistent with increased non-shivering thermogenesis."
+  ],
+  "Kidney (Renal System)": [
+    "In mice flown for 12 days, the kidney, like the liver, overexpressed genes in pathways related to cellular responses to peptides, apoptosis, fat cell differentiation, and protein kinase regulation.",
+    "A multi-omics analysis of 11 spaceflight missions suggests spaceflight induces renal transporter dephosphorylation, which may increase the risk of kidney stones (nephrolithiasis).",
+    "Spaceflight and simulated GCR exposure in mice were found to cause remodeling of the nephron, resulting in an expansion of distal convoluted tubule size but a loss of overall tubule density, leading to renal damage and dysfunction."
+  ],
+  "Skin": [
+    "Spaceflight can cause skin rashes and irritation in astronauts.",
+    "Post-flight skin biopsies from the Inspiration4 crew showed significant up-regulation of genes related to inflammation and KRAS signaling across all skin regions.",
+    "Multi-omics analysis of astronaut skin revealed altered interferon responses, DNA damage, epithelial barrier disruptions, and hindered regeneration, primarily in outer tissue compartments.",
+    "A systems biology approach identified DNA damage & repair and mitochondrial dysregulation as potential drivers for skin health risks during spaceflight."
+  ],
+  "Multi-System & General Cellular Effects": [
+    "Spaceflight is associated with aging-like changes, including genomic instability, mitochondrial dysfunction, increased inflammation, and epigenetic changes.",
+    "Analysis of data from space-flown mice and astronauts identified gene expression patterns indicative of a frailty-like condition, suggesting spaceflight may accelerate aspects of aging.",
+    "A comprehensive, multi-omics systems biology analysis of astronaut and space-flown sample data identified mitochondrial stress as a central biological hub for the impact of spaceflight.",
+    "Cell-free DNA analysis of Inspiration4 astronauts revealed increased immune cell signatures post-flight.",
+    "Telomere elongation occurred during the short-duration Inspiration4 spaceflight, with shortening observed after return to Earth.",
+    "Telomere lengthening was also observed in muscle stem cells and myofiber nuclei (but not endothelial cells) of mice subjected to a hindlimb unloading spaceflight-mimicking model.",
+    "Simultaneous exposure of cultured human lymphoblastic cells to simulated microgravity and radiation increased the frequency of both simple and complex chromosome aberrations compared to radiation alone.",
+    "A conserved microRNA (miRNA) signature associated with spaceflight was identified across rodents and humans; inhibiting a subset of these miRNAs rescued vascular damage caused by simulated deep space radiation in human tissue models.",
+    "Human pluripotent stem cells cultured in microgravity showed enhanced mitochondrial biogenesis and advanced structural maturation of cardiomyocytes.",
+    "Simulated microgravity combined with microspheres was shown to preserve the 'stemness' and improve the proliferation and differentiation abilities of human adipose-derived stem cells.",
+    "Microgravity induces changes in hepatic metabolism, endothelial function, and bone mechanotransduction at the organ level."
+  ]
+};
+
+export default spaceSystemsData;
+
+
+

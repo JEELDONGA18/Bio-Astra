@@ -25,3 +25,15 @@
     @apply bg-gray-700 border border-gray-600 rounded-lg px-4 py-2 text-white placeholder-gray-400 focus:border-cosmos-cyan focus:outline-none transition-colors duration-200;
   }
 }
+
+/* global.css */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: #3b82f6; /* blue */
+  border-radius: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9; /* slate-100 */
+}
