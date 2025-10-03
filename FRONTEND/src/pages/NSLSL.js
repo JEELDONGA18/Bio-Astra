@@ -1,76 +1,140 @@
-import React from 'react';
-import ResourceCard from '../components/ResourceCard';
+import React from "react";
+import ResourceCard from "../components/ResourceCard";
+import { Canvas } from "@react-three/fiber";
+import { Stars, OrbitControls } from "@react-three/drei";
+
+// 3D Star Background Component
+function SpaceBackground() {
+  return (
+    <>
+      <Stars
+        radius={100}
+        depth={50}
+        count={5000}
+        factor={4}
+        saturation={0}
+        fade
+        speed={1}
+      />
+      <ambientLight intensity={1} />
+    </>
+  );
+}
 
 const NSLSL = () => {
   const nslslResources = [
     {
       title: "NASA Space Life Sciences Library",
-      description: "Comprehensive digital library containing NASA's space life sciences publications, research reports, and technical documents spanning decades of space biology research.",
+      description:
+        "Comprehensive digital library containing NASA's space life sciences publications, research reports, and technical documents spanning decades of space biology research.",
       link: "https://public.ksc.nasa.gov/nslsl/",
       category: "Digital Library",
       icon: (
-        <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+        <svg
+          className="w-6 h-6 text-white"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+          />
         </svg>
       ),
       features: [
         "Historical research documents",
         "Technical reports and studies",
         "Mission-specific publications",
-        "Advanced search capabilities"
-      ]
+        "Advanced search capabilities",
+      ],
     },
     {
       title: "Research Archive",
-      description: "Extensive archive of NASA space biology research spanning from early space missions to current International Space Station studies, including unpublished reports and data.",
+      description:
+        "Extensive archive of NASA space biology research spanning from early space missions to current International Space Station studies, including unpublished reports and data.",
       link: "https://public.ksc.nasa.gov/nslsl/",
       category: "Research Archive",
       icon: (
-        <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 8h14M5 8a2 2 0 110-4h1.586a1 1 0 01.707.293l1.414 1.414a1 1 0 00.707.293H19a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4" />
+        <svg
+          className="w-6 h-6 text-white"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M5 8h14M5 8a2 2 0 110-4h1.586a1 1 0 01.707.293l1.414 1.414a1 1 0 00.707.293H19a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"
+          />
         </svg>
       ),
       features: [
         "Mission-specific research collections",
         "Historical data preservation",
         "Digital preservation standards",
-        "Metadata and cataloging"
-      ]
+        "Metadata and cataloging",
+      ],
     },
     {
       title: "Publication Database",
-      description: "Searchable database of peer-reviewed publications, conference proceedings, and technical papers from NASA space biology research programs and collaborations.",
+      description:
+        "Searchable database of peer-reviewed publications, conference proceedings, and technical papers from NASA space biology research programs and collaborations.",
       link: "https://data.nasa.gov/",
       category: "Publications",
       icon: (
-        <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+        <svg
+          className="w-6 h-6 text-white"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+          />
         </svg>
       ),
       features: [
         "Peer-reviewed journal articles",
         "Conference proceedings",
         "Technical reports",
-        "Citation tracking and metrics"
-      ]
+        "Citation tracking and metrics",
+      ],
     },
     {
       title: "Educational Resources",
-      description: "Educational materials, tutorials, and learning resources for students, educators, and researchers interested in space life sciences and NASA research.",
+      description:
+        "Educational materials, tutorials, and learning resources for students, educators, and researchers interested in space life sciences and NASA research.",
       link: "https://www.nasa.gov/learning-resources/",
       category: "Education",
       icon: (
-        <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+        <svg
+          className="w-6 h-6 text-white"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+          />
         </svg>
       ),
       features: [
         "Learning modules and tutorials",
         "Educational case studies",
         "Curriculum resources",
-        "Student research projects"
-      ]
-    }
+        "Student research projects",
+      ],
+    },
   ];
 
   const quickLinks = [
@@ -78,63 +142,77 @@ const NSLSL = () => {
       title: "Browse Collections",
       description: "Explore research collections by topic",
       link: "https://science.nasa.gov/researchers/sara/library-and-useful-links/",
-      icon: "📚"
+      icon: "📚",
     },
     {
       title: "Search Publications",
       description: "Find specific research papers",
       link: "https://science.nasa.gov/researchers/sara/library-and-useful-links/",
-      icon: "🔍"
+      icon: "🔍",
     },
     {
       title: "Download Resources",
       description: "Access educational materials",
       link: "https://www.nasa.gov/learning-resources/",
-      icon: "⬇️"
+      icon: "⬇️",
     },
     {
       title: "Submit Content",
       description: "Contribute to the library",
       link: "https://science.nasa.gov/researchers/sara/how-to-guide/nspires-submission/",
-      icon: "📝"
-    }
+      icon: "📝",
+    },
   ];
 
   const collections = [
     {
       title: "Apollo Era Research",
-      description: "Historical documents from the Apollo program's life sciences experiments",
+      description:
+        "Historical documents from the Apollo program's life sciences experiments",
       count: "150+ documents",
-      period: "1960s-1970s"
+      period: "1960s-1970s",
     },
     {
       title: "Space Shuttle Studies",
       description: "Research conducted during the Space Shuttle program",
       count: "300+ studies",
-      period: "1980s-2010s"
+      period: "1980s-2010s",
     },
     {
       title: "ISS Research",
       description: "Current International Space Station life sciences research",
       count: "500+ publications",
-      period: "2000s-present"
+      period: "2000s-present",
     },
     {
       title: "Ground-Based Studies",
       description: "Earth-based analog research and simulation studies",
       count: "200+ studies",
-      period: "Ongoing"
-    }
+      period: "Ongoing",
+    },
   ];
 
   return (
     <div className="min-h-screen bg-gray-900">
-        {/* Hero Section with Starfield Background */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
-        {/* Animated Background Stars */}
-        <div className="absolute inset-0 bg-star-field bg-[length:300px_300px] animate-pulse-slow"></div>
-        
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      {/* Hero Section with Rotating 3D Star Background */}
+      <section
+        className="relative overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900"
+        style={{ minHeight: "500px" }}
+      >
+        {/* 3D Rotating Stars Background */}
+        <div className="absolute inset-0 z-0">
+          <Canvas camera={{ position: [0, 0, 1] }}>
+            <SpaceBackground />
+            <OrbitControls
+              enableZoom={false}
+              enablePan={false}
+              autoRotate
+              autoRotateSpeed={0.5}
+            />
+          </Canvas>
+        </div>
+
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 z-10">
           <div className="text-center">
             <h1 className="text-5xl md:text-7xl font-bold mb-6">
               <span className="bg-cosmos-gradient bg-clip-text text-transparent">
@@ -144,8 +222,9 @@ const NSLSL = () => {
               <span className="text-white">(NSLSL)</span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto">
-              Access NASA's comprehensive collection of space life sciences publications, 
-              research documents, and educational resources spanning decades of space exploration.
+              Access NASA's comprehensive collection of space life sciences
+              publications, research documents, and educational resources
+              spanning decades of space exploration.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
@@ -154,8 +233,18 @@ const NSLSL = () => {
                 rel="noopener noreferrer"
                 className="btn-primary text-lg px-8 py-4 inline-flex items-center justify-center"
               >
-                <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
+                <svg
+                  className="w-5 h-5 mr-2"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"
+                  />
                 </svg>
                 Access NSLSL
               </a>
@@ -165,8 +254,18 @@ const NSLSL = () => {
                 rel="noopener noreferrer"
                 className="btn-secondary text-lg px-8 py-4 inline-flex items-center justify-center"
               >
-                <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                <svg
+                  className="w-5 h-5 mr-2"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                  />
                 </svg>
                 View Documentation
               </a>
@@ -176,8 +275,14 @@ const NSLSL = () => {
 
         {/* Floating Elements */}
         <div className="absolute top-20 left-10 w-20 h-20 bg-cosmos-cyan/20 rounded-full animate-float"></div>
-        <div className="absolute top-40 right-20 w-16 h-16 bg-cosmos-purple/20 rounded-full animate-float" style={{animationDelay: '2s'}}></div>
-        <div className="absolute bottom-20 left-1/4 w-12 h-12 bg-cosmos-blue/20 rounded-full animate-float" style={{animationDelay: '4s'}}></div>
+        <div
+          className="absolute top-40 right-20 w-16 h-16 bg-cosmos-purple/20 rounded-full animate-float"
+          style={{ animationDelay: "2s" }}
+        ></div>
+        <div
+          className="absolute bottom-20 left-1/4 w-12 h-12 bg-cosmos-blue/20 rounded-full animate-float"
+          style={{ animationDelay: "4s" }}
+        ></div>
       </section>
 
       <div className="max-w-7xl mx-auto my-10 px-4 sm:px-6 lg:px-8">
@@ -189,11 +294,13 @@ const NSLSL = () => {
                 Preserving Space Biology Knowledge
               </h2>
               <p className="text-gray-300 mb-6 leading-relaxed">
-                The NASA Space Life Sciences Library serves as the definitive repository for 
-                space biology research, housing decades of scientific knowledge from early 
-                space missions to current International Space Station studies. Our collection 
-                includes peer-reviewed publications, technical reports, educational materials, 
-                and historical documents that chronicle the evolution of space life sciences.
+                The NASA Space Life Sciences Library serves as the definitive
+                repository for space biology research, housing decades of
+                scientific knowledge from early space missions to current
+                International Space Station studies. Our collection includes
+                peer-reviewed publications, technical reports, educational
+                materials, and historical documents that chronicle the evolution
+                of space life sciences.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <a
@@ -204,22 +311,31 @@ const NSLSL = () => {
                 >
                   Visit NSLSL
                 </a>
-                <button className="btn-secondary">
-                  Browse Collections
-                </button>
+                <button className="btn-secondary">Browse Collections</button>
               </div>
             </div>
             <div className="bg-cosmos-gradient/10 rounded-lg p-8 text-center">
               <div className="w-32 h-32 bg-cosmos-gradient rounded-full flex items-center justify-center mx-auto mb-6">
-                <svg className="w-16 h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                <svg
+                  className="w-16 h-16 text-white"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+                  />
                 </svg>
               </div>
               <h3 className="text-2xl font-bold text-white mb-4">
                 Knowledge Preservation
               </h3>
               <p className="text-gray-300">
-                Safeguarding decades of space biology research for future generations
+                Safeguarding decades of space biology research for future
+                generations
               </p>
             </div>
           </div>
@@ -254,8 +370,18 @@ const NSLSL = () => {
             {collections.map((collection, index) => (
               <div key={index} className="card text-center">
                 <div className="w-16 h-16 bg-cosmos-gradient rounded-full flex items-center justify-center mx-auto mb-4">
-                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                  <svg
+                    className="w-8 h-8 text-white"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
+                    />
                   </svg>
                 </div>
                 <h3 className="text-lg font-semibold text-white mb-2">
@@ -295,9 +421,7 @@ const NSLSL = () => {
                 <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-cosmos-cyan transition-colors duration-200">
                   {link.title}
                 </h3>
-                <p className="text-gray-400 text-sm">
-                  {link.description}
-                </p>
+                <p className="text-gray-400 text-sm">{link.description}</p>
               </a>
             ))}
           </div>
@@ -313,25 +437,39 @@ const NSLSL = () => {
               Comprehensive coverage of space life sciences research
             </p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div className="text-center">
-              <div className="text-3xl font-bold text-cosmos-cyan mb-2">1,200+</div>
+              <div className="text-3xl font-bold text-cosmos-cyan mb-2">
+                1,200+
+              </div>
               <div className="text-white font-semibold mb-1">Publications</div>
-              <div className="text-gray-400 text-sm">Peer-reviewed articles</div>
+              <div className="text-gray-400 text-sm">
+                Peer-reviewed articles
+              </div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-cosmos-cyan mb-2">500+</div>
-              <div className="text-white font-semibold mb-1">Technical Reports</div>
-              <div className="text-gray-400 text-sm">NASA research documents</div>
+              <div className="text-3xl font-bold text-cosmos-cyan mb-2">
+                500+
+              </div>
+              <div className="text-white font-semibold mb-1">
+                Technical Reports
+              </div>
+              <div className="text-gray-400 text-sm">
+                NASA research documents
+              </div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-cosmos-cyan mb-2">50+</div>
+              <div className="text-3xl font-bold text-cosmos-cyan mb-2">
+                50+
+              </div>
               <div className="text-white font-semibold mb-1">Years</div>
               <div className="text-gray-400 text-sm">Of research history</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-cosmos-cyan mb-2">10,000+</div>
+              <div className="text-3xl font-bold text-cosmos-cyan mb-2">
+                10,000+
+              </div>
               <div className="text-white font-semibold mb-1">Downloads</div>
               <div className="text-gray-400 text-sm">Monthly access</div>
             </div>
@@ -344,8 +482,8 @@ const NSLSL = () => {
             Explore the NSLSL Collection
           </h2>
           <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-            Discover decades of space biology research and contribute to the growing 
-            knowledge base of space life sciences.
+            Discover decades of space biology research and contribute to the
+            growing knowledge base of space life sciences.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a

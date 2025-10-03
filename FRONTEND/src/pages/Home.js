@@ -2,16 +2,61 @@ import React from "react";
 import { Link } from "react-router-dom";
 import TrendChart from "../components/TrendChart";
 import CategoryPieChart from "../components/CategoryPieChart";
+import Categories3D from "../components/categories3D";
+// Add these imports:
+import { Canvas } from "@react-three/fiber";
+import { Stars } from "@react-three/drei";
+import { OrbitControls } from "@react-three/drei";
 
+function SpaceBackground() {
+  return (
+    <>
+      <Stars
+        radius={100}
+        depth={50}
+        count={5000}
+        factor={4}
+        saturation={0}
+        fade
+        speed={1}
+      />
+      <ambientLight intensity={1} />
+    </>
+  );
+}
 const Home = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
-        {/* Animated Background Stars */}
-        <div className="absolute inset-0 bg-star-field bg-[length:300px_300px] animate-pulse-slow"></div>
+      <section
+        className="relative overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900"
+        style={{ minHeight: "700px" }}
+      >
+        {/* Moving Stars Background */}
+        <div className="absolute inset-0 z-0">
+          <Canvas camera={{ position: [0, 0, 1] }}>
+            <SpaceBackground />
+            <OrbitControls
+              enableZoom={false}
+              enablePan={false}
+              autoRotate
+              autoRotateSpeed={0.5}
+            />
+          </Canvas>
+          <Canvas camera={{ position: [0, 0, 1] }}>
+            <Stars
+              radius={100}
+              depth={50}
+              count={2000}
+              factor={4}
+              saturation={0}
+              fade
+              speed={1}
+            />
+          </Canvas>
+        </div>
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="text-center">
             <h1 className="text-5xl md:text-7xl font-bold mb-6">
               <span className="bg-cosmos-gradient bg-clip-text text-transparent">
@@ -167,136 +212,141 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Trend Chart and Category Pie Chart */}
-      <div className="my-10 ">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-          <TrendChart />
-          <CategoryPieChart />
+      <div className="min-h-screen p-10 bg-gray-900">
+        <div className="my-10">
+          <Categories3D />
         </div>
-      </div>
-
-      {/* Features Section */}
-      <section className="py-20 bg-gray-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-white mb-4">Key Features</h2>
-            <p className="text-xl text-gray-300">
-              Everything you need to explore NASA Space Biology research
-            </p>
+        {/* Trend Chart and Category Pie Chart */}
+        <div className="my-10 ">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+            <TrendChart />
+            <CategoryPieChart />
           </div>
+        </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h3 className="text-3xl font-bold text-white mb-6">
-                Advanced Search & Discovery
-              </h3>
-              <ul className="space-y-4">
-                <li className="flex items-start">
-                  <div className="w-6 h-6 bg-cosmos-cyan rounded-full flex items-center justify-center mr-4 mt-1">
-                    <svg
-                      className="w-3 h-3 text-white"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                        clipRule="evenodd"
-                      />
-                    </svg>
-                  </div>
-                  <span className="text-gray-300">
-                    Search by title, author, category, and keywords
-                  </span>
-                </li>
-                <li className="flex items-start">
-                  <div className="w-6 h-6 bg-cosmos-cyan rounded-full flex items-center justify-center mr-4 mt-1">
-                    <svg
-                      className="w-3 h-3 text-white"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                        clipRule="evenodd"
-                      />
-                    </svg>
-                  </div>
-                  <span className="text-gray-300">
-                    Interactive timeline visualization
-                  </span>
-                </li>
-                <li className="flex items-start">
-                  <div className="w-6 h-6 bg-cosmos-cyan rounded-full flex items-center justify-center mr-4 mt-1">
-                    <svg
-                      className="w-3 h-3 text-white"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                        clipRule="evenodd"
-                      />
-                    </svg>
-                  </div>
-                  <span className="text-gray-300">
-                    Trend analysis and publication patterns
-                  </span>
-                </li>
-                <li className="flex items-start">
-                  <div className="w-6 h-6 bg-cosmos-cyan rounded-full flex items-center justify-center mr-4 mt-1">
-                    <svg
-                      className="w-3 h-3 text-white"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                        clipRule="evenodd"
-                      />
-                    </svg>
-                  </div>
-                  <span className="text-gray-300">
-                    Direct links to NASA resources
-                  </span>
-                </li>
-              </ul>
+        {/* Features Section */}
+        <section className="py-20 bg-gray-900">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl font-bold text-white mb-4">
+                Key Features
+              </h2>
+              <p className="text-xl text-gray-300">
+                Everything you need to explore NASA Space Biology research
+              </p>
             </div>
 
-            <div className="bg-gray-800 rounded-lg p-8">
-              <div className="text-center">
-                <div className="w-32 h-32 bg-cosmos-gradient rounded-full flex items-center justify-center mx-auto mb-6">
-                  <svg
-                    className="w-16 h-16 text-white"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
-                    />
-                  </svg>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <h3 className="text-3xl font-bold text-white mb-6">
+                  Advanced Search & Discovery
+                </h3>
+                <ul className="space-y-4">
+                  <li className="flex items-start">
+                    <div className="w-6 h-6 bg-cosmos-cyan rounded-full flex items-center justify-center mr-4 mt-1">
+                      <svg
+                        className="w-3 h-3 text-white"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                          clipRule="evenodd"
+                        />
+                      </svg>
+                    </div>
+                    <span className="text-gray-300">
+                      Search by title, author, category, and keywords
+                    </span>
+                  </li>
+                  <li className="flex items-start">
+                    <div className="w-6 h-6 bg-cosmos-cyan rounded-full flex items-center justify-center mr-4 mt-1">
+                      <svg
+                        className="w-3 h-3 text-white"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                          clipRule="evenodd"
+                        />
+                      </svg>
+                    </div>
+                    <span className="text-gray-300">
+                      Interactive timeline visualization
+                    </span>
+                  </li>
+                  <li className="flex items-start">
+                    <div className="w-6 h-6 bg-cosmos-cyan rounded-full flex items-center justify-center mr-4 mt-1">
+                      <svg
+                        className="w-3 h-3 text-white"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                          clipRule="evenodd"
+                        />
+                      </svg>
+                    </div>
+                    <span className="text-gray-300">
+                      Trend analysis and publication patterns
+                    </span>
+                  </li>
+                  <li className="flex items-start">
+                    <div className="w-6 h-6 bg-cosmos-cyan rounded-full flex items-center justify-center mr-4 mt-1">
+                      <svg
+                        className="w-3 h-3 text-white"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                          clipRule="evenodd"
+                        />
+                      </svg>
+                    </div>
+                    <span className="text-gray-300">
+                      Direct links to NASA resources
+                    </span>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="bg-gray-800 rounded-lg p-8">
+                <div className="text-center">
+                  <div className="w-32 h-32 bg-cosmos-gradient rounded-full flex items-center justify-center mx-auto mb-6">
+                    <svg
+                      className="w-16 h-16 text-white"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
+                      />
+                    </svg>
+                  </div>
+                  <h4 className="text-2xl font-bold text-white mb-4">
+                    Data-Driven Insights
+                  </h4>
+                  <p className="text-gray-400">
+                    Our dashboard transforms complex research data into clear,
+                    actionable insights that advance the field of space biology.
+                  </p>
                 </div>
-                <h4 className="text-2xl font-bold text-white mb-4">
-                  Data-Driven Insights
-                </h4>
-                <p className="text-gray-400">
-                  Our dashboard transforms complex research data into clear,
-                  actionable insights that advance the field of space biology.
-                </p>
               </div>
             </div>
           </div>
-        </div>
-      </section>
-
-      
+        </section>
+      </div>
       {/* CTA Section */}
       <section className="py-20 bg-cosmos-gradient">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">

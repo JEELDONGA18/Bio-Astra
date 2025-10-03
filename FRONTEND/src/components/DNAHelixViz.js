@@ -30,15 +30,7 @@ function Card({ children, className = "" }) {
     </div>
   )
 }
-function createDnaSegment(color) {
-  const geometry = new THREE.CylinderGeometry(0.05, 0.05, 2, 8)
-  const material = new THREE.MeshStandardMaterial({
-    color,
-    emissive: color,
-    emissiveIntensity: 0.2,
-  })
-  return { geometry, material }
-}
+
 
 function DNAHelix({ onSegmentClick, radiationActive }) {
   const dnaGroupRef = useRef(null)
@@ -298,7 +290,7 @@ export default function DNAHelixViz() {
 
         <div className="grid gap-8 lg:grid-cols-[1.5fr_1fr]">
           <div>
-            <div className="h-[700px] w-full max-h-[560px] overflow-hidden rounded-lg bg-slate-950 shadow-2xl">
+            <div className="h-[1800px] max-h-[800px] w-full  overflow-hidden rounded-lg bg-slate-950 shadow-2xl">
               <Canvas>
                 <PerspectiveCamera makeDefault position={[0, 0, 12]} />
                 <ambientLight intensity={0.3} />
@@ -317,7 +309,7 @@ export default function DNAHelixViz() {
     Stress Simulations
   </h3>
   <p className="mb-6 text-sm text-blue-900">
-    Click DNA segments or trigger radiation events to explore research findings
+    Click DNA segments or trigger radiation events to explore spaceflight stressors affect genetic code at the molecular level
   </p>
 
   <div className="space-y-4">
