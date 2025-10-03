@@ -3,6 +3,8 @@ import ResourceCard from "../components/ResourceCard";
 import { Link } from "react-router-dom";
 import { Canvas } from "@react-three/fiber";
 import { Stars, OrbitControls } from "@react-three/drei";
+import OrganismChart from "../components/OrganismChart";
+import GenericPieChart from "../components/GenericPieChart";
 
 function SpaceBackground() {
   return (
@@ -284,6 +286,7 @@ const OSDR = () => {
                 </a>
               </div>
             </div>
+            
             <div className="bg-cosmos-gradient/10 rounded-lg p-8 text-center">
               <div className="w-32 h-32 bg-cosmos-gradient rounded-full flex items-center justify-center mx-auto mb-6">
                 <svg
@@ -311,6 +314,22 @@ const OSDR = () => {
           </div>
         </div>
 
+
+
+        {/* OSDR Studies Overview */}
+        <div className="mb-16">
+          <h2 className="text-3xl font-bold text-white mb-4 text-center">OSDR Studies Overview</h2>
+          <p className="text-gray-300 text-center mb-4">Distribution of No. of studies by organism .</p>
+          <OrganismChart />
+        </div>
+
+        {/* Generic Pie Chart */}
+        <div className="mb-16">
+          <h2 className="text-3xl font-bold text-white mb-4 text-center">Customizable Breakdown</h2>
+          <p className="text-gray-300 text-center mb-4">Choose a label field to generate a pie chart.</p>
+          <GenericPieChart />
+        </div>
+        
         {/* Main Resources */}
         <div className="mb-16">
           <h2 className="text-3xl font-bold text-white mb-8 text-center">
@@ -354,6 +373,8 @@ const OSDR = () => {
             ))}
           </div>
         </div>
+
+
 
         {/* Cross-links to Other NASA Resources */}
         <div className="card mb-16">

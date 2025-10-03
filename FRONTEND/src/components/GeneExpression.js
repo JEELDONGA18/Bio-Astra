@@ -233,7 +233,7 @@ export default function GeneExpression() {
         <div className="flex flex-col md:flex-row items-center bg-[#0d1117] text-white rounded-2xl shadow-lg p-6 gap-8">
           {/* LEFT: 3D Model Viewer */}
           <div className="w-full md:w-2.5/3 h-[750px] bg-black rounded-xl cursor-pointer">
-            <Canvas camera={{ position: [6, 4, 6], fov: 50 }} shadows>
+            <Canvas camera={{ position: [12, 8, 12], fov: 65 }} shadows>
               <Suspense fallback={<Loader />}>
                 {/* Lights */}
                 <ambientLight intensity={0.8} />
@@ -305,7 +305,7 @@ export default function GeneExpression() {
                 enableRotate={true}
                 autoRotate={false}
                 maxPolarAngle={Math.PI / 2}
-                minPolarAngle={Math.PI / 3}
+                minPolarAngle={Math.PI / 4}
               />
             </Canvas>
           </div>

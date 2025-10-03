@@ -9,7 +9,7 @@ import * as THREE from "three";
 function Card({ children, className = "" }) {
   return (
     <div
-      className={`rounded-xl border border-gray-200 bg-white shadow-lg ${className}`}
+      className={` rounded-xl border border-gray-200 bg-white shadow-lg ${className}`}
     >
       {children}
     </div>
@@ -189,7 +189,7 @@ export default function GravitySliderViz() {
         <div className="grid gap-8 lg:grid-cols-3">
           {/* 3D Bone Viz */}
           <div className="lg:col-span-2">
-            <div className="h-[720px] w-[700px] overflow-hidden rounded-lg bg-slate-950 shadow-2xl">
+            <div className="h-[500px] w-[600px] overflow-hidden rounded-lg bg-slate-950 shadow-2xl">
               <Canvas>
                 <PerspectiveCamera makeDefault position={[0, 0, 8]} />
                 <ambientLight intensity={0.4} />
