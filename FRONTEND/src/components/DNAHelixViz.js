@@ -341,7 +341,7 @@ export default function DNAHelixViz() {
 
         <div className="grid gap-8 lg:grid-cols-[1.5fr_1fr]">
           <div>
-            <div className="h-[1800px] max-h-[800px] w-full  overflow-hidden rounded-lg bg-slate-950 shadow-2xl">
+            <div className="h-[700px] max-h-[800px] w-full  overflow-hidden rounded-lg bg-slate-950 shadow-2xl">
               <Canvas>
                 <PerspectiveCamera makeDefault position={[0, 0, 12]} />
                 <ambientLight intensity={0.3} />

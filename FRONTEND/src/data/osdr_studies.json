@@ -1,0 +1,1818 @@
+[
+    {
+        "OSD":"OSD-1",
+        "Title":"Expression data from drosophila melanogaster",
+        "Assay":"DNA microarray",
+        "Organism":"Drosophila melanogaster",
+        "Tissue":"Whole Organism",
+        "Factor":"infection,spaceflight"
+    },
+    {
+        "OSD":"OSD-3",
+        "Title":"Drosophila melanogaster gene expression changes after spaceflight.",
+        "Assay":"DNA microarray",
+        "Organism":"Drosophila melanogaster",
+        "Tissue":"Whole Organism",
+        "Factor":"developmental stage,spaceflight"
+    },
+    {
+        "OSD":"OSD-4",
+        "Title":"Microarray Analysis of Space-flown Murine Thymus Tissue",
+        "Assay":"DNA microarray",
+        "Organism":"Mus musculus",
+        "Tissue":"thymus",
+        "Factor":"spaceflight"
+    },
+    {
+        "OSD":"OSD-6",
+        "Title":"Transcription profiling of rat keratinocytes exposed to a 56Fe ion beam",
+        "Assay":"DNA microarray",
+        "Organism":"Rattus norvegicus",
+        "Tissue":"Cells",
+        "Factor":"ionizing radiation"
+    },
+    {
+        "OSD":"OSD-13",
+        "Title":"T Cell Activation in Microgravity Compared to 1g (Earth's) Gravity",
+        "Assay":"DNA microarray",
+        "Organism":"Homo sapiens",
+        "Tissue":"Primary T Cells",
+        "Factor":"altered gravity,spaceflight,treatment"
+    },
+    {
+        "OSD":"OSD-14",
+        "Title":"Response of Pseudomonas aeruginosa PAO1 to low shear modeled microgravity",
+        "Assay":"DNA microarray",
+        "Organism":"Pseudomonas aeruginosa",
+        "Tissue":"Cells",
+        "Factor":"microgravity simulation"
+    },
+    {
+        "OSD":"OSD-15",
+        "Title":"Transcriptional and proteomic response of Pseudomonas aeruginosa PAO1 to spaceflight conditions involves Hfq regulation and reveals a role for oxygen",
+        "Assay":"DNA microarray",
+        "Organism":"Pseudomonas aeruginosa",
+        "Tissue":"Cells",
+        "Factor":"microgravity simulation,spaceflight"
+    },
+    {
+        "OSD":"OSD-22",
+        "Title":"Root transcriptome remodeling of Arabidopsis in response to high levels of magnesium sulfate",
+        "Assay":"DNA microarray",
+        "Organism":"Arabidopsis thaliana",
+        "Tissue":"Plant Roots",
+        "Factor":"genotype,soil environment exposure,time"
+    },
+    {
+        "OSD":"OSD-25",
+        "Title":"STS-135 Liver Transcriptomics",
+        "Assay":"DNA microarray",
+        "Organism":"Mus musculus",
+        "Tissue":"Liver",
+        "Factor":"spaceflight"
+    },
+    {
+        "OSD":"OSD-27",
+        "Title":"Transcription profiling of Drosophila exposed to a levitation magnet for different lengths of time",
+        "Assay":"DNA microarray",
+        "Organism":"Drosophila melanogaster",
+        "Tissue":"Whole Organism",
+        "Factor":"duration,microgravity simulation,sex,temperature"
+    },
+    {
+        "OSD":"OSD-30",
+        "Title":"Transcription profiling of mouse osteoblasts under static vs simulated microgravity",
+        "Assay":"DNA microarray",
+        "Organism":"Mus musculus",
+        "Tissue":"Cells",
+        "Factor":"microgravity simulation"
+    },
+    {
+        "OSD":"OSD-34",
+        "Title":"Environmental and simulation facility conditions can modulate a behavioral-driven altered gravity response of Drosophila imagoes transcriptome",
+        "Assay":"DNA microarray",
+        "Organism":"Drosophila melanogaster",
+        "Tissue":"Whole Organism",
+        "Factor":"age,altered gravity,altered gravity simulator,sex,temperature"
+    },
+    {
+        "OSD":"OSD-36",
+        "Title":"Transcription profiling of Drosophila after exposure to microgravity in the International Space Station and in a microgravity simulator",
+        "Assay":"DNA microarray",
+        "Organism":"Drosophila melanogaster",
+        "Tissue":null,
+        "Factor":"altered gravity,altered gravity simulator,spaceflight,treatment"
+    },
+    {
+        "OSD":"OSD-37",
+        "Title":"Comparison of the spaceflight transcriptome of four commonly used Arabidopsis thaliana ecotypes",
+        "Assay":"RNA Sequencing (RNA-Seq)",
+        "Organism":"Arabidopsis thaliana",
+        "Tissue":"Seedlings",
+        "Factor":"ecotype,spaceflight"
+    },
+    {
+        "OSD":"OSD-38",
+        "Title":"Proteomics and Transcriptomics analysis of Arabidopsis Seedlings in Microgravity",
+        "Assay":"mass spectrometry,RNA Sequencing (RNA-Seq)",
+        "Organism":"Arabidopsis thaliana",
+        "Tissue":null,
+        "Factor":"sample preservation method,spaceflight"
+    },
+    {
+        "OSD":"OSD-42",
+        "Title":"Expression data from C. elegans",
+        "Assay":"DNA microarray",
+        "Organism":"Caenorhabditis elegans",
+        "Tissue":null,
+        "Factor":"spaceflight"
+    },
+    {
+        "OSD":"OSD-43",
+        "Title":"Effect of simulated microgravity on E. coli K12 MG1655 growth and gene expression",
+        "Assay":"DNA microarray",
+        "Organism":"Escherichia coli",
+        "Tissue":null,
+        "Factor":"microgravity simulation"
+    },
+    {
+        "OSD":"OSD-44",
+        "Title":"Transcriptomics analysis of etiolated Arabidopsis thaliana seedlings in response to microgravity",
+        "Assay":"DNA microarray",
+        "Organism":"Arabidopsis thaliana",
+        "Tissue":null,
+        "Factor":"genotype,spaceflight"
+    },
+    {
+        "OSD":"OSD-46",
+        "Title":"Gamma radiation and HZE treatment of seedlings in Arabidopsis",
+        "Assay":"DNA microarray",
+        "Organism":"Arabidopsis thaliana",
+        "Tissue":null,
+        "Factor":"absorbed radiation dose,age,exposure duration,genotype,ionizing radiation,time of sample collection after treatment"
+    },
+    {
+        "OSD":"OSD-47",
+        "Title":"Rodent Research-1 (RR1) National Lab Validation Flight: Mouse liver transcriptomic, proteomic, epigenomic and histology data",
+        "Assay":"mass spectrometry,Microscopy,Whole Genome Bisulfite Sequencing,RNA Sequencing (RNA-Seq)",
+        "Organism":"Mus musculus",
+        "Tissue":"Liver",
+        "Factor":"spaceflight"
+    },
+    {
+        "OSD":"OSD-48",
+        "Title":"Rodent Research-1 (RR1) NASA Validation Flight: Mouse liver transcriptomic, proteomic, epigenomic and histology data",
+        "Assay":"Whole Transcriptome Bisulfite Sequencing,Microscopy,RNA Sequencing (RNA-Seq),mass spectrometry,Whole Genome Bisulfite Sequencing",
+        "Organism":"Mus musculus",
+        "Tissue":"Liver",
+        "Factor":"dissection condition,spaceflight"
+    },
+    {
+        "OSD":"OSD-49",
+        "Title":"Multi-omic investigations of mouse liver subjected to simulated spaceflight freezing and storage protocols",
+        "Assay":"mass spectrometry,Whole Genome Bisulfite Sequencing,RNA Sequencing (RNA-Seq)",
+        "Organism":"Mus musculus",
+        "Tissue":"Liver",
+        "Factor":"sample preservation method,sample storage time,time of sample collection after euthanasia"
+    },
+    {
+        "OSD":"OSD-50",
+        "Title":"Evaluation of in vitro macrophage differentiation during space flight",
+        "Assay":"DNA microarray",
+        "Organism":"Mus musculus",
+        "Tissue":"primary cell",
+        "Factor":"spaceflight"
+    },
+    {
+        "OSD":"OSD-52",
+        "Title":"Expression data from SPHINX (SPaceflight of Huvec: an INtegrated eXperiment)",
+        "Assay":"DNA microarray",
+        "Organism":"Homo sapiens",
+        "Tissue":"Cells",
+        "Factor":"spaceflight"
+    },
+    {
+        "OSD":"OSD-59",
+        "Title":"RNA-Seq transcriptome analysis of reactive oxygen species gene network in Mizuna plants grown in long-term space flight",
+        "Assay":"RNA Sequencing (RNA-Seq)",
+        "Organism":"Brassica rapa",
+        "Tissue":"leaf",
+        "Factor":"spaceflight"
+    },
+    {
+        "OSD":"OSD-61",
+        "Title":"Effect of a 91 day long stay in weightlessness on the International Space Station on mouse skin physiology",
+        "Assay":"DNA microarray",
+        "Organism":"Mus musculus",
+        "Tissue":null,
+        "Factor":"genotype,spaceflight"
+    },
+    {
+        "OSD":"OSD-62",
+        "Title":"Molecular mechanism of flocculation self-recognition in yeast and its role in mating and survival",
+        "Assay":"DNA microarray",
+        "Organism":"Saccharomyces cerevisiae",
+        "Tissue":"Cells",
+        "Factor":"genotype,spaceflight"
+    },
+    {
+        "OSD":"OSD-70",
+        "Title":"Environmental and facility conditions promote singular gravity responses of transcriptome during Drosophila metamorphosis",
+        "Assay":"DNA microarray",
+        "Organism":"Drosophila melanogaster",
+        "Tissue":null,
+        "Factor":"altered gravity,altered gravity simulator,o2 level,temperature"
+    },
+    {
+        "OSD":"OSD-71",
+        "Title":"Immediate Transcriptional Changes in Response to High Dose Radiation Exposure",
+        "Assay":"DNA microarray",
+        "Organism":"Homo sapiens",
+        "Tissue":"blood, isolated leukocytes",
+        "Factor":"absorbed radiation dose,ionizing radiation"
+    },
+    {
+        "OSD":"OSD-78",
+        "Title":"Transcription profiling of human MCF10A cells subjected to ionizing radiation and treatment with transforming growth factor beta-1",
+        "Assay":"DNA microarray",
+        "Organism":"Homo sapiens",
+        "Tissue":"human mammary epithelial cells",
+        "Factor":"ionizing radiation,treatment"
+    },
+    {
+        "OSD":"OSD-79",
+        "Title":"Murine microenvironment metaprofiles associate with human cancer etiology and intrinsic subtypes",
+        "Assay":"DNA microarray",
+        "Organism":"Mus musculus",
+        "Tissue":"transplanted p53null mammary tumor",
+        "Factor":"genotype,ionizing radiation"
+    },
+    {
+        "OSD":"OSD-80",
+        "Title":"Response of mammary tissue to high-LET HZE particle (Silicon ions) radiation or low-LET gamma-rays",
+        "Assay":"DNA microarray",
+        "Organism":"Mus musculus",
+        "Tissue":"mammary gland",
+        "Factor":"absorbed radiation dose,ionizing radiation,time of sample collection after treatment"
+    },
+    {
+        "OSD":"OSD-83",
+        "Title":"Comparative Transcriptomic Analysis of Adult Medaka Tissues Sampled after Adaptation to a Space Environment",
+        "Assay":"RNA Sequencing (RNA-Seq)",
+        "Organism":"Oryzias latipes",
+        "Tissue":"Liver,Ovary,Eye,Testis,Intestines,Brain",
+        "Factor":"spaceflight,tissue"
+    },
+    {
+        "OSD":"OSD-85",
+        "Title":"Transcriptomic response of Drosophila melanogaster pupae developed in hypergravity",
+        "Assay":"RNA Sequencing (RNA-Seq)",
+        "Organism":"Drosophila melanogaster",
+        "Tissue":"Whole Organism",
+        "Factor":"hypergravity"
+    },
+    {
+        "OSD":"OSD-87",
+        "Title":"Spaceflight effects on the mouse retina: Histological, gene expression and epigenetic changes after flight on STS-135",
+        "Assay":"DNA microarray",
+        "Organism":"Mus musculus",
+        "Tissue":"Retina",
+        "Factor":"spaceflight"
+    },
+    {
+        "OSD":"OSD-91",
+        "Title":"A study of gene expression influenced by simulated microgravity in human lymphoblastoid cells",
+        "Assay":"RNA Sequencing (RNA-Seq)",
+        "Organism":"Homo sapiens",
+        "Tissue":"Cells",
+        "Factor":"microgravity simulation"
+    },
+    {
+        "OSD":"OSD-92",
+        "Title":"Response of the EPI-200 human 3-D skin model to high and low doses of protons",
+        "Assay":"DNA microarray",
+        "Organism":"Homo sapiens",
+        "Tissue":"3D Cells",
+        "Factor":"absorbed radiation dose,ionizing radiation,time of sample collection after treatment"
+    },
+    {
+        "OSD":"OSD-93",
+        "Title":"Gene expression profiles of irradiated lung tissue in three mouse strains",
+        "Assay":"DNA microarray",
+        "Organism":"Mus musculus",
+        "Tissue":"Lung",
+        "Factor":"ionizing radiation,strain"
+    },
+    {
+        "OSD":"OSD-96",
+        "Title":"The development of Drosophila melanogaster during space flight",
+        "Assay":"RNA Sequencing (RNA-Seq)",
+        "Organism":"Drosophila melanogaster",
+        "Tissue":"Whole Organism",
+        "Factor":"generation,spaceflight,time of sample collection after treatment"
+    },
+    {
+        "OSD":"OSD-98",
+        "Title":"Rodent Research-1 (RR1) NASA Validation Flight: Mouse adrenal gland transcriptomic, proteomic, and epigenomic data",
+        "Assay":"mass spectrometry,Whole Genome Bisulfite Sequencing,RNA Sequencing (RNA-Seq)",
+        "Organism":"Not Applicable,Mus musculus",
+        "Tissue":"Adrenal glands- both sides,Not Applicable",
+        "Factor":"spaceflight"
+    },
+    {
+        "OSD":"OSD-99",
+        "Title":"Rodent Research-1 (RR1) NASA Validation Flight: Mouse extensor digitorum longus muscle transcriptomic and epigenomic data",
+        "Assay":"Whole Genome Bisulfite Sequencing,RNA Sequencing (RNA-Seq)",
+        "Organism":"Mus musculus",
+        "Tissue":"Extensor digitorum longus- both sides",
+        "Factor":"spaceflight"
+    },
+    {
+        "OSD":"OSD-100",
+        "Title":"Rodent Research-1 (RR1) NASA Validation Flight: Mouse eye transcriptomic and epigenomic data",
+        "Assay":"Whole Genome Bisulfite Sequencing,RNA Sequencing (RNA-Seq)",
+        "Organism":"Mus musculus",
+        "Tissue":"left eye",
+        "Factor":"spaceflight"
+    },
+    {
+        "OSD":"OSD-101",
+        "Title":"Rodent Research-1 (RR1) NASA Validation Flight: Mouse left gastrocnemius muscle transcriptomic, proteomic, and epigenomic data",
+        "Assay":"mass spectrometry,Whole Transcriptome Bisulfite Sequencing,Whole Genome Bisulfite Sequencing,RNA Sequencing (RNA-Seq)",
+        "Organism":"Mus musculus",
+        "Tissue":"Left gastrocnemius,Not Applicable",
+        "Factor":"spaceflight"
+    },
+    {
+        "OSD":"OSD-102",
+        "Title":"Rodent Research-1 (RR1) NASA Validation Flight: Mouse kidney transcriptomic, proteomic, and epigenomic data",
+        "Assay":"mass spectrometry,Whole Transcriptome Bisulfite Sequencing,Whole Genome Bisulfite Sequencing,RNA Sequencing (RNA-Seq)",
+        "Organism":"Not Applicable,Mus musculus",
+        "Tissue":"Not Applicable,Left kidney",
+        "Factor":"spaceflight"
+    },
+    {
+        "OSD":"OSD-103",
+        "Title":"Rodent Research-1 (RR1) NASA Validation Flight: Mouse quadriceps muscle transcriptomic, proteomic, and epigenomic data",
+        "Assay":"mass spectrometry,Whole Transcriptome Bisulfite Sequencing,Whole Genome Bisulfite Sequencing,RNA Sequencing (RNA-Seq)",
+        "Organism":"Not Applicable,Mus musculus",
+        "Tissue":"Left quadriceps femoris,Not Applicable",
+        "Factor":"spaceflight"
+    },
+    {
+        "OSD":"OSD-104",
+        "Title":"Rodent Research-1 (RR1) NASA Validation Flight: Mouse soleus muscle transcriptomic and epigenomic data",
+        "Assay":"Whole Genome Bisulfite Sequencing,RNA Sequencing (RNA-Seq)",
+        "Organism":"Mus musculus",
+        "Tissue":"Soleus-both sides",
+        "Factor":"spaceflight"
+    },
+    {
+        "OSD":"OSD-105",
+        "Title":"Rodent Research-1 (RR1) NASA Validation Flight: Mouse tibialis anterior muscle transcriptomic, proteomic, and epigenomic data",
+        "Assay":"mass spectrometry,Whole Transcriptome Bisulfite Sequencing,Whole Genome Bisulfite Sequencing,RNA Sequencing (RNA-Seq)",
+        "Organism":"Not Applicable,Mus musculus",
+        "Tissue":"Not Applicable,Left tibialis anterior",
+        "Factor":"spaceflight"
+    },
+    {
+        "OSD":"OSD-109",
+        "Title":"Delayed Cardiomyocyte Response to Total Body Particle Radiation Exposure - Identification of Regulatory Gene Network [iron]",
+        "Assay":"DNA microarray",
+        "Organism":"Mus musculus",
+        "Tissue":"primary left ventricular cell",
+        "Factor":"ionizing radiation,time of sample collection after treatment"
+    },
+    {
+        "OSD":"OSD-112",
+        "Title":"Microgravity effect on C. elegans N2\/VC (CERISE, 4 days)",
+        "Assay":"DNA microarray",
+        "Organism":"Caenorhabditis elegans",
+        "Tissue":"Whole Organism",
+        "Factor":"altered gravity,spaceflight"
+    },
+    {
+        "OSD":"OSD-113",
+        "Title":"Expression Data from International C. elegans Experiment 1st (ICE-FIRST)",
+        "Assay":"DNA microarray",
+        "Organism":"Caenorhabditis elegans",
+        "Tissue":"Whole Organism",
+        "Factor":"spaceflight"
+    },
+    {
+        "OSD":"OSD-117",
+        "Title":"Delayed Cardiomyocyte Response to Total Body Particle Radiation Exposure - Identification of Regulatory Gene Network [proton]",
+        "Assay":"DNA microarray",
+        "Organism":"Mus musculus",
+        "Tissue":"murine left ventricular cardiomyocytes",
+        "Factor":"ionizing radiation,time of sample collection after treatment"
+    },
+    {
+        "OSD":"OSD-120",
+        "Title":"Genetic dissection of the Arabidopsis spaceflight transcriptome: Are some responses dispensable for the physiological adaptation of plants to spaceflight?",
+        "Assay":"Photography,RNA Sequencing (RNA-Seq)",
+        "Organism":"Arabidopsis thaliana",
+        "Tissue":null,
+        "Factor":"ecotype,spaceflight,treatment"
+    },
+    {
+        "OSD":"OSD-121",
+        "Title":"Biological Research in Canisters-16 (BRIC-16): Transcriptomics, Glycomics, and Morphometric photography.",
+        "Assay":"Image analysis,ELISA,DNA microarray",
+        "Organism":"Arabidopsis thaliana",
+        "Tissue":null,
+        "Factor":"spaceflight"
+    },
+    {
+        "OSD":"OSD-124",
+        "Title":"Effect of electromagnetic fields on the chondrogenic differentiation under microgravity conditions",
+        "Assay":"DNA microarray",
+        "Organism":"Homo sapiens",
+        "Tissue":null,
+        "Factor":"electromagnetic fields"
+    },
+    {
+        "OSD":"OSD-125",
+        "Title":"mRNA expression profile in DLD-1 and MOLT-4 cancer cell lines cultured under Microgravity",
+        "Assay":"DNA microarray",
+        "Organism":"Homo sapiens",
+        "Tissue":"Cells",
+        "Factor":"cell line,microgravity simulation"
+    },
+    {
+        "OSD":"OSD-127",
+        "Title":"Global gene expression profiles of cardiac progenitors differentiated from human pluripotent stem cells in 3D culture under simulated microgravity",
+        "Assay":"RNA Sequencing (RNA-Seq)",
+        "Organism":"Homo sapiens",
+        "Tissue":null,
+        "Factor":"microgravity simulation"
+    },
+    {
+        "OSD":"OSD-129",
+        "Title":"Gene expression profiling of PBL in response to ionizing radiation and modeled microgravity",
+        "Assay":"DNA microarray",
+        "Organism":"Homo sapiens",
+        "Tissue":"Human Peripheral blood lymphocytes (PBL)",
+        "Factor":"ionizing radiation,microgravity simulation"
+    },
+    {
+        "OSD":"OSD-136",
+        "Title":"Dissecting Low Atmospheric Pressure Stress: Transcriptome Responses to the Components of Hypobaria in Arabidopsis [Experiment 2]",
+        "Assay":"DNA microarray",
+        "Organism":"Arabidopsis thaliana",
+        "Tissue":null,
+        "Factor":"atmospheric pressure"
+    },
+    {
+        "OSD":"OSD-137",
+        "Title":"Rodent Research-3-CASIS: Mouse liver transcriptomic, proteomic, epigenomic and histology data",
+        "Assay":"mass spectrometry,Microscopy,Whole Genome Bisulfite Sequencing,RNA Sequencing (RNA-Seq)",
+        "Organism":"Mus musculus",
+        "Tissue":"Liver",
+        "Factor":"spaceflight"
+    },
+    {
+        "OSD":"OSD-138",
+        "Title":"BRIC-23 GeneLab Process Verification Test: Bacillus subtilis transcriptomic, proteomic, and metabolomic data",
+        "Assay":"mass spectrometry,RNA Sequencing (RNA-Seq)",
+        "Organism":"Bacillus subtilis,Not Applicable",
+        "Tissue":"Not Applicable,Cells",
+        "Factor":"freezing,spaceflight"
+    },
+    {
+        "OSD":"OSD-141",
+        "Title":"Validation of Methods to Assess the Immunoglobulin Gene Repertoire in Tissues Obtained from Mice on the International Space Station",
+        "Assay":"RNA Sequencing (RNA-Seq)",
+        "Organism":"Mus musculus",
+        "Tissue":"Whole Spleen,Tissue,Cells",
+        "Factor":"sample collection protocol"
+    },
+    {
+        "OSD":"OSD-147",
+        "Title":"Arg1 functions in the physiological adaptation of undifferentiated plant cells to spaceflight",
+        "Assay":"DNA microarray",
+        "Organism":"Arabidopsis thaliana",
+        "Tissue":"hypocotyl cell culture",
+        "Factor":"genotype,spaceflight"
+    },
+    {
+        "OSD":"OSD-151",
+        "Title":"Bystander response to 2.5 Gy of protons in a human 3-dimensional skin model in 16 h after exposure",
+        "Assay":"DNA microarray",
+        "Organism":"Homo sapiens",
+        "Tissue":"3D cells",
+        "Factor":"absorbed radiation dose,ionizing radiation,radiation distance"
+    },
+    {
+        "OSD":"OSD-152",
+        "Title":"Transcription profiling of human peripheral blood to development gene expression signatures for practical radiation biodosimetry",
+        "Assay":"DNA microarray",
+        "Organism":"Homo sapiens",
+        "Tissue":"Peripheral blood cell",
+        "Factor":"absorbed radiation dose,ionizing radiation,time of sample collection after treatment"
+    },
+    {
+        "OSD":"OSD-153",
+        "Title":"Non-targeted effects of low dose ionizing radiation act via TGF-beta to promote mammary carcinogenesis",
+        "Assay":"DNA microarray",
+        "Organism":"Mus musculus",
+        "Tissue":"whole 4th (inguinal) mammary glands",
+        "Factor":"genotype,ionizing radiation,time of sample collection after treatment"
+    },
+    {
+        "OSD":"OSD-154",
+        "Title":"Low dose ionizing radiation treated lymphoblastoid cells",
+        "Assay":"DNA microarray",
+        "Organism":"Homo sapiens",
+        "Tissue":"Cells",
+        "Factor":"absorbed radiation dose,cell line"
+    },
+    {
+        "OSD":"OSD-155",
+        "Title":"Radiation responses in peripheral white blood cells of smokers and non-smokers",
+        "Assay":"DNA microarray",
+        "Organism":"Homo sapiens",
+        "Tissue":"Whole Blood",
+        "Factor":"absorbed radiation dose,ionizing radiation,smoking status"
+    },
+    {
+        "OSD":"OSD-160",
+        "Title":"Gene expression data from 4T1 irradiated tumors treated with TGFbeta blockade",
+        "Assay":"DNA microarray",
+        "Organism":"Mus musculus",
+        "Tissue":"4T1 tumor",
+        "Factor":"ionizing radiation,treatment"
+    },
+    {
+        "OSD":"OSD-161",
+        "Title":"Rodent Research-3-CASIS: Mouse adrenal gland transcriptomic, proteomic, and epigenomic data",
+        "Assay":"nucleotide sequencing,mass spectrometry,RNA Sequencing (RNA-Seq)",
+        "Organism":"nan,Mus musculus",
+        "Tissue":"Adrenal gland,Not applicable",
+        "Factor":"spaceflight"
+    },
+    {
+        "OSD":"OSD-162",
+        "Title":"Rodent Research-3-CASIS: Mouse eye transcriptomic and proteomic data",
+        "Assay":"mass spectrometry,RNA Sequencing (RNA-Seq)",
+        "Organism":"Mus musculus",
+        "Tissue":"eye",
+        "Factor":"spaceflight"
+    },
+    {
+        "OSD":"OSD-163",
+        "Title":"Rodent Research-3-CASIS: Mouse kidney transcriptomic, proteomic, and epigenomic data",
+        "Assay":"nucleotide sequencing,mass spectrometry,RNA Sequencing (RNA-Seq)",
+        "Organism":"Mus musculus",
+        "Tissue":"Left kidney",
+        "Factor":"spaceflight"
+    },
+    {
+        "OSD":"OSD-164",
+        "Title":"Effects of spaceflight on the immunoglobulin repertoire of unimmunized C57BL\/6 mice",
+        "Assay":"RNA Sequencing (RNA-Seq)",
+        "Organism":"Mus musculus",
+        "Tissue":"Spleen,Liver",
+        "Factor":"spaceflight,tissue"
+    },
+    {
+        "OSD":"OSD-168",
+        "Title":"RR-1 and RR-3 mouse liver transcriptomics with and without ERCC control RNA spike-ins",
+        "Assay":"RNA Sequencing (RNA-Seq)",
+        "Organism":"Mus musculus",
+        "Tissue":"Liver",
+        "Factor":"space mission,spaceflight"
+    },
+    {
+        "OSD":"OSD-172",
+        "Title":"Dynamic gene expression response to altered gravity in human T cells (parabolic flight)",
+        "Assay":"DNA microarray",
+        "Organism":"Homo sapiens",
+        "Tissue":"Cells",
+        "Factor":"altered gravity"
+    },
+    {
+        "OSD":"OSD-173",
+        "Title":"STS-135: Mouse Liver Transcriptomics using RNA-Seq",
+        "Assay":"RNA Sequencing (RNA-Seq)",
+        "Organism":"Mus musculus",
+        "Tissue":"liver",
+        "Factor":"spaceflight"
+    },
+    {
+        "OSD":"OSD-178",
+        "Title":"IMR90 radiation bystander time-course experiment 0.5Gy alpha particle",
+        "Assay":"DNA microarray",
+        "Organism":"Homo sapiens",
+        "Tissue":"Cells",
+        "Factor":"ionizing radiation,radiation distance,time of sample collection after treatment"
+    },
+    {
+        "OSD":"OSD-182",
+        "Title":"Human skin fibroblast mitochondrial depletion, 0.5 Gy alpha-particle",
+        "Assay":"DNA microarray",
+        "Organism":"Homo sapiens",
+        "Tissue":"Cells",
+        "Factor":"ionizing radiation,treatment"
+    },
+    {
+        "OSD":"OSD-183",
+        "Title":"Radiation-induced bystander effects and gene expression in cells deficient for RAD9",
+        "Assay":"DNA microarray",
+        "Organism":"Homo sapiens",
+        "Tissue":"Cells",
+        "Factor":"genotype,ionizing radiation,micronucleus index,radiation distance"
+    },
+    {
+        "OSD":"OSD-188",
+        "Title":"Dynamic gene expression response to altered gravity in human T cells (sounding rocket flight)",
+        "Assay":"DNA microarray",
+        "Organism":"Homo sapiens",
+        "Tissue":"Cells",
+        "Factor":"altered gravity"
+    },
+    {
+        "OSD":"OSD-189",
+        "Title":"Gene expression response to simulated gravity and hypergravity in human T cells",
+        "Assay":"DNA microarray",
+        "Organism":"Homo sapiens",
+        "Tissue":"Cells",
+        "Factor":"altered gravity"
+    },
+    {
+        "OSD":"OSD-193",
+        "Title":"During development, the Sku6 mutant roots engage different genes than wild type Col-0 roots, either on the ground or in spaceflight.",
+        "Assay":"RNA Sequencing (RNA-Seq)",
+        "Organism":"Arabidopsis thaliana",
+        "Tissue":null,
+        "Factor":"genotype,spaceflight,time"
+    },
+    {
+        "OSD":"OSD-194",
+        "Title":"Rodent Research-3-CASIS: Mouse retina transcriptomic data",
+        "Assay":"RNA Sequencing (RNA-Seq)",
+        "Organism":"Mus musculus",
+        "Tissue":"Right retina,Left retina",
+        "Factor":"spaceflight"
+    },
+    {
+        "OSD":"OSD-201",
+        "Title":"Impact of Antiorthostatic Suspension on Mouse response to Tetanus Toxoid and CpG",
+        "Assay":"RNA Sequencing (RNA-Seq)",
+        "Organism":"Mus musculus",
+        "Tissue":"Spleen",
+        "Factor":"hindlimb unloading,tetanus toxoid,vaccine adjuvant"
+    },
+    {
+        "OSD":"OSD-202",
+        "Title":"Low dose (0.04 Gy) irradiation (LDR) and hindlimb unloading (HLU) microgravity in mice: brain transcriptomic and epigenomic data",
+        "Assay":"RNA Sequencing (RNA-Seq),Reduced-Representation Bisulfite Sequencing,DNA microarray",
+        "Organism":"Mus musculus",
+        "Tissue":"brain",
+        "Factor":"hindlimb unloading,ionizing radiation,time of sample collection after treatment"
+    },
+    {
+        "OSD":"OSD-203",
+        "Title":"Low dose (0.04 Gy) irradiation (LDR) and hindlimb unloading (HLU) microgravity in mice: retina transcriptomic and epigenomic data",
+        "Assay":"Reduced-Representation Bisulfite Sequencing,RNA Sequencing (RNA-Seq)",
+        "Organism":"Mus musculus",
+        "Tissue":"Retina",
+        "Factor":"hindlimb unloading,ionizing radiation,time of sample collection after treatment"
+    },
+    {
+        "OSD":"OSD-205",
+        "Title":"HSFA2 functions in the physiological adaptation of undifferentiated plant cells to spaceflight microgravity environment",
+        "Assay":"DNA microarray",
+        "Organism":"Arabidopsis thaliana",
+        "Tissue":null,
+        "Factor":"genotype,spaceflight"
+    },
+    {
+        "OSD":"OSD-207",
+        "Title":"Correlated Gene and Protein Expression in heads from Drosophila reared in microgravity",
+        "Assay":"mass spectrometry,RNA Sequencing (RNA-Seq)",
+        "Organism":"Drosophila melanogaster",
+        "Tissue":"Head",
+        "Factor":"genotype,spaceflight,strain"
+    },
+    {
+        "OSD":"OSD-208",
+        "Title":"Comparing RNA-Seq and microarray gene expression data in two zones of the Arabidopsis root apex relevant to spaceflight.",
+        "Assay":"RNA Sequencing (RNA-Seq),DNA microarray",
+        "Organism":"Arabidopsis thaliana",
+        "Tissue":null,
+        "Factor":"tissue"
+    },
+    {
+        "OSD":"OSD-211",
+        "Title":"Transcriptomic analysis of spleens from mice subjected to chronic low-dose radiation, hindlimb unloading or a combination of both",
+        "Assay":"RNA Sequencing (RNA-Seq)",
+        "Organism":"Mus musculus",
+        "Tissue":"Spleen",
+        "Factor":"hindlimb unloading,ionizing radiation"
+    },
+    {
+        "OSD":"OSD-213",
+        "Title":"A whole-genome microarray study of Arabidopsis thaliana cell cultures exposed to microgravity for 5 days on board of Shenzhou 8",
+        "Assay":"DNA microarray",
+        "Organism":"Arabidopsis thaliana",
+        "Tissue":"callus cell culture",
+        "Factor":"altered gravity,spaceflight"
+    },
+    {
+        "OSD":"OSD-214",
+        "Title":"Impact of Antiorthostatic Suspension on Mouse response to Tetanus Toxoid and CpG: bone marrow transcriptomic data",
+        "Assay":"RNA Sequencing (RNA-Seq)",
+        "Organism":"Mus musculus",
+        "Tissue":"Bone Marrow",
+        "Factor":"hindlimb unloading,tetanus toxoid,vaccine adjuvant"
+    },
+    {
+        "OSD":"OSD-217",
+        "Title":"Characterization of Epigenetic Regulation in an Extraterrestrial Environment: The Arabidopsis Spaceflight Methylome",
+        "Assay":"Whole Genome Bisulfite Sequencing,RNA Sequencing (RNA-Seq)",
+        "Organism":"Arabidopsis thaliana",
+        "Tissue":"root,leaf",
+        "Factor":"spaceflight"
+    },
+    {
+        "OSD":"OSD-218",
+        "Title":"Plant development on ISS differs from the development on the ground and is influenced by the genetic background",
+        "Assay":"RNA Sequencing (RNA-Seq)",
+        "Organism":"Arabidopsis thaliana",
+        "Tissue":null,
+        "Factor":"age,cultivar,spaceflight"
+    },
+    {
+        "OSD":"OSD-223",
+        "Title":"The effect of spaceflight on transgenic Arabidopsis plants with compromised signaling",
+        "Assay":"RNA Sequencing (RNA-Seq)",
+        "Organism":"Arabidopsis thaliana",
+        "Tissue":null,
+        "Factor":"altered gravity,genotype,spaceflight"
+    },
+    {
+        "OSD":"OSD-227",
+        "Title":"Effect of acute muscle unloading on soleus and gastrocnemius muscle gene expression",
+        "Assay":"DNA microarray",
+        "Organism":"Mus musculus",
+        "Tissue":null,
+        "Factor":"hindlimb unloading,tissue"
+    },
+    {
+        "OSD":"OSD-235",
+        "Title":"Transcriptomic analysis of liver from mice subjected to simulated spaceflight euthanasia, freezing, and tissue preservation protocols",
+        "Assay":"RNA Sequencing (RNA-Seq)",
+        "Organism":"Mus musculus",
+        "Tissue":"Left Lobe of the Liver",
+        "Factor":"carcass preservation method,dissection condition,euthanasia method,tissue homogenate preservation time at -80c in rlt buffer"
+    },
+    {
+        "OSD":"OSD-236",
+        "Title":"Transcriptomic analysis of quadriceps from mice subjected to simulated spaceflight euthanasia, freezing, and tissue preservation protocols",
+        "Assay":"RNA Sequencing (RNA-Seq)",
+        "Organism":"Mus musculus",
+        "Tissue":"Left quadriceps femoris",
+        "Factor":"carcass preservation method,dissection condition,euthanasia method"
+    },
+    {
+        "OSD":"OSD-237",
+        "Title":"Transcriptomic analysis of skin from mice subjected to chronic low-dose radiation, hindlimb unloading or a combination of both",
+        "Assay":"RNA Sequencing (RNA-Seq)",
+        "Organism":"Mus musculus",
+        "Tissue":"dorsal skin",
+        "Factor":"hindlimb unloading,ionizing radiation"
+    },
+    {
+        "OSD":"OSD-238",
+        "Title":"Transcriptomic analysis of dorsal skin from mice flown on the MHU-2 mission",
+        "Assay":"RNA Sequencing (RNA-Seq)",
+        "Organism":"Mus musculus",
+        "Tissue":"dorsal skin",
+        "Factor":"altered gravity,diet,spaceflight"
+    },
+    {
+        "OSD":"OSD-239",
+        "Title":"Transcriptomic analysis of femoral skin from mice flown on the MHU-2 mission",
+        "Assay":"RNA Sequencing (RNA-Seq)",
+        "Organism":"Mus musculus",
+        "Tissue":"femoral skin",
+        "Factor":"altered gravity,diet,spaceflight"
+    },
+    {
+        "OSD":"OSD-240",
+        "Title":"Transcriptional analysis of dorsal skin from mice flown on the RR-5 mission",
+        "Assay":"RNA Sequencing (RNA-Seq)",
+        "Organism":"Mus musculus",
+        "Tissue":"dorsal skin",
+        "Factor":"spaceflight"
+    },
+    {
+        "OSD":"OSD-241",
+        "Title":"Transcriptional analysis of femoral skin from mice flown on the RR-5 mission",
+        "Assay":"RNA Sequencing (RNA-Seq)",
+        "Organism":"Mus musculus",
+        "Tissue":"femoral lateral skin",
+        "Factor":"spaceflight"
+    },
+    {
+        "OSD":"OSD-242",
+        "Title":"Effect of spaceflight on liver from mice flown on the ISS for 33 days: transcriptional analysis",
+        "Assay":"RNA Sequencing (RNA-Seq)",
+        "Organism":"Mus musculus",
+        "Tissue":"Liver",
+        "Factor":"spaceflight"
+    },
+    {
+        "OSD":"OSD-243",
+        "Title":"Transcriptional analysis of dorsal skin from mice flown on the RR-6 mission",
+        "Assay":"RNA Sequencing (RNA-Seq)",
+        "Organism":"Mus musculus",
+        "Tissue":"dorsal skin",
+        "Factor":"dissection condition,duration,euthanasia location,spaceflight"
+    },
+    {
+        "OSD":"OSD-244",
+        "Title":"Transcriptional analysis of thymus from mice flown on the RR-6 Mission",
+        "Assay":"RNA Sequencing (RNA-Seq)",
+        "Organism":"Mus musculus",
+        "Tissue":"Thymus",
+        "Factor":"dissection condition,duration,euthanasia location,spaceflight"
+    },
+    {
+        "OSD":"OSD-245",
+        "Title":"Transcriptional analysis of liver from mice flown on the RR-6 mission",
+        "Assay":"RNA Sequencing (RNA-Seq)",
+        "Organism":"Mus musculus",
+        "Tissue":"Liver",
+        "Factor":"dissection condition,duration,euthanasia location,spaceflight"
+    },
+    {
+        "OSD":"OSD-246",
+        "Title":"Transcriptional analysis of spleen from mice flown on the RR-6 mission",
+        "Assay":"RNA Sequencing (RNA-Seq)",
+        "Organism":"Mus musculus",
+        "Tissue":"Spleen",
+        "Factor":"dissection condition,duration,euthanasia location,spaceflight"
+    },
+    {
+        "OSD":"OSD-247",
+        "Title":"Transcriptional analysis of colon from mice flown on the RR-6 mission",
+        "Assay":"RNA Sequencing (RNA-Seq)",
+        "Organism":"Mus musculus",
+        "Tissue":"descending colon",
+        "Factor":"dissection condition,duration,euthanasia location,spaceflight"
+    },
+    {
+        "OSD":"OSD-248",
+        "Title":"Transcriptional analysis of lung from mice flown on the RR-6 mission",
+        "Assay":"RNA Sequencing (RNA-Seq)",
+        "Organism":"Mus musculus",
+        "Tissue":"Left Lung",
+        "Factor":"dissection condition,duration,euthanasia location,spaceflight"
+    },
+    {
+        "OSD":"OSD-251",
+        "Title":"RNAseq analysis of the response of Arabidopsis thaliana to fractional gravity under blue-light stimulation during spaceflight",
+        "Assay":"RNA Sequencing (RNA-Seq)",
+        "Organism":"Arabidopsis thaliana",
+        "Tissue":"Seedlings",
+        "Factor":"altered gravity,spaceflight"
+    },
+    {
+        "OSD":"OSD-253",
+        "Title":"Transcriptional analysis of kidneys from mice flown on the RR-7 mission",
+        "Assay":"RNA Sequencing (RNA-Seq)",
+        "Organism":"Mus musculus",
+        "Tissue":"Left kidney",
+        "Factor":"duration,spaceflight,strain"
+    },
+    {
+        "OSD":"OSD-254",
+        "Title":"Transcriptional analysis of dorsal skin from mice flown on the RR-7 mission",
+        "Assay":"RNA Sequencing (RNA-Seq)",
+        "Organism":"Mus musculus",
+        "Tissue":"dorsal skin",
+        "Factor":"duration,spaceflight,strain"
+    },
+    {
+        "OSD":"OSD-255",
+        "Title":"Spaceflight influences gene expression, photoreceptor integrity, and oxidative stress-related damage in the murine retina",
+        "Assay":"RNA Sequencing (RNA-Seq)",
+        "Organism":"Mus musculus",
+        "Tissue":"Right retina",
+        "Factor":"spaceflight"
+    },
+    {
+        "OSD":"OSD-258",
+        "Title":"Effects of Spaceflight on Human Induced Pluripotent Stem Cell-Derived Cardiomyocyte Structure and Function",
+        "Assay":"RNA Sequencing (RNA-Seq)",
+        "Organism":"Homo sapiens",
+        "Tissue":"Cells",
+        "Factor":"spaceflight,time"
+    },
+    {
+        "OSD":"OSD-270",
+        "Title":"Bulk and spatially resolved transcriptional analysis of hearts from mice flown on the RR-3",
+        "Assay":"spatial transcriptomics,RNA Sequencing (RNA-Seq)",
+        "Organism":"Mus musculus",
+        "Tissue":"Heart",
+        "Factor":"spaceflight"
+    },
+    {
+        "OSD":"OSD-271",
+        "Title":"Global gene expression profiling of radiation-induced rat mammary carcinomas",
+        "Assay":"DNA microarray",
+        "Organism":"Rattus norvegicus",
+        "Tissue":"mammary gland",
+        "Factor":"ionizing radiation"
+    },
+    {
+        "OSD":"OSD-272",
+        "Title":"Transcriptional analysis of spleens from mice preserved with the Rapid Freeze hardware",
+        "Assay":"RNA Sequencing (RNA-Seq)",
+        "Organism":"Mus musculus",
+        "Tissue":"Spleen",
+        "Factor":"dissection condition,order of preservation,preservation method"
+    },
+    {
+        "OSD":"OSD-273",
+        "Title":"Transcriptional analysis of livers from mice preserved with the Rapid Freeze hardware",
+        "Assay":"RNA Sequencing (RNA-Seq)",
+        "Organism":"Mus musculus",
+        "Tissue":"liver",
+        "Factor":"dissection condition,order of preservation,preservation method"
+    },
+    {
+        "OSD":"OSD-274",
+        "Title":"Transcriptional analysis of soleus from mice preserved with the Rapid Freeze hardware",
+        "Assay":"RNA Sequencing (RNA-Seq)",
+        "Organism":"Mus musculus",
+        "Tissue":"Soleus",
+        "Factor":"dissection condition,order of preservation,preservation method"
+    },
+    {
+        "OSD":"OSD-278",
+        "Title":"Spaceflight and simulated microgravity conditions increase virulence of Serratia marcescens in the Drosophila melanogaster infection model",
+        "Assay":"RNA Sequencing (RNA-Seq)",
+        "Organism":"Drosophila melanogaster",
+        "Tissue":"Whole Organism",
+        "Factor":"infection,spaceflight"
+    },
+    {
+        "OSD":"OSD-281",
+        "Title":"During development, the Sku5 mutant roots engage different genes than wild type WS roots, either on the ground or in spaceflight.",
+        "Assay":"RNA Sequencing (RNA-Seq)",
+        "Organism":"Arabidopsis thaliana",
+        "Tissue":null,
+        "Factor":"age,genotype,spaceflight"
+    },
+    {
+        "OSD":"OSD-282",
+        "Title":"The Heat-Inducible Transcription Factor HsfA2 Enhances Anoxia Tolerance in Arabidopsis",
+        "Assay":"DNA microarray",
+        "Organism":"Arabidopsis thaliana",
+        "Tissue":"Seedlings",
+        "Factor":"treatment"
+    },
+    {
+        "OSD":"OSD-288",
+        "Title":"Transcriptome analysis of murine spleen in space",
+        "Assay":"RNA Sequencing (RNA-Seq)",
+        "Organism":"Mus musculus",
+        "Tissue":"Spleen",
+        "Factor":"altered gravity,spaceflight"
+    },
+    {
+        "OSD":"OSD-289",
+        "Title":"Impact of spaceflight on gene expression in the thymus",
+        "Assay":"RNA Sequencing (RNA-Seq)",
+        "Organism":"Mus musculus",
+        "Tissue":"thymus",
+        "Factor":"altered gravity,space mission,spaceflight"
+    },
+    {
+        "OSD":"OSD-294",
+        "Title":"Efficient Identification of Multiple Pathways: RNA-Seq Analysis of Livers from 56Fe Ion Irradiated Mice",
+        "Assay":"RNA Sequencing (RNA-Seq)",
+        "Organism":"Mus musculus",
+        "Tissue":"Left Lobe of the Liver",
+        "Factor":"ionizing radiation,time of sample collection after treatment"
+    },
+    {
+        "OSD":"OSD-295",
+        "Title":"RNA-Seq transcriptome profiling of soleus from adult and aged mice following disuse muscle atrophy and recovery",
+        "Assay":"RNA Sequencing (RNA-Seq)",
+        "Organism":"Mus musculus",
+        "Tissue":"Soleus",
+        "Factor":"age,hindlimb reloading duration,hindlimb unloading"
+    },
+    {
+        "OSD":"OSD-296",
+        "Title":"Transcription profiling of Arabidopsis seedings exposed to UV-B irradiation",
+        "Assay":"DNA microarray",
+        "Organism":"Arabidopsis thaliana",
+        "Tissue":null,
+        "Factor":"genotype,light,time,treatment"
+    },
+    {
+        "OSD":"OSD-304",
+        "Title":"Global gene expression in response to X rays in mice deficient in Parp1",
+        "Assay":"DNA microarray",
+        "Organism":"Mus musculus",
+        "Tissue":"Blood",
+        "Factor":"absorbed radiation dose,genotype,ionizing radiation"
+    },
+    {
+        "OSD":"OSD-308",
+        "Title":"Differential expression profiles of long non-coding RNAs during the mouse pronucleus stage under normal gravity and simulated microgravity",
+        "Assay":"RNA Sequencing (RNA-Seq)",
+        "Organism":"Mus musculus",
+        "Tissue":"Zygote",
+        "Factor":"microgravity simulation"
+    },
+    {
+        "OSD":"OSD-313",
+        "Title":"Dissecting transcriptional responses of nucleolin mutants to red light stimulation and darkness in ground reference conditions",
+        "Assay":"RNA Sequencing (RNA-Seq)",
+        "Organism":"Arabidopsis thaliana",
+        "Tissue":null,
+        "Factor":"treatment"
+    },
+    {
+        "OSD":"OSD-314",
+        "Title":"Adaptive response of Arabidopsis seedlings in microgravity and Mars reduced gravity environment is enhanced by red light photostimulation",
+        "Assay":"RNA Sequencing (RNA-Seq)",
+        "Organism":"Arabidopsis thaliana",
+        "Tissue":"Seedlings",
+        "Factor":"altered gravity,light,spaceflight"
+    },
+    {
+        "OSD":"OSD-318",
+        "Title":"RNA seq of tumors derived from irradiated versus sham hosts transplanted with Trp53 null mammary tissue and fed either Control diet versus Caffeic Acid Phenethyl Ester (CAPE) diet.",
+        "Assay":"RNA Sequencing (RNA-Seq)",
+        "Organism":"Mus musculus",
+        "Tissue":"Trp53 null Mammary Tumor",
+        "Factor":"diet,ionizing radiation"
+    },
+    {
+        "OSD":"OSD-320",
+        "Title":"Gamma radiation and HZE treatment of seedlings in Arabidopsis",
+        "Assay":"DNA microarray",
+        "Organism":"Arabidopsis thaliana",
+        "Tissue":"Seedlings",
+        "Factor":"genotype,ionizing radiation,time of sample collection after treatment"
+    },
+    {
+        "OSD":"OSD-321",
+        "Title":"Relevance of Unfolded Protein Response to Spaceflight-Induced Transcriptional Reprogramming in Arabidopsis",
+        "Assay":"RNA Sequencing (RNA-Seq)",
+        "Organism":"Arabidopsis thaliana",
+        "Tissue":"Seedlings",
+        "Factor":"genotype,spaceflight"
+    },
+    {
+        "OSD":"OSD-323",
+        "Title":"Evaluating the effect of spaceflight on the host-pathogen interaction between human intestinal epithelial cells and Salmonella Typhimurium",
+        "Assay":"RNA Sequencing (RNA-Seq)",
+        "Organism":"Homo sapiens",
+        "Tissue":"Cells",
+        "Factor":"infection,spaceflight"
+    },
+    {
+        "OSD":"OSD-326",
+        "Title":"Gene-metabolite network linked to inhibited bioenergetics in association with spaceflight induced loss of quadriceps muscle",
+        "Assay":"RNA Sequencing (RNA-Seq)",
+        "Organism":"Mus musculus",
+        "Tissue":"Quadriceps femoris",
+        "Factor":"spaceflight"
+    },
+    {
+        "OSD":"OSD-331",
+        "Title":"Effect of microgravity on HUVECs (Human Umbilical vein Endothelial cells) cells and its transcriptome analysis.",
+        "Assay":"RNA Sequencing (RNA-Seq)",
+        "Organism":"Homo sapiens",
+        "Tissue":"Cells",
+        "Factor":"microgravity simulation"
+    },
+    {
+        "OSD":"OSD-346",
+        "Title":"RNAseq analysis of the response of Arabidopsis thaliana phytochrome mutants (PhyA, PhyB) to fractional gravity under blue-light stimulation during spaceflight",
+        "Assay":"RNA Sequencing (RNA-Seq)",
+        "Organism":"Arabidopsis thaliana",
+        "Tissue":null,
+        "Factor":"altered gravity,genotype,spaceflight,treatment"
+    },
+    {
+        "OSD":"OSD-347",
+        "Title":"Heart Flies - effect of microgravity on heart function in Drosophila",
+        "Assay":"RNA Sequencing (RNA-Seq)",
+        "Organism":"Drosophila melanogaster",
+        "Tissue":"Heart",
+        "Factor":"genotype,spaceflight"
+    },
+    {
+        "OSD":"OSD-352",
+        "Title":"Multi-modal transcriptional and chromatin accessibility analysis of brains from mice flown on the RR-3 mission",
+        "Assay":"spatial transcriptomics,single-cell RNA sequencing,single-cell ATAC-seq,RNA Sequencing (RNA-Seq)",
+        "Organism":"Mus musculus",
+        "Tissue":"Brain",
+        "Factor":"spaceflight"
+    },
+    {
+        "OSD":"OSD-367",
+        "Title":"Bystander response to 0.5 Gy of alpha-particles in a human 3-dimensional skin model in 16h after exposure to ionizing radiation",
+        "Assay":"DNA microarray",
+        "Organism":"Homo sapiens",
+        "Tissue":"3D Cells",
+        "Factor":"ionizing radiation,radiation distance"
+    },
+    {
+        "OSD":"OSD-368",
+        "Title":"Biological response to low dose of alpha-particles in a human 3-dimensional skin model, in 1 and 16h after exposure to ionizing radiation.",
+        "Assay":"DNA microarray",
+        "Organism":"Homo sapiens",
+        "Tissue":"3D cells",
+        "Factor":"ionizing radiation,time of sample collection after treatment"
+    },
+    {
+        "OSD":"OSD-369",
+        "Title":"Bystander responses to 0.5Gy of alpha-particles in a human 3-dimensional skin model in 4h after exposure to ionizing radiation",
+        "Assay":"DNA microarray",
+        "Organism":"Homo sapiens",
+        "Tissue":"3D cells",
+        "Factor":"ionizing radiation"
+    },
+    {
+        "OSD":"OSD-370",
+        "Title":"Insulin resistance induced by physical inactivity is associated with multiple transcriptional changes in skeletal muscle in young men",
+        "Assay":"DNA microarray",
+        "Organism":"Homo sapiens",
+        "Tissue":"Vastus Lateralis",
+        "Factor":"bed rest,time,treatment"
+    },
+    {
+        "OSD":"OSD-373",
+        "Title":"RNA sequencing of zebrafish embryos under simulated microgravity conditions",
+        "Assay":"RNA Sequencing (RNA-Seq)",
+        "Organism":"Danio rerio",
+        "Tissue":"embryo",
+        "Factor":"microgravity simulation,treatment"
+    },
+    {
+        "OSD":"OSD-374",
+        "Title":"Bi-directional and shared epigenomic signatures following proton irradiation",
+        "Assay":"DIP-seq,RNA Sequencing (RNA-Seq)",
+        "Organism":"Mus musculus",
+        "Tissue":"Hippocampus",
+        "Factor":"ionizing radiation"
+    },
+    {
+        "OSD":"OSD-379",
+        "Title":"Transcriptional profiling of livers from mice flown on Rodent Research Reference Mission-1 (RRRM-1)",
+        "Assay":"RNA Sequencing (RNA-Seq)",
+        "Organism":"Mus musculus",
+        "Tissue":"Left Lobe of the Liver",
+        "Factor":"age,dissection condition,duration,euthanasia location,spaceflight"
+    },
+    {
+        "OSD":"OSD-397",
+        "Title":"Illumina NGS RNA-seq and RRBS Sequencing on Spaceflight Mouse Retina",
+        "Assay":"Reduced-Representation Bisulfite Sequencing,RNA Sequencing (RNA-Seq)",
+        "Organism":"Mus musculus",
+        "Tissue":"Right retina,Left retina",
+        "Factor":"spaceflight"
+    },
+    {
+        "OSD":"OSD-401",
+        "Title":"Alternative splicing regulates the physiological adaptation of the mouse hind limb postural and phasic muscles to microgravity",
+        "Assay":"RNA Sequencing (RNA-Seq)",
+        "Organism":"Mus musculus",
+        "Tissue":"Quadriceps femoris,Gastrocnemius",
+        "Factor":"spaceflight,tissue"
+    },
+    {
+        "OSD":"OSD-406",
+        "Title":"Transcriptomic responses of Arabidopsis thaliana lines WS and sku5 to the Blue Origin NS-12 and Virgin Galactic VP-03 suborbital flights",
+        "Assay":"RNA Sequencing (RNA-Seq)",
+        "Organism":"Arabidopsis thaliana",
+        "Tissue":"root",
+        "Factor":"altered gravity,ecotype,genotype,spacecraft"
+    },
+    {
+        "OSD":"OSD-411",
+        "Title":"Plant Gravity Perception: Pilot (PGP Pilot)",
+        "Assay":"RNA Sequencing (RNA-Seq)",
+        "Organism":"Arabidopsis thaliana",
+        "Tissue":"Cotyledon,root tip,Hypocotyl,mature root",
+        "Factor":"genotype,treatment"
+    },
+    {
+        "OSD":"OSD-418",
+        "Title":"Transcriptional profiling of gastrocnemius from rats exposed to partial weight bearing treatment to mimic Martian gravity",
+        "Assay":"RNA Sequencing (RNA-Seq)",
+        "Organism":"Rattus norvegicus",
+        "Tissue":"Gastrocnemius",
+        "Factor":"partial weight bearing"
+    },
+    {
+        "OSD":"OSD-419",
+        "Title":"Transcriptional profiling of the right gastrocnemius muscle from mice flown on the RR-1 mission",
+        "Assay":"RNA Sequencing (RNA-Seq)",
+        "Organism":"Mus musculus",
+        "Tissue":"Right gastrocnemius",
+        "Factor":"spaceflight"
+    },
+    {
+        "OSD":"OSD-420",
+        "Title":"Transcriptional profiling of spleens from mice flown on the RR-9 mission",
+        "Assay":"RNA Sequencing (RNA-Seq)",
+        "Organism":"Mus musculus",
+        "Tissue":"Spleen-distal",
+        "Factor":"spaceflight"
+    },
+    {
+        "OSD":"OSD-421",
+        "Title":"Transcriptional profiling of thymus from mice flown on the RR-9 mission",
+        "Assay":"RNA Sequencing (RNA-Seq)",
+        "Organism":"Mus musculus",
+        "Tissue":"thymus",
+        "Factor":"spaceflight"
+    },
+    {
+        "OSD":"OSD-422",
+        "Title":"Transcriptional profiling of gastrocnemius muscle from rats flown on the SLS-1 mission",
+        "Assay":"RNA Sequencing (RNA-Seq)",
+        "Organism":"Rattus norvegicus",
+        "Tissue":"right lateral gastrocnemius",
+        "Factor":"spaceflight"
+    },
+    {
+        "OSD":"OSD-423",
+        "Title":"Transcriptional profiling of thymus tissue from rats flown on the SLS-2 mission",
+        "Assay":"RNA Sequencing (RNA-Seq)",
+        "Organism":"Rattus norvegicus",
+        "Tissue":"thymus",
+        "Factor":"spaceflight"
+    },
+    {
+        "OSD":"OSD-425",
+        "Title":"The effect of microgravity on the epigenetic modification in C. elegans - JAXA EPIGENETICS spaceflight experiment",
+        "Assay":"DNA microarray",
+        "Organism":"Caenorhabditis elegans",
+        "Tissue":"Whole Organism",
+        "Factor":"altered gravity,generation,genotype,spaceflight"
+    },
+    {
+        "OSD":"OSD-426",
+        "Title":"Cerium oxide nanoparticle administration to skeletal muscle cells under different gravity and radiation conditions",
+        "Assay":"miRNA Sequencing,RNA Sequencing (RNA-Seq)",
+        "Organism":"Mus musculus",
+        "Tissue":"Cells",
+        "Factor":"altered gravity,spaceflight,treatment"
+    },
+    {
+        "OSD":"OSD-427",
+        "Title":"Characterizing Epigenetic Changes in Methylation Mutants (elp2-5 and met1-7) in Response to Spaceflight. [RNA-Seq]",
+        "Assay":"RNA Sequencing (RNA-Seq)",
+        "Organism":"Arabidopsis thaliana",
+        "Tissue":"root,leaf",
+        "Factor":"genotype,spaceflight"
+    },
+    {
+        "OSD":"OSD-428",
+        "Title":"Profiling the response of Arabidopsis thaliana to altered gravity environments: Exposure of the 14-3-3k:GFP overexpression line on the F-104 Starfighter, second flight",
+        "Assay":"DNA microarray",
+        "Organism":"Arabidopsis thaliana",
+        "Tissue":null,
+        "Factor":"altered gravity,time"
+    },
+    {
+        "OSD":"OSD-431",
+        "Title":"Microgravity and space radiation exert either opposite or synergic effects on single molecular pathways",
+        "Assay":"RNA Sequencing (RNA-Seq)",
+        "Organism":"Homo sapiens",
+        "Tissue":"Cells",
+        "Factor":"altered gravity,spaceflight"
+    },
+    {
+        "OSD":"OSD-434",
+        "Title":"Arabidopsis thaliana in altered gravity: the 14-3-3k:GFP overexpression line on the F-104 Starfighter, first flight",
+        "Assay":"DNA microarray",
+        "Organism":"Arabidopsis thaliana",
+        "Tissue":null,
+        "Factor":"altered gravity,time"
+    },
+    {
+        "OSD":"OSD-437",
+        "Title":"Transcriptional and Post transcriptional Regulation of Seedling Development in Microgravity",
+        "Assay":"RNA Sequencing (RNA-Seq)",
+        "Organism":"Arabidopsis thaliana",
+        "Tissue":null,
+        "Factor":"age,altered gravity,spaceflight"
+    },
+    {
+        "OSD":"OSD-450",
+        "Title":"Arabidopsis thaliana in altered gravity: the 14-3-3\u03ba:GFP overexpression line in C-9 parabolic flight, 2013",
+        "Assay":"DNA microarray",
+        "Organism":"Arabidopsis thaliana",
+        "Tissue":null,
+        "Factor":"altered gravity,time"
+    },
+    {
+        "OSD":"OSD-455",
+        "Title":"Transcriptomic responses in mouse blood during the first week after in vivo gamma irradiation.",
+        "Assay":"DNA microarray",
+        "Organism":"Mus musculus",
+        "Tissue":"Whole Blood",
+        "Factor":"absorbed radiation dose,ionizing radiation,time of sample collection after treatment"
+    },
+    {
+        "OSD":"OSD-457",
+        "Title":"Expression profiles in multiple tissues of WT and Nrf2-knockout mouse under space flight",
+        "Assay":"RNA Sequencing (RNA-Seq)",
+        "Organism":"Mus musculus",
+        "Tissue":"Liver,brown adipose tissue,Cerebrum,Spleen,Kidney,white adipose tissue,Temporal Bone,Mandible,thymus",
+        "Factor":"genotype,spaceflight,tissue"
+    },
+    {
+        "OSD":"OSD-463",
+        "Title":"Transcriptional profiling of livers from mice flown on the RR-23 mission",
+        "Assay":"RNA Sequencing (RNA-Seq)",
+        "Organism":"Mus musculus",
+        "Tissue":"Left Lobe of the Liver",
+        "Factor":"spaceflight"
+    },
+    {
+        "OSD":"OSD-464",
+        "Title":"Transcriptional profiling of lungs from mice flown on the RR-23 mission",
+        "Assay":"RNA Sequencing (RNA-Seq)",
+        "Organism":"Mus musculus",
+        "Tissue":"Left Lung",
+        "Factor":"spaceflight"
+    },
+    {
+        "OSD":"OSD-467",
+        "Title":"Transcriptomic profiling of cortical bone from hindlimb unloaded mice",
+        "Assay":"RNA Sequencing (RNA-Seq)",
+        "Organism":"Mus musculus",
+        "Tissue":"Cortical Bone",
+        "Factor":"hindlimb unloading"
+    },
+    {
+        "OSD":"OSD-469",
+        "Title":"Transcriptomic analysis of the interaction between FLOWERING LOCUS T induction and photoperiodic signaling in response to spaceflight",
+        "Assay":"DNA microarray",
+        "Organism":"Arabidopsis thaliana",
+        "Tissue":null,
+        "Factor":"genotype,light cycle,spaceflight"
+    },
+    {
+        "OSD":"OSD-476",
+        "Title":"Plants grown in Apollo lunar regolith present stress-associated transcriptomes that inform prospects for lunar exploration",
+        "Assay":"Image analysis,RNA Sequencing (RNA-Seq)",
+        "Organism":"Arabidopsis thaliana",
+        "Tissue":"aboveground biomass",
+        "Factor":"treatment"
+    },
+    {
+        "OSD":"OSD-498",
+        "Title":"The SOG1 transcriptional activator and the MYB3R family of repressors control a complex gene network in response to DNA damage in Arabidopsis [RNA-seq gIR vs mock wt]",
+        "Assay":"RNA Sequencing (RNA-Seq)",
+        "Organism":"Arabidopsis thaliana",
+        "Tissue":"Seedlings",
+        "Factor":"ionizing radiation,time of sample collection after treatment"
+    },
+    {
+        "OSD":"OSD-502",
+        "Title":"The SOG1 transcriptional activator and the MYB3R family of repressors control a complex gene network in response to DNA damage in Arabidopsis [RNA-seq myb3r135 vs wt]",
+        "Assay":"RNA Sequencing (RNA-Seq)",
+        "Organism":"Arabidopsis thaliana",
+        "Tissue":"Seedlings",
+        "Factor":"genotype,ionizing radiation"
+    },
+    {
+        "OSD":"OSD-506",
+        "Title":"Transcriptional profiling of spleens from mice flown on the RR-23 mission",
+        "Assay":"RNA Sequencing (RNA-Seq)",
+        "Organism":"Mus musculus",
+        "Tissue":"Spleen",
+        "Factor":"spaceflight"
+    },
+    {
+        "OSD":"OSD-508",
+        "Title":"The SOG1 transcriptional activator and the MYB3R family of repressors control a complex gene network in response to DNA damage in Arabidopsis [RNA-seq t vs t0]",
+        "Assay":"RNA Sequencing (RNA-Seq)",
+        "Organism":"Arabidopsis thaliana",
+        "Tissue":"Seedlings",
+        "Factor":"genotype,ionizing radiation,time of sample collection after treatment"
+    },
+    {
+        "OSD":"OSD-510",
+        "Title":"The SOG1 transcriptional activator and the MYB3R family of repressors control a complex gene network in response to DNA damage in Arabidopsis [RNA-seq DREMmodel]",
+        "Assay":"RNA Sequencing (RNA-Seq)",
+        "Organism":"Arabidopsis thaliana",
+        "Tissue":"Seedlings",
+        "Factor":"genotype,ionizing radiation,time of sample collection after treatment"
+    },
+    {
+        "OSD":"OSD-511",
+        "Title":"Transcriptional profiling of mammary glands from mice flown on the RRRM-1 mission",
+        "Assay":"RNA Sequencing (RNA-Seq)",
+        "Organism":"Mus musculus",
+        "Tissue":"mammary gland",
+        "Factor":"age,spaceflight"
+    },
+    {
+        "OSD":"OSD-512",
+        "Title":"Transcriptional profiling of adrenal glands from mice flown on the RR-23 mission",
+        "Assay":"RNA Sequencing (RNA-Seq)",
+        "Organism":"Mus musculus",
+        "Tissue":"adrenal gland",
+        "Factor":"spaceflight"
+    },
+    {
+        "OSD":"OSD-513",
+        "Title":"Transcriptional profiling of kidneys from mice flown on the RR-23 mission",
+        "Assay":"RNA Sequencing (RNA-Seq)",
+        "Organism":"Mus musculus",
+        "Tissue":"Left kidney",
+        "Factor":"spaceflight"
+    },
+    {
+        "OSD":"OSD-514",
+        "Title":"Artificial gravity partially protects space-induced neurological deficits in Drosophila melanogaster",
+        "Assay":"mass spectrometry,RNA Sequencing (RNA-Seq)",
+        "Organism":"Drosophila melanogaster",
+        "Tissue":"head",
+        "Factor":"altered gravity,sex,spaceflight"
+    },
+    {
+        "OSD":"OSD-515",
+        "Title":"Transcriptional profiling of thymus from mice flown on the RR-23 mission",
+        "Assay":"RNA Sequencing (RNA-Seq)",
+        "Organism":"Mus musculus",
+        "Tissue":"thymus",
+        "Factor":"spaceflight"
+    },
+    {
+        "OSD":"OSD-516",
+        "Title":"Modeling cellular responses to serum and vitamin D in microgravity using a human kidney microphysiological system",
+        "Assay":"RNA Sequencing (RNA-Seq)",
+        "Organism":"Homo sapiens",
+        "Tissue":"primary cell",
+        "Factor":"sex,spaceflight,treatment"
+    },
+    {
+        "OSD":"OSD-518",
+        "Title":"Opposing influences of TAC1 and LAZY1 on Lateral Shoot Orientation in Arabidopsis",
+        "Assay":"RNA Sequencing (RNA-Seq)",
+        "Organism":"Arabidopsis thaliana",
+        "Tissue":null,
+        "Factor":"genotype,treatment"
+    },
+    {
+        "OSD":"OSD-519",
+        "Title":"PUCHI represses early meristem formation in developing lateral roots of Arabidopsis thaliana",
+        "Assay":"RNA Sequencing (RNA-Seq)",
+        "Organism":"Arabidopsis thaliana",
+        "Tissue":null,
+        "Factor":"genotype,time,treatment"
+    },
+    {
+        "OSD":"OSD-522",
+        "Title":"Integrative Transcriptomics and Proteomics Profiling of Arabidopsis thaliana Elucidates Novel Mechanisms Underlying Spaceflight Adaptation",
+        "Assay":"mass spectrometry,RNA Sequencing (RNA-Seq)",
+        "Organism":"Arabidopsis thaliana",
+        "Tissue":null,
+        "Factor":"spaceflight"
+    },
+    {
+        "OSD":"OSD-525",
+        "Title":"Transcriptional profiling of cerebellums from mice flown on the RR-23 mission",
+        "Assay":"RNA Sequencing (RNA-Seq)",
+        "Organism":"Mus musculus",
+        "Tissue":"Cerebellum",
+        "Factor":"spaceflight"
+    },
+    {
+        "OSD":"OSD-539",
+        "Title":"Transcriptomic response of bioengineered human cartilage to parabolic flight microgravity is sex-dependent",
+        "Assay":"RNA Sequencing (RNA-Seq)",
+        "Organism":"Homo sapiens",
+        "Tissue":"human engineered cartilage",
+        "Factor":"treatment"
+    },
+    {
+        "OSD":"OSD-540",
+        "Title":"Ten-day human unilateral lower limb suspension and active recovery in young healthy men",
+        "Assay":"RNA Sequencing (RNA-Seq)",
+        "Organism":"Homo sapiens",
+        "Tissue":"Vastus Lateralis",
+        "Factor":"hindlimb unloading"
+    },
+    {
+        "OSD":"OSD-542",
+        "Title":"Effects of 14 days of confinement on blood gene expression profiles in men",
+        "Assay":"DNA microarray",
+        "Organism":"Homo sapiens",
+        "Tissue":"Whole Blood",
+        "Factor":"time"
+    },
+    {
+        "OSD":"OSD-546",
+        "Title":"SCD \u2013 Stem Cell Differentiation Toward Osteoblast Onboard the International Space Station",
+        "Assay":"DNA microarray",
+        "Organism":"Homo sapiens",
+        "Tissue":"Cells",
+        "Factor":"spaceflight,treatment"
+    },
+    {
+        "OSD":"OSD-547",
+        "Title":"Whole gene expression data from osteocyte-like cell line MLO-Y4 under large gradient high magnetic field (LG-HMF)",
+        "Assay":"DNA microarray",
+        "Organism":"Mus musculus",
+        "Tissue":"Cells",
+        "Factor":"altered gravity"
+    },
+    {
+        "OSD":"OSD-548",
+        "Title":"Balancing apelin and angiotensin-II signaling to reduce heart injury during weightlessness",
+        "Assay":"DNA microarray",
+        "Organism":"Mus musculus",
+        "Tissue":"cardiac muscle tissue",
+        "Factor":"hindlimb unloading"
+    },
+    {
+        "OSD":"OSD-561",
+        "Title":"Bulk RNA sequencing and spatially resolved transcriptional profiling of cerebellums from mice flown on the RRRM-2 mission",
+        "Assay":"spatial transcriptomics,RNA Sequencing (RNA-Seq)",
+        "Organism":"Mus musculus",
+        "Tissue":"right hemisphere of cerebellum",
+        "Factor":"age,euthanasia location,spaceflight"
+    },
+    {
+        "OSD":"OSD-562",
+        "Title":"Bulk RNA sequencing and spatially resolved transcriptional profiling of hippocampi from mice flown on the RRRM-2 mission",
+        "Assay":"spatial transcriptomics,RNA Sequencing (RNA-Seq)",
+        "Organism":"Mus musculus",
+        "Tissue":"Right hippocampus",
+        "Factor":"age,euthanasia location,spaceflight"
+    },
+    {
+        "OSD":"OSD-563",
+        "Title":"Bulk RNA sequencing and spatially resolved transcriptional profiling of cerebellums from mice flown on the RR-10 mission",
+        "Assay":"spatial transcriptomics,RNA Sequencing (RNA-Seq)",
+        "Organism":"Mus musculus",
+        "Tissue":"right hemisphere of cerebellum",
+        "Factor":"spaceflight"
+    },
+    {
+        "OSD":"OSD-564",
+        "Title":"Bulk RNA sequencing and spatially resolved transcriptional profiling of hippocampi from mice flown on the RR-10 mission",
+        "Assay":"spatial transcriptomics,RNA Sequencing (RNA-Seq)",
+        "Organism":"Mus musculus",
+        "Tissue":"Right hippocampus",
+        "Factor":"spaceflight"
+    },
+    {
+        "OSD":"OSD-565",
+        "Title":"Utilizing the KSC Fixation Tube to Conduct Human-Tended Plant Biology Experiments on a Suborbital Spaceflight",
+        "Assay":"RNA Sequencing (RNA-Seq)",
+        "Organism":"Arabidopsis thaliana",
+        "Tissue":null,
+        "Factor":"microgravity simulation,treatment"
+    },
+    {
+        "OSD":"OSD-566",
+        "Title":"Sexual Dimorphism during Integrative Endocrine and Immune Responses to Ionizing Radiation in Mice -- Adrenal data",
+        "Assay":"RNA Sequencing (RNA-Seq)",
+        "Organism":"Mus musculus",
+        "Tissue":"adrenal gland",
+        "Factor":"ionizing radiation,sex"
+    },
+    {
+        "OSD":"OSD-576",
+        "Title":"Transcriptional profiling of tibialis anterior muscle from mice flown on the RR-23 mission",
+        "Assay":"RNA Sequencing (RNA-Seq)",
+        "Organism":"Mus musculus",
+        "Tissue":"Right tibialis anterior",
+        "Factor":"spaceflight"
+    },
+    {
+        "OSD":"OSD-580",
+        "Title":"Transcriptional profiling of heart tissue from mice flown on the RRRM-2 mission",
+        "Assay":"RNA Sequencing (RNA-Seq)",
+        "Organism":"Mus musculus",
+        "Tissue":"Heart,heart right ventricle",
+        "Factor":"age,euthanasia location,spaceflight"
+    },
+    {
+        "OSD":"OSD-590",
+        "Title":"First transcriptome profiling of D. melanogaster after development in a deep underground low radiation background laboratory",
+        "Assay":"RNA Sequencing (RNA-Seq)",
+        "Organism":"Drosophila melanogaster",
+        "Tissue":"Whole Organism",
+        "Factor":"ionizing radiation,ionizing radiation device or source"
+    },
+    {
+        "OSD":"OSD-599",
+        "Title":"Transcriptomic Effects on the Mouse Heart Following 30 Days on the International Space Station.",
+        "Assay":"RNA Sequencing (RNA-Seq)",
+        "Organism":"Mus musculus",
+        "Tissue":"Heart",
+        "Factor":"spaceflight"
+    },
+    {
+        "OSD":"OSD-609",
+        "Title":"Drosophila parasitoids go to space: Unexpected and differential effects of spaceflight on hosts and their parasitoids - Wasp Leptopilina heterotoma 14 data",
+        "Assay":"RNA Sequencing (RNA-Seq)",
+        "Organism":"Leptopilina heterotoma",
+        "Tissue":"Whole Organism",
+        "Factor":"spaceflight"
+    },
+    {
+        "OSD":"OSD-610",
+        "Title":"Drosophila parasitoids go to space: Unexpected and differential effects of spaceflight on hosts and their parasitoids - Wasp Leptopilina boulardi 17 data",
+        "Assay":"RNA Sequencing (RNA-Seq)",
+        "Organism":"Leptopilina boulardi",
+        "Tissue":"Whole Organism",
+        "Factor":"spaceflight"
+    },
+    {
+        "OSD":"OSD-612",
+        "Title":"Bulk RNA sequencing and single nuclei transcriptomics and epigenomics of brain tissue from mice flown on the RR-10 mission",
+        "Assay":"single-cell RNA sequencing,single-cell ATAC-seq,RNA Sequencing (RNA-Seq)",
+        "Organism":"Mus musculus",
+        "Tissue":"Left cerebral hemisphere",
+        "Factor":"spaceflight"
+    },
+    {
+        "OSD":"OSD-613",
+        "Title":"Bulk RNA sequencing and single nuclei transcriptomics and epigenomics of brain tissue from mice flown on the RRRM-2 mission",
+        "Assay":"single-cell RNA sequencing,single-cell ATAC-seq,RNA Sequencing (RNA-Seq)",
+        "Organism":"Mus musculus",
+        "Tissue":"Left cerebral hemisphere",
+        "Factor":"age,spaceflight"
+    },
+    {
+        "OSD":"OSD-635",
+        "Title":"Spaceflight effects on human vascular smooth muscle cell phenotype and function",
+        "Assay":"RNA Sequencing (RNA-Seq)",
+        "Organism":"Homo sapiens",
+        "Tissue":"Cells",
+        "Factor":"spaceflight"
+    },
+    {
+        "OSD":"OSD-658",
+        "Title":"Simulated Galactic Cosmic Ray Exposure Activates Dose-Dependent DNA Repair Response and Downregulates Glucosinolate Pathway in Arabidopsis Seedlings",
+        "Assay":"RNA Sequencing (RNA-Seq)",
+        "Organism":"Arabidopsis thaliana",
+        "Tissue":"Whole Organism",
+        "Factor":"absorbed radiation dose,ionizing radiation"
+    },
+    {
+        "OSD":"OSD-665",
+        "Title":"Transcriptional profiling of right extensor digitorum longus muscle from mice flown on the RR-23 mission",
+        "Assay":"RNA Sequencing (RNA-Seq)",
+        "Organism":"Mus musculus",
+        "Tissue":"Right extensor digitorum longus",
+        "Factor":"spaceflight"
+    },
+    {
+        "OSD":"OSD-666",
+        "Title":"Transcriptional profiling of right quadriceps femoris muscle from mice flown on the RR-23 mission",
+        "Assay":"RNA Sequencing (RNA-Seq)",
+        "Organism":"Mus musculus",
+        "Tissue":"Right quadriceps femoris",
+        "Factor":"spaceflight"
+    },
+    {
+        "OSD":"OSD-667",
+        "Title":"Transcriptional profiling of colon from mice flown on the RR-10 mission",
+        "Assay":"RNA Sequencing (RNA-Seq)",
+        "Organism":"Mus musculus",
+        "Tissue":"Colon",
+        "Factor":"genotype,spaceflight"
+    },
+    {
+        "OSD":"OSD-678",
+        "Title":"Light has a principal role in the Arabidopsis transcriptomic response to the spaceflight environment",
+        "Assay":"RNA Sequencing (RNA-Seq)",
+        "Organism":"Arabidopsis thaliana",
+        "Tissue":null,
+        "Factor":"ecotype,genotype,spaceflight,treatment"
+    },
+    {
+        "OSD":"OSD-684",
+        "Title":"Human skeletal muscle tissue chip autonomous payload reveals changes in fiber type and metabolic gene expression due to spaceflight.",
+        "Assay":"RNA Sequencing (RNA-Seq)",
+        "Organism":"Homo sapiens",
+        "Tissue":"Myoblasts",
+        "Factor":"donor age,spaceflight"
+    },
+    {
+        "OSD":"OSD-686",
+        "Title":"Impact of spaceflight and artificial gravity on sulfur metabolism in mouse liver: sulfur metabolomic and transcriptomic analysis",
+        "Assay":"RNA Sequencing (RNA-Seq)",
+        "Organism":"Mus musculus",
+        "Tissue":"Liver",
+        "Factor":"altered gravity,spaceflight"
+    },
+    {
+        "OSD":"OSD-689",
+        "Title":"Single-cell analysis identifies conserved features of immune dysfunction in simulated microgravity and spaceflight",
+        "Assay":"single-cell RNA sequencing,RNA Sequencing (RNA-Seq)",
+        "Organism":"Homo sapiens",
+        "Tissue":"isolated cells",
+        "Factor":"microgravity simulation,sex,treatment,microgravity simulation,sex"
+    },
+    {
+        "OSD":"OSD-690",
+        "Title":"Nrf2 alleviates spaceflight-induced immunosuppression and thrombotic microangiopathy in mice",
+        "Assay":"RNA Sequencing (RNA-Seq)",
+        "Organism":"Mus musculus",
+        "Tissue":"Bone Marrow",
+        "Factor":"genotype,spaceflight"
+    },
+    {
+        "OSD":"OSD-714",
+        "Title":"Lunar gravity prevents skeletal muscle atrophy but not myofiber type shift in mice",
+        "Assay":"RNA Sequencing (RNA-Seq)",
+        "Organism":"Mus musculus",
+        "Tissue":"Soleus",
+        "Factor":"altered gravity,space mission,spaceflight"
+    },
+    {
+        "OSD":"OSD-719",
+        "Title":"Sexual Dimorphism during Integrative Endocrine and Immune Responses to Ionizing Radiation in Mice -- Blood data",
+        "Assay":"RNA Sequencing (RNA-Seq)",
+        "Organism":"Mus musculus",
+        "Tissue":"Blood",
+        "Factor":"ionizing radiation,sex"
+    },
+    {
+        "OSD":"OSD-770",
+        "Title":"Transcriptional profiling of soleus muscle from mice flown on the RR-23 mission",
+        "Assay":"RNA Sequencing (RNA-Seq)",
+        "Organism":"Mus musculus",
+        "Tissue":"Right soleus",
+        "Factor":"spaceflight"
+    },
+    {
+        "OSD":"OSD-771",
+        "Title":"Transcriptional profiling of kidney tissue from mice flown on the Rodent Research Reference Mission-2 (RRRM-2)",
+        "Assay":"RNA Sequencing (RNA-Seq)",
+        "Organism":"Mus musculus",
+        "Tissue":"Right kidney",
+        "Factor":"age,euthanasia location,spaceflight"
+    },
+    {
+        "OSD":"OSD-781",
+        "Title":"Skeletal muscle-on-a-chip in microgravity as a platform for regeneration modeling and drug screening - myoblast data",
+        "Assay":"RNA Sequencing (RNA-Seq)",
+        "Organism":"Homo sapiens",
+        "Tissue":"primary cell",
+        "Factor":"spaceflight"
+    },
+    {
+        "OSD":"OSD-783",
+        "Title":"Multidirectional effect of low-intensity electrical myostimulation on gene expression and phenotype in thigh and calf muscles after one week of disuse - soleus data",
+        "Assay":"RNA Sequencing (RNA-Seq)",
+        "Organism":"Homo sapiens",
+        "Tissue":"Soleus",
+        "Factor":"treatment"
+    },
+    {
+        "OSD":"OSD-784",
+        "Title":"Multidirectional effect of low-intensity electrical myostimulation on gene expression and phenotype in thigh and calf muscles after one week of disuse - vastus lateralis data",
+        "Assay":"RNA Sequencing (RNA-Seq)",
+        "Organism":"Homo sapiens",
+        "Tissue":"Vastus Lateralis",
+        "Factor":"treatment"
+    },
+    {
+        "OSD":"OSD-787",
+        "Title":"Skeletal muscle-on-a-chip in microgravity as a platform for regeneration modeling and drug screening - vastus lateralis data",
+        "Assay":"RNA Sequencing (RNA-Seq)",
+        "Organism":"Homo sapiens",
+        "Tissue":"Vastus Lateralis",
+        "Factor":"disease state,sex"
+    },
+    {
+        "OSD":"OSD-863",
+        "Title":"Effects of microgravity on human iPSC-derived neural organoids on the International Space Station - cortical organoids",
+        "Assay":"RNA Sequencing (RNA-Seq)",
+        "Organism":"Homo sapiens",
+        "Tissue":"Cells, Cultured",
+        "Factor":"co-culture,donor medical history,spaceflight"
+    },
+    {
+        "OSD":"OSD-871",
+        "Title":"Effects of microgravity on human iPSC-derived neural organoids on the International Space Station - dopaminergic organoids",
+        "Assay":"RNA Sequencing (RNA-Seq)",
+        "Organism":"Homo sapiens",
+        "Tissue":"Cells, Cultured",
+        "Factor":"co-culture,donor medical history,spaceflight"
+    }
+]

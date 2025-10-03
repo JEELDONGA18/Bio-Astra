@@ -3,7 +3,6 @@ import AnatomyViewer from "../components/AstronautCard";
 import DNAHelixViz from "../components/DNAHelixViz";
 import GravitySliderViz from "../components/Bone";
 import GeneExpression from "../components/GeneExpression";
-import OrganismComparator from "../components/OrganismComparator";
 const Impact = () => {
 
   return (
@@ -31,9 +30,7 @@ const Impact = () => {
         <div className="mt-16">
           <GeneExpression />
         </div>
-        <div className="mt-16">
-          <OrganismComparator />
-        </div>
+
        
       </div>
     </div>
