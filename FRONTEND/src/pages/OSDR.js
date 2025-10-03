@@ -3,8 +3,8 @@ import ResourceCard from "../components/ResourceCard";
 import { Link } from "react-router-dom";
 import { Canvas } from "@react-three/fiber";
 import { Stars, OrbitControls } from "@react-three/drei";
-import OrganismChart from "../components/OrganismChart";
-import GenericPieChart from "../components/GenericPieChart";
+import OrganismChart from "../components/OSDR/OrganismChart";
+import GenericPieChart from "../components/OSDR/GenericPieChart";
 
 function SpaceBackground() {
   return (
@@ -181,7 +181,7 @@ const OSDR = () => {
               enableZoom={false}
               enablePan={false}
               autoRotate
-              autoRotateSpeed={0.5}
+              autoRotateSpeed={0.2}
             />
           </Canvas>
         </div>

@@ -21,7 +21,7 @@ const Footer = () => {
               Discover research, connect with data, and advance space life sciences.
             </p>
             <div className="flex space-x-4">
-              <a href="https://github.com/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-cosmos-cyan transition-colors duration-200">
+              <a href="https://github.com/JEELDONGA18/Bio-Astra" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-cosmos-cyan transition-colors duration-200">
                 <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path fillRule="evenodd" d="M12 .5C5.73.5.98 5.25.98 11.52c0 4.85 3.15 8.96 7.52 10.41.55.1.75-.24.75-.53 0-.26-.01-.95-.02-1.86-3.06.66-3.71-1.48-3.71-1.48-.5-1.27-1.23-1.61-1.23-1.61-1.01-.69.08-.68.08-.68 1.12.08 1.71 1.15 1.71 1.15.99 1.7 2.59 1.21 3.22.92.1-.72.39-1.21.72-1.49-2.44-.28-5-1.22-5-5.43 0-1.2.43-2.18 1.14-2.95-.12-.28-.5-1.42.11-2.96 0 0 .94-.3 3.08 1.13.89-.25 1.85-.37 2.81-.38.96.01 1.92.13 2.81.38 2.14-1.43 3.08-1.13 3.08-1.13.61 1.54.23 2.68.11 2.96.71.77 1.14 1.75 1.14 2.95 0 4.22-2.56 5.15-5 5.43.4.34.76 1.02.76 2.06 0 1.49-.01 2.69-.01 3.06 0 .29.2.64.75.53 4.37-1.45 7.52-5.56 7.52-10.41C23.02 5.25 18.27.5 12 .5z" clipRule="evenodd"/>
                 </svg>

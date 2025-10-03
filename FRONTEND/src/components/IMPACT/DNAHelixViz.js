@@ -341,7 +341,7 @@ export default function DNAHelixViz() {
 
         <div className="grid gap-8 lg:grid-cols-[1.5fr_1fr]">
           <div>
-            <div className="h-[700px] max-h-[800px] w-full  overflow-hidden rounded-lg bg-slate-950 shadow-2xl">
+            <div className="h-[640px] max-h-[800px] w-full  overflow-hidden rounded-lg bg-slate-950 shadow-2xl">
               <Canvas>
                 <PerspectiveCamera makeDefault position={[0, 0, 12]} />
                 <ambientLight intensity={0.3} />
@@ -361,8 +361,8 @@ export default function DNAHelixViz() {
             </div>
           </div>
 
-          <div className="w-full bg-[#11182c] rounded-xl p-6 overflow-y-auto">
-            <Card className="p-6">
+          <div className="w-full bg-[#11182c] rounded-xl overflow-hidden">
+            <Card className="p-6 h-[640px] flex flex-col">
               <h3 className="mb-4 font-[family-name:var(--font-montserrat)] text-2xl font-black text-white">
                 Stress Simulations
               </h3>
@@ -382,32 +382,25 @@ export default function DNAHelixViz() {
                 </Button>
               </div>
 
-              {infoType && (
-                <div className="mt-6 space-y-4 border-t border-border pt-6">
-                  <div>
-                    <h4 className="mb-2 font-semibold text-pink-400">
-                      {researchInfo[infoType].title}
-                    </h4>
-                    <p className="mb-3 text-sm text-gray-300">
-                      {researchInfo[infoType].content}
-                    </p>
-
-                    <div className="text-xs text-blue-900">
-                      Related Studies:{" "}
-                      {researchInfo[infoType].studies.slice(0, 5).join(", ")}...
+              <div className="mt-6 border-t border-border pt-6 flex-1 min-h-0">
+                <div className="h-full overflow-y-auto pr-2 space-y-4" style={{scrollbarWidth:"thin"}}>
+                  {infoType && (
+                    <div>
+                      <h4 className="mb-2 font-semibold text-pink-400">
+                        {researchInfo[infoType].title}
+                      </h4>
+                      <p className="mb-3 text-sm text-gray-300">
+                        {researchInfo[infoType].content}
+                      </p>
+                      <div className="text-xs text-blue-900">
+                        Related Studies: {researchInfo[infoType].studies.slice(0,8).join(", ")}...
+                      </div>
                     </div>
-                  </div>
-                </div>
-              )}
+                  )}
 
-              <div className="mt-6 space-y-4 border-t border-border pt-6">
-                <div>
-                  <h4 className="mb-2 font-semibold text-blue-600">
-                    impacts on DNA According To Researches
-                  </h4>
+                  <h4 className="mt-2 mb-2 font-semibold text-blue-600">Impacts on DNA According To Researches</h4>
 
-                  {/* Scrollable container */}
-                  <div className="max-h-64 overflow-y-scroll pr-2 space-y-6 text-sm text-blue-900">
+                  <div className="space-y-6 text-sm text-blue-900">
                     {/* DNA Damage & Radiation */}
                     <div>
                       <h5 className="font-semibold text-cyan-400">

@@ -1,10 +1,10 @@
 import React, { useMemo, useState } from 'react';
 import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer } from 'recharts';
-import dataSource from '../data/osdr_studies.json';
+import dataSource from '../OSDR/osdr_studies.json';
 
 const COLORS = [
   '#6366f1',
-  '#14b8a6',
+  '#14b8a6',  
   '#3b82f6',
   '#06b6d4',
   '#8b5cf6',

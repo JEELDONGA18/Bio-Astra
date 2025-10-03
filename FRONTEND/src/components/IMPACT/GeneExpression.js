@@ -213,7 +213,7 @@ export default function GeneExpression() {
 
   return (
     <section className="relative min-h-screen bg-gradient-to-b from-slate-950 to-background py-10">
-      <div className="mb-10 ml-10 mr-10 p-6 bg-blue-50 rounded-xl text-blue-900 text-base leading-relaxed shadow">
+      <div className="mb-10 ml-10 mr-10 p-6 bg-black rounded-xl text-white text-base leading-relaxed shadow">
         In biological terms, gene expression is the fundamental process by which
         the genetic information encoded within a gene's DNA sequence is used to
         synthesize a functional product, which is either a protein or a
@@ -310,8 +310,12 @@ export default function GeneExpression() {
             </Canvas>
           </div>
 
+        </div>
+
+        {/* Impacts row below 3D model */}
+        <div className="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-6">
           {/* RIGHT: Gene Expression Details and Controls */}
-          <div className="w-[] md:w-1/2 bg-white rounded-xl p-6 min-h-[500px]">
+          <div className="bg-white rounded-xl p-6 min-h-[500px]">
             <h2 className="text-2xl font-bold mb-4 text-blue-600">
               Gene Expression Matrix
             </h2>
@@ -400,14 +404,12 @@ export default function GeneExpression() {
               )}
             </div>
 
-            <div className="mt-6 space-y-4 border-t border-border pt-6">
-              <div>
-                <h4 className="mb-2 font-semibold text-blue-600">
-                  impacts According To Researches
-                </h4>
+          </div>
 
-                {/* Scrollable container */}
-                <div className="max-h-64 overflow-y-scroll pr-2 space-y-6 text-sm text-blue-900">
+          {/* Impacts horizontally below */}
+          <div className="bg-white rounded-xl p-6">
+            <h4 className="mb-4 font-semibold text-blue-600">Impacts According To Researches</h4>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm text-blue-900">
                   {/* Bone and Bone Marrow */}
                   <div>
                     <h5 className="font-semibold text-blue-700">
@@ -537,8 +539,6 @@ export default function GeneExpression() {
                       (Experiment 571)
                     </p>
                   </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>

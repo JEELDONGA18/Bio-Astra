@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import TrendChart from "../components/TrendChart";
-import CategoryPieChart from "../components/CategoryPieChart";
+import CategoryPieChart from "../components/IMPACT/CategoryPieChart";
 import Categories3D from "../components/categories3D";
 // Add these imports:
 import { Canvas } from "@react-three/fiber";
@@ -30,7 +30,7 @@ const Home = () => {
       {/* Hero Section */}
       <section
         className="relative overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900"
-        style={{ minHeight: "700px" }}
+        style={{ minHeight: "550px" }}
       >
         {/* Moving Stars Background */}
         <div className="absolute inset-0 z-0">
@@ -40,7 +40,7 @@ const Home = () => {
               enableZoom={false}
               enablePan={false}
               autoRotate
-              autoRotateSpeed={0.5}
+              autoRotateSpeed={0.2}
             />
           </Canvas>
           <Canvas camera={{ position: [0, 0, 1] }}>
@@ -212,12 +212,12 @@ const Home = () => {
         </div>
       </section>
 
-      <div className="min-h-screen p-10 bg-gray-900">
-        <div className="my-10">
+      <div className="min-h-screen bg-gray-900">
+        <div className="my-10 p-8">
           <Categories3D />
         </div>
         {/* Trend Chart and Category Pie Chart */}
-        <div className="my-10 ">
+        <div className="my-10 p-10 bg-gray-800">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
             <TrendChart />
             <CategoryPieChart />

@@ -536,6 +536,40 @@ def test_data():
         "available_categories": list(set(paper.get('category', '') for paper in research_data.values() if paper.get('category')))
     })
 
+@app.route('/api/research-papers')
+def list_research_papers():
+    """
+    Return a list of research papers in a shape compatible with the frontend's
+    previous JSON import. Each item includes keys such as:
+    "Experiment No.", "Title", "Link", "PMCId", "Category", "Study Year", "Abstract".
+    """
+    try:
+        papers = []
+        for idx, (pmcid, paper) in enumerate(research_data.items()):
+            # Construct legacy-compatible structure
+            item = {
+                "Experiment No.": idx + 1,
+                "Title": paper.get('title', ''),
+                "Link": next((x.get('url') for x in paper.get('explore_more', []) if isinstance(x, dict) and x.get('title', '').lower().startswith('ncbi')), ''),
+                "PMCId": paper.get('pmcid', pmcid),
+                "Category": paper.get('category', ''),
+                "Study Year": paper.get('year', 2020),
+                "Abstract": paper.get('abstract', ''),
+                "Summary": paper.get('summary', ''),
+            }
+            papers.append(item)
+
+        return jsonify({
+            "success": True,
+            "total": len(papers),
+            "data": papers
+        })
+    except Exception as e:
+        return jsonify({
+            "success": False,
+            "error": str(e)
+        }), 500
+
 @app.route('/api/search', methods=['POST'])
 def search():
     try:
@@ -743,12 +777,12 @@ def get_categories():
         "categories": sorted(list(categories))
     })
 
-@app.route('/api/category-counts')
-def get_category_counts():
-    """
-    Return a mapping of category -> count of papers.
-    """
-    return jsonify(_CATEGORY_COUNTS_CACHE)
+# @app.route('/api/category-counts')
+# def get_category_counts():
+#     """
+#     Return a mapping of category -> count of papers.
+#     """
+#     return jsonify(_CATEGORY_COUNTS_CACHE)
 
 @app.route('/api/years')
 def get_years():

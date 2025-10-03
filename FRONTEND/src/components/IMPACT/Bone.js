@@ -9,7 +9,7 @@ import * as THREE from "three";
 function Card({ children, className = "" }) {
   return (
     <div
-      className={` rounded-xl border border-gray-200 bg-white shadow-lg ${className}`}
+      className={` rounded-xl border border-gray-200 bg-gray shadow-lg ${className}`}
     >
       {children}
     </div>
@@ -46,11 +46,7 @@ function Slider({
 function BoneModel({ morphValue }) {
   const groupRef = useRef(null);
 
-  useFrame((state) => {
-    if (groupRef.current) {
-      groupRef.current.rotation.y = state.clock.elapsedTime * 0.3;
-    }
-  });
+  useFrame(() => {});
 
   const boneColor = new THREE.Color().lerpColors(
     new THREE.Color(0xf0f0f0), // Healthy
@@ -63,13 +59,7 @@ function BoneModel({ morphValue }) {
   return (
     <group ref={groupRef}>
       {/* Title label */}
-      <Text
-        position={[0, 3.5, 0]}
-        fontSize={0.5}
-        color="white"
-        anchorX="center"
-        anchorY="middle"
-      >
+      <Text position={[0, 3.5, 0]} fontSize={0.5} color="white" anchorX="center" anchorY="middle">
         Bone
       </Text>
 
@@ -228,8 +218,27 @@ export default function GravitySliderViz() {
             </Card>
           </div>
 
-          {/* Bone Health Data */}
+          {/* Impacts beside the 3D model */}
           <div className="lg:col-span-1">
+            <Card className="p-6 mb-6">
+              <h3 className="mb-4 text-2xl font-black text-blue-600">Impacts</h3>
+              <div className="max-h-64 overflow-y-auto pr-2 space-y-4 text-sm" style={{scrollbarWidth:"thin"}}>
+                <div>
+                  <h5 className="font-semibold text-blue-700">Dose-Dependent Bone Loss</h5>
+                  <p className="text-xs leading-relaxed mt-1">Severity of bone loss increases as gravity decreases; lunar gravity partially mitigates but does not prevent loss.</p>
+                </div>
+                <div>
+                  <h5 className="font-semibold text-blue-700">Cellular Mechanisms</h5>
+                  <p className="text-xs leading-relaxed mt-1">Increased osteoclast activity and inhibited osteoblast function lead to trabecular thinning and higher fracture risk.</p>
+                </div>
+                <div>
+                  <h5 className="font-semibold text-blue-700">Muscle-Bone Connection</h5>
+                  <p className="text-xs leading-relaxed mt-1">Muscle atrophy contributes to skeletal degradation; preserving muscle can protect bone density.</p>
+                </div>
+              </div>
+            </Card>
+
+            {/* Bone Health Data */}
             <Card className="p-6">
               <h3 className="mb-4 text-2xl font-black text-blue-600">
                 Bone Health Data

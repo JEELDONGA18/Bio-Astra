@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, Label } from 'recharts';
-import osdrStudies from '../data/osdr_studies.json';
+import osdrStudies from '../OSDR/osdr_studies.json';
 
 const OrganismChart = () => {
   const chartData = useMemo(() => {
