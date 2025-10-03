@@ -169,7 +169,7 @@ export default function AnatomyViewer() {
       </div>
 
       {/* RIGHT: Organ Details */}
-      <div className="w-full md:w-1/2 bg-[#11182c] rounded-xl p-6 min-h-[400px] max-h-[400px] overflow-y-auto">
+      <div className="w-full md:w-1/2 bg-[#11182c] rounded-xl p-6 min-h-[25rem] max-h-[25rem] overflow-y-auto">
         {selectedOrgan ? (
           <>
             <h2 className="text-2xl font-bold mb-4">{selectedOrgan}</h2>

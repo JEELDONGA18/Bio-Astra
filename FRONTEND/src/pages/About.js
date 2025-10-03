@@ -39,43 +39,24 @@ const About = () => {
   const teamMembers = [
     {
       name: "Jeel Donga",
-      role: "Backend Developer",
+      role: "Full Stack Developer",
       bio: "Jeel specializes in backend development and API systems for the dashboard. He has extensive experience in database design, with a focus on handling large-scale scientific datasets.",
       image: "👨‍💻",
       link: "https://www.linkedin.com/in/jeel-hasmukhbhai-donga-226441290/",
-      expertise: [
-        "API Development",
-        "Python",
-        "Flask",
-        "NASA APIs",
-        "Gemini APIs",
-      ],
     },
         {
       name: "Meet Paladiya",
-      role: "Frontend Developer",
-      bio: "Meet specializes in React.js development and user experience design. He's passionate about creating intuitive interfaces for scientific data visualization..",
+      role: "Full Stack Developer",
+      bio: "Meet specializes in React.js development and user experience design. He's passionate about creating intuitive interfaces for scientific data visualization.",
       image: "👨‍💻",
       link: "https://www.linkedin.com/in/meet-paladiya-953052271/",
-      expertise: [
-        "React.js",
-        "UI/UX Design",
-        "Data Visualization",
-        "Web Development",
-      ],
     },
     {
       name: "Vishal Shingala",
-      role: "Data & Insights Lead",
+      role: "Full Stack Developer",
       bio: "Vishal handles data pipeline development and integration with NASA databases. He ensures data quality and implements automated processing workflows for real-time data updates.",
       image: "👨‍🔧",
       link: "https://www.linkedin.com/in/vishal-shingala-382a20295/",
-      expertise: [
-        "Python",
-        "Data Processing",
-        "Data Visualization",
-        "Chart.js",
-      ],
     },
     {
       name: "Dhyey Desai",
@@ -83,11 +64,6 @@ const About = () => {
       bio: "Dhyey provides domain expertise by researching NASA content and crafting clear narratives to connect complex scientific data with end users. He ensures the information presented is accurate and accessible to the target audience.",
       image: "👨‍🔬",
       link: "https://www.linkedin.com/in/dhyey-desai-625256286/",
-      expertise: [
-        "Space Data Research",
-        "Documentation",
-        "Technical Writing",
-      ],
     },
     {
       name: "Dhrumil Khatiwala",
@@ -95,11 +71,6 @@ const About = () => {
       bio: "Dhrumil ensures the quality and reliability of every feature by rigorously testing and refining the application, delivering a smooth and user-friendly experience for hackathon judges. He brings extensive expertise in software testing and quality assurance.",
       image: "🕵️‍♂️",
       link: "https://www.linkedin.com/in/dhrumil-khatiwala-4b55322b6",
-      expertise: [
-        "Software Testing",
-        "Bug Tracking",
-        "Performance Analysis",
-      ],
     },
     {
       name: "Parth Gevariya",
@@ -107,12 +78,6 @@ const About = () => {
       bio: "Parth ensures the project is well-presented online via GitHub README, project website, and documentation, highlighting features and impact.",
       image: "👨‍💼",
       link: "https://www.linkedin.com/in/parth-gevariya-3b2a592aa/",
-      expertise: [
-        "GitHub Documentation",
-        "Website Content",
-        "Project Presentation",
-        "Communication",
-      ],
     },
   ];
 
@@ -270,16 +235,6 @@ const About = () => {
                 <p className="text-gray-300 text-sm mb-4 leading-relaxed">
                   {member.bio}
                 </p>
-                <div className="flex flex-wrap gap-2 justify-center">
-                  {member.expertise.map((skill, skillIndex) => (
-                    <span
-                      key={skillIndex}
-                      className="bg-gray-700 text-gray-300 px-2 py-1 rounded text-xs"
-                    >
-                      {skill}
-                    </span>
-                  ))}
-                </div>
               </div>
             ))}
           </div>
