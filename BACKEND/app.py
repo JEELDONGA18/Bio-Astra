@@ -982,24 +982,6 @@ def clear_chat():
             "error": f"Failed to clear chat: {str(e)}"
         }), 500
 
-# if __name__ == '__main__':
-#     # Ensure we're in the correct directory
-#     os.chdir(os.path.dirname(os.path.abspath(__file__)))
-    
-#     print("🚀 Starting Bio-Astra Dashboard Backend Server...")
-#     print("📍 Server will run on: http://localhost:5000")
-#     print("🔗 API endpoints:")
-#     print("   - GET  /api/health")
-#     print("   - POST /api/search")
-#     print("   - GET  /api/research/<pmcid>")
-#     print("   - GET  /api/categories")
-#     print("   - GET  /api/years")
-#     print("\n" + "="*50)
-    
-#     try:
-#         app.run(debug=True, host='0.0.0.0', port=5000)
-#     except KeyboardInterrupt:
-#         print("\n👋 Server stopped by user")
-#     except Exception as e:
-#         print(f"❌ Error starting server: {e}")
-#         sys.exit(1)
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port, debug=True)
