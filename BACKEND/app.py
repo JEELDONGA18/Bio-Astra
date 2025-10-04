@@ -777,13 +777,6 @@ def get_categories():
         "categories": sorted(list(categories))
     })
 
-# @app.route('/api/category-counts')
-# def get_category_counts():
-#     """
-#     Return a mapping of category -> count of papers.
-#     """
-#     return jsonify(_CATEGORY_COUNTS_CACHE)
-
 @app.route('/api/years')
 def get_years():
     years = set()
