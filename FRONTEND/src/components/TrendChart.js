@@ -11,7 +11,7 @@ const CustomTooltip = ({ active, payload, label }) => {
         <div className="flex items-center gap-2">
           <span className="inline-block w-2 h-2 rounded-full" style={{ backgroundColor: item.color }}></span>
           <span className="text-sm text-gray-200">Publications:</span>
-          <span className="text-sm font-bold text-cosmos-cyan">{item.value}</span>
+          <span className="text-sm font-bold text-[#6366f1]">{item.value}</span>
         </div>
       </div>
     );
@@ -53,26 +53,26 @@ const TrendChart = ({ data }) => {
               stroke="#9CA3AF"
               fontSize={12}
               tickLine={false}
-              axisLine={{ stroke: '#374151' }}
+              axisLine={{ stroke: '#6366f1' }}
             >
-              <Label value="Years" offset={-10} position="insideBottom" fill="#9CA3AF" />
+              <Label value="Years" offset={-10} position="insideBottom" fill="#6366f1" />
             </XAxis>
             <YAxis 
               stroke="#9CA3AF"
               fontSize={12}
               tickLine={false}
-              axisLine={{ stroke: '#374151' }}
+              axisLine={{ stroke: '#6366f1' }}
             >
-              <Label value="No. of Research Papers" angle={-90} offset={15} position="insideLeft" fill="#9CA3AF" style={{ textAnchor: 'middle' }} />
+              <Label value="No. of Research Papers" angle={-90} offset={15} position="insideLeft" fill="#6366f1" style={{ textAnchor: 'middle' }} />
             </YAxis>
-            <Tooltip content={<CustomTooltip />} cursor={{ stroke: '#374151' }} />
+            <Tooltip content={<CustomTooltip />} cursor={{ stroke: '#6366f1' }} />
             <Line 
               type="monotone" 
               dataKey="publications" 
-              stroke="#06b6d4" 
+              stroke="#6366f1" 
               strokeWidth={3}
-              dot={{ fill: '#06b6d4', strokeWidth: 2, r: 4 }}
-              activeDot={{ r: 6, stroke: '#06b6d4', strokeWidth: 2 }}
+              dot={{ fill: '#6366f1', strokeWidth: 2, r: 4 }}
+              activeDot={{ r: 6, stroke: '#ffffff', strokeWidth: 2 }}
             />
           </LineChart>
         </ResponsiveContainer>

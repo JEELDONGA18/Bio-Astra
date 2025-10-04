@@ -170,7 +170,7 @@ export default function GravitySliderViz() {
           <h2 className="mb-2 font-[family-name:var(--font-montserrat)] text-blue-600 text-4xl font-black text-foreground md:text-4xl">
             Gravity & Bone Morphology
           </h2>
-          <p className="mx-auto text-blue-900 max-w-2xl text-lg text-muted-foreground">
+          <p className="mx-auto text-whites max-w-2xl text-lg text-muted-foreground">
             Explore how different gravity levels affect bone structure and
             density
           </p>
@@ -178,8 +178,8 @@ export default function GravitySliderViz() {
 
         <div className="grid gap-8 lg:grid-cols-3">
           {/* 3D Bone Viz */}
-          <div className="lg:col-span-2">
-            <div className="h-[500px] w-[600px] overflow-hidden rounded-lg bg-slate-950 shadow-2xl">
+          <div className="lg:col-span-1">
+            <div className="h-[600px] w-full overflow-hidden rounded-lg bg-slate-950 shadow-2xl">
               <Canvas>
                 <PerspectiveCamera makeDefault position={[0, 0, 8]} />
                 <ambientLight intensity={0.4} />
@@ -189,57 +189,67 @@ export default function GravitySliderViz() {
                 <OrbitControls enableZoom minDistance={5} maxDistance={15} />
               </Canvas>
             </div>
+          </div>
 
-            {/* Gravity Slider */}
-            <Card className="mt-6 p-6">
-              <div className="space-y-4">
-                <div className="flex items-center justify-between">
-                  <label className="font-semibold text-foreground text-green-600">
-                    Gravity Level
-                  </label>
-                  <span className="font-mono text-lg font-bold text-primary text-green-600">
+          {/* Vertical Gravity Level */}
+          <div className="lg:col-span-1">
+            <Card className="p-6 h-[600px] flex flex-col">
+              <h3 className="mb-4 text-2xl font-black text-blue-600">
+                Gravity Level
+              </h3>
+              <div className="flex-1 flex flex-col items-center justify-center space-y-8">
+                <div className="text-center">
+                  <span className="font-mono text-2xl font-bold text-green-600">
                     {gravityLabel}
                   </span>
                 </div>
-                <Slider
-                  value={gravityValue}
-                  onValueChange={handleSliderChange}
-                  min={0}
-                  max={100}
-                  step={1}
-                />
-                <div className="flex justify-between text-xs text-muted-foreground">
-                  <span>0g (Microgravity)</span>
-                  <span>0.16g (Moon)</span>
-                  <span>0.38g (Mars)</span>
-                  <span>1.0g (Earth)</span>
+                
+                {/* Vertical Slider Container */}
+                <div className="flex items-center space-x-6">
+                  {/* Vertical Labels */}
+                  <div className="h-80 flex flex-col justify-between items-end space-y-2">
+                    <span className="text-sm text-green-500 font-semibold">1.0g (Earth)</span>
+                    <span className="text-sm text-red-400 font-semibold">0.38g (Mars)</span>
+                    <span className="text-sm text-red-600 font-semibold">0.16g (Moon)</span>
+                    <span className="text-sm text-red-900 font-semibold">0g (Microgravity)</span>
+                  </div>
+                  
+                  {/* Vertical Slider Track */}
+                  <div 
+                    className="h-80 w-2 bg-blue-600 rounded-full relative cursor-pointer"
+                    onMouseDown={(e) => {
+                      const rect = e.currentTarget.getBoundingClientRect();
+                      const y = e.clientY - rect.top;
+                      const percentage = Math.max(0, Math.min(100, ((rect.height - y) / rect.height) * 100));
+                      handleSliderChange([Math.round(percentage)]);
+                    }}
+                    onMouseMove={(e) => {
+                      if (e.buttons === 1) {
+                        const rect = e.currentTarget.getBoundingClientRect();
+                        const y = e.clientY - rect.top;
+                        const percentage = Math.max(0, Math.min(100, ((rect.height - y) / rect.height) * 100));
+                        handleSliderChange([Math.round(percentage)]);
+                      }
+                    }}
+                  >
+                    {/* Slider Thumb Position */}
+                    <div 
+                      className="absolute w-4 h-4 bg-blue-600 rounded-full border-2 border-white shadow-lg z-10 pointer-events-none"
+                      style={{ 
+                        bottom: `${gravityValue[0]}%`,
+                        transform: 'translateY(50%)',
+                        left: '-6px'
+                      }}
+                    />
+                  </div>
                 </div>
               </div>
             </Card>
           </div>
 
-          {/* Impacts beside the 3D model */}
+          {/* Bone Health Data */}
           <div className="lg:col-span-1">
-            <Card className="p-6 mb-6">
-              <h3 className="mb-4 text-2xl font-black text-blue-600">Impacts</h3>
-              <div className="max-h-64 overflow-y-auto pr-2 space-y-4 text-sm" style={{scrollbarWidth:"thin"}}>
-                <div>
-                  <h5 className="font-semibold text-blue-700">Dose-Dependent Bone Loss</h5>
-                  <p className="text-xs leading-relaxed mt-1">Severity of bone loss increases as gravity decreases; lunar gravity partially mitigates but does not prevent loss.</p>
-                </div>
-                <div>
-                  <h5 className="font-semibold text-blue-700">Cellular Mechanisms</h5>
-                  <p className="text-xs leading-relaxed mt-1">Increased osteoclast activity and inhibited osteoblast function lead to trabecular thinning and higher fracture risk.</p>
-                </div>
-                <div>
-                  <h5 className="font-semibold text-blue-700">Muscle-Bone Connection</h5>
-                  <p className="text-xs leading-relaxed mt-1">Muscle atrophy contributes to skeletal degradation; preserving muscle can protect bone density.</p>
-                </div>
-              </div>
-            </Card>
-
-            {/* Bone Health Data */}
-            <Card className="p-6">
+            <Card className="p-6 h-[600px] flex flex-col">
               <h3 className="mb-4 text-2xl font-black text-blue-600">
                 Bone Health Data
               </h3>
@@ -248,99 +258,103 @@ export default function GravitySliderViz() {
                 levels
               </p>
 
-              <div className="space-y-4">
-  {boneHealthData.map((data, index) => {
-    // Color mapping by label
-    const labelColors = {
-      Earth: "text-green-500",
-      Mars: "text-red-400",
-      Moon: "text-red-600",
-      Microgravity: "text-red-900",
-    }
+              <div className="flex-1 overflow-y-auto pr-2">
+                <div className="space-y-4">
+                  {boneHealthData.map((data, index) => {
+                    // Color mapping by label
+                    const labelColors = {
+                      Earth: "text-green-500",
+                      Mars: "text-red-400",
+                      Moon: "text-red-600",
+                      Microgravity: "text-red-900",
+                    }
 
-    const textColor = labelColors[data.label] || "text-blue-600" // fallback if unknown
+                    const textColor = labelColors[data.label] || "text-blue-600" // fallback if unknown
 
-    return (
-      <div
-        key={index}
-        className={`rounded-lg border border-border p-3 ${textColor}`}
-      >
-        <div className="flex items-center justify-between">
-          <span className="font-semibold">{data.label}</span>
-          <span className="font-mono text-sm">{data.gravity}g</span>
-        </div>
-        <div className="mt-1 text-sm">
-          Bone Loss:{" "}
-          <span className="font-semibold text-destructive">{data.loss}</span>
-        </div>
-        <div className="mt-1 text-xs">{data.description}</div>
-      </div>
-    )
-  })}
-</div>
-
-
-<div className="mt-6 space-y-4 border-t border-border pt-6">
-  <div>
-    <h4 className="mb-2 font-semibold text-blue-600">Impacts on Bone & Muscle According to Researches</h4>
-
-    {/* Scrollable container */}
-    <div className="max-h-64 overflow-y-scroll pr-2 space-y-6 text-sm text-blue-900">
-
-      {/* Dose-Dependent Bone Loss */}
-      <div>
-        <h5 className="font-semibold text-blue-700">Dose-Dependent Bone Loss: A Gravity Continuum</h5>
-        <p className="text-xs leading-relaxed mt-1">
-          Your visualization shows that the severity of bone loss is directly proportional to the reduction in gravity. 
-          Studies using partial weight-bearing rodent models confirm that skeletal properties—bone mineral density, 
-          trabecular bone volume, and cortical area—decrease linearly with unloading. Even a 70% reduction in weight-bearing 
-          causes significant deterioration.
-        </p>
-        <p className="text-xs leading-relaxed mt-2">
-          Bone loss is progressive over time with no plateau observed after a month of reduced loading. Experiments on 
-          the ISS comparing microgravity (μg), lunar gravity (1/6g), and Earth gravity (1g) show that lunar gravity 
-          partially mitigates bone loss but does not fully prevent it, highlighting the necessity of full 1 g load to 
-          maintain bone density.
-        </p>
-      </div>
-
-      {/* Cellular Mechanisms */}
-      <div>
-        <h5 className="font-semibold text-blue-700">Cellular Mechanisms: How Microgravity Degrades Bone</h5>
-        <p className="text-xs leading-relaxed mt-1">
-          Microgravity triggers an imbalance in bone remodeling. Osteoclast activity increases rapidly—one study reported 
-          a 170% increase in mice after 15 days in space—driven by pro-osteoclastogenic genes like RANKL. Simultaneously, 
-          osteoblast function is inhibited, preventing effective bone regeneration.
-        </p>
-        <p className="text-xs leading-relaxed mt-2">
-          This imbalance leads to structural deterioration in weight-bearing bones such as the femur, with reduced trabecular 
-          thickness and overall bone volume fraction. The weakening of internal scaffolding reduces bending strength and 
-          increases fracture risk, represented in your model by fading internal structure.
-        </p>
-      </div>
-
-      {/* Muscle-Bone Connection */}
-      <div>
-        <h5 className="font-semibold text-blue-700">The Muscle-Bone Connection: A Coupled System</h5>
-        <p className="text-xs leading-relaxed mt-1">
-          Muscle atrophy is a parallel consequence of unloading. Postural muscles like the soleus undergo significant wasting, 
-          driven by energy-saving gene expression changes, oxidative stress, and disrupted calcium signaling.
-        </p>
-        <p className="text-xs leading-relaxed mt-2">
-          Studies show sex-based differences, with females maintaining muscle function better during unloading. Muscle and 
-          bone health are intertwined: targeting specific genes in muscle, such as inhibiting GSK3, can preserve muscle 
-          mass and simultaneously increase bone mineral density, demonstrating powerful muscle-bone crosstalk. Countermeasures 
-          for muscle preservation may therefore protect the skeleton as well.
-        </p>
-      </div>
-
-    </div>
-  </div>
-</div>
-
-
+                    return (
+                      <div
+                        key={index}
+                        className={`rounded-lg border border-border p-3 ${textColor}`}
+                      >
+                        <div className="flex items-center justify-between">
+                          <span className="font-semibold">{data.label}</span>
+                          <span className="font-mono text-sm">{data.gravity}g</span>
+                        </div>
+                        <div className="mt-1 text-sm">
+                          Bone Loss:{" "}
+                          <span className="font-semibold text-destructive">{data.loss}</span>
+                        </div>
+                        <div className="mt-1 text-xs">{data.description}</div>
+                      </div>
+                    )
+                  })}
+                </div>
+              </div>
             </Card>
           </div>
+        </div>
+
+        {/* Detailed Research Section - Below the slider */}
+        <div className="mt-8">
+          <Card className="p-6">
+            <div className="space-y-4 border-t border-border pt-6">
+              <div>
+                <h4 className="mb-2 font-semibold text-blue-600">Impacts on Bone & Muscle According to Researches</h4>
+
+                {/* Scrollable container */}
+                <div className="max-h-86 overflow-y-auto pr-2 space-y-6 text-sm text-blue-900">
+
+                  {/* Dose-Dependent Bone Loss */}
+                  <div>
+                    <h5 className="font-semibold text-blue-700">Dose-Dependent Bone Loss: A Gravity Continuum</h5>
+                    <p className="text-xs text-gray-300 leading-relaxed mt-1">
+                      Your visualization shows that the severity of bone loss is directly proportional to the reduction in gravity. 
+                      Studies using partial weight-bearing rodent models confirm that skeletal properties—bone mineral density, 
+                      trabecular bone volume, and cortical area—decrease linearly with unloading. Even a 70% reduction in weight-bearing 
+                      causes significant deterioration.
+                    </p>
+                    <p className="text-xs text-gray-300 leading-relaxed mt-2">
+                      Bone loss is progressive over time with no plateau observed after a month of reduced loading. Experiments on 
+                      the ISS comparing microgravity (μg), lunar gravity (1/6g), and Earth gravity (1g) show that lunar gravity 
+                      partially mitigates bone loss but does not fully prevent it, highlighting the necessity of full 1 g load to 
+                      maintain bone density.
+                    </p>
+                  </div>
+
+                  {/* Cellular Mechanisms */}
+                  <div>
+                    <h5 className="font-semibold text-blue-700">Cellular Mechanisms: How Microgravity Degrades Bone</h5>
+                    <p className="text-xs text-gray-300 leading-relaxed mt-1">
+                      Microgravity triggers an imbalance in bone remodeling. Osteoclast activity increases rapidly—one study reported 
+                      a 170% increase in mice after 15 days in space—driven by pro-osteoclastogenic genes like RANKL. Simultaneously, 
+                      osteoblast function is inhibited, preventing effective bone regeneration.
+                    </p>
+                    <p className="text-xs text-gray-300 leading-relaxed mt-2">
+                      This imbalance leads to structural deterioration in weight-bearing bones such as the femur, with reduced trabecular 
+                      thickness and overall bone volume fraction. The weakening of internal scaffolding reduces bending strength and 
+                      increases fracture risk, represented in your model by fading internal structure.
+                    </p>
+                  </div>
+
+                  {/* Muscle-Bone Connection */}
+                  <div>
+                    <h5 className="font-semibold text-blue-700">The Muscle-Bone Connection: A Coupled System</h5>
+                    <p className="text-xs text-gray-300 leading-relaxed mt-1">
+                      Muscle atrophy is a parallel consequence of unloading. Postural muscles like the soleus undergo significant wasting, 
+                      driven by energy-saving gene expression changes, oxidative stress, and disrupted calcium signaling.
+                    </p>
+                    <p className="text-xs  text-gray-300 leading-relaxed mt-2">
+                      Studies show sex-based differences, with females maintaining muscle function better during unloading. Muscle and 
+                      bone health are intertwined: targeting specific genes in muscle, such as inhibiting GSK3, can preserve muscle 
+                      mass and simultaneously increase bone mineral density, demonstrating powerful muscle-bone crosstalk. Countermeasures 
+                      for muscle preservation may therefore protect the skeleton as well.
+                    </p>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </Card>
         </div>
       </div>
     </section>

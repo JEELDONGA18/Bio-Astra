@@ -214,7 +214,7 @@ const Home = () => {
 
       <div className="min-h-screen bg-gray-900">
         <div className="my-10 p-8">
-          <Categories3D />
+          <Categories3D preSelectAll={true} />
         </div>
         {/* Trend Chart and Category Pie Chart */}
         <div className="my-10 p-10 bg-gray-800">

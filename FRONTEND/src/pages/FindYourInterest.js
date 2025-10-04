@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import TrendChart from '../components/TrendChart';
 
 const FindYourInterest = () => {
   const navigate = useNavigate();
@@ -237,7 +236,9 @@ const FindYourInterest = () => {
         {/* Header */}
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-white mb-4">
+          <span className="bg-cosmos-gradient bg-clip-text text-transparent">
             Find Your Interest
+            </span>
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             Discover NASA Space Biology publications through advanced search and filtering. 

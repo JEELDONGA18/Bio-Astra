@@ -213,7 +213,16 @@ export default function GeneExpression() {
 
   return (
     <section className="relative min-h-screen bg-gradient-to-b from-slate-950 to-background py-10">
-      <div className="mb-10 ml-10 mr-10 p-6 bg-black rounded-xl text-white text-base leading-relaxed shadow">
+      <div className="mb-5 text-center">
+          <h2 className=" text-blue-600 mb-4 font-[family-name:var(--font-montserrat)] text-2xl font-black text-foreground md:text-4xl">
+            DNA Helix of Stress & Adaptation
+          </h2>
+          <p className=" text-white mx-auto max-w-2xl text-lg text-muted-foreground">
+            Explore how spaceflight stressors affect genetic code at the
+            molecular level
+          </p>
+        </div>
+      <div className="mb-10 ml-10 mr-10 p-6 rounded-xl text-blue-600 border-white border text-base leading-relaxed shadow">
         In biological terms, gene expression is the fundamental process by which
         the genetic information encoded within a gene's DNA sequence is used to
         synthesize a functional product, which is either a protein or a
@@ -230,9 +239,9 @@ export default function GeneExpression() {
         overall physiology.
       </div>
       <div className="container mx-auto px-4">
-        <div className="flex flex-col md:flex-row items-center bg-[#0d1117] text-white rounded-2xl shadow-lg p-6 gap-8">
+        <div className="flex flex-col lg:flex-row items-start  text-white rounded-2xl shadow-lg p-6 gap-8">
           {/* LEFT: 3D Model Viewer */}
-          <div className="w-full md:w-2.5/3 h-[750px] bg-black rounded-xl cursor-pointer">
+          <div className="w-full lg:w-2/3 h-[615px] bg-black rounded-xl cursor-pointer">
             <Canvas camera={{ position: [12, 8, 12], fov: 65 }} shadows>
               <Suspense fallback={<Loader />}>
                 {/* Lights */}
@@ -310,16 +319,12 @@ export default function GeneExpression() {
             </Canvas>
           </div>
 
-        </div>
-
-        {/* Impacts row below 3D model */}
-        <div className="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-6">
           {/* RIGHT: Gene Expression Details and Controls */}
-          <div className="bg-white rounded-xl p-6 min-h-[500px]">
+          <div className="w-full lg:w-1/3 border-white border rounded-xl p-6 min-h-[500px]">
             <h2 className="text-2xl font-bold mb-4 text-blue-600">
               Gene Expression Matrix
             </h2>
-            <p className="text-blue-900 text-lg mb-6 ">
+            <p className="text-gray-300 text-lg mb-6 ">
               3D heatmap showing gene expression changes across tissues
             </p>
 
@@ -331,7 +336,7 @@ export default function GeneExpression() {
               <select
                 value={selectedTissue}
                 onChange={(e) => setSelectedTissue(e.target.value)}
-                className="w-full p-3 bg-blue-600 text-white rounded border border-gray-700 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                className="w-full p-3 bg-gray-800 text-white rounded border border-gray-600 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
               >
                 <option value="all">All Tissues</option>
                 {tissues.map((tissue) => (
@@ -350,15 +355,15 @@ export default function GeneExpression() {
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
                   <div className="w-6 h-6 bg-green-500 rounded" />
-                  <span className="text-green-300">Upregulated (Positive)</span>
+                  <span className="text-green-400">Upregulated (Positive)</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <div className="w-6 h-6 bg-red-500 rounded" />
-                  <span className="text-red-300">Downregulated (Negative)</span>
+                  <span className="text-red-400">Downregulated (Negative)</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <div className="w-6 h-6 bg-gray-500 rounded" />
-                  <span className="text-gray-300">Places</span>
+                  <span className="text-gray-400">Places</span>
                 </div>
               </div>
             </div>
@@ -371,11 +376,11 @@ export default function GeneExpression() {
                 <div
                   className={`p-4 border rounded-lg ${
                     hoveredGene.expression > 0
-                      ? "bg-green-500 border-green-900"
-                      : "bg-red-500 border-red-900"
+                      ? "bg-green-600 border-green-500"
+                      : "bg-red-600 border-red-500"
                   }`}
                 >
-                  <h4 className="font-semibold text-gray-100 text-lg">
+                  <h4 className="font-semibold text-white text-lg">
                     {hoveredGene.name}
                   </h4>
                   <p className="text-white mt-2">
@@ -393,156 +398,163 @@ export default function GeneExpression() {
                 </div>
               ) : (
                 <div className="flex flex-col justify-center items-center h-32 text-center">
-                  <p className="text-gray-400 text-lg">
+                  <p className="text-gray-300 text-lg">
                     👆 Hover over bars in the 3D model to view gene details
                     here.
                   </p>
-                  <p className="text-gray-500 text-sm mt-2">
+                  <p className="text-gray-400 text-sm mt-2">
                     You can rotate the model by dragging it.
                   </p>
                 </div>
               )}
             </div>
-
           </div>
+        </div>
 
-          {/* Impacts horizontally below */}
-          <div className="bg-white rounded-xl p-6">
-            <h4 className="mb-4 font-semibold text-blue-600">Impacts According To Researches</h4>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm text-blue-900">
-                  {/* Bone and Bone Marrow */}
-                  <div>
-                    <h5 className="font-semibold text-blue-700">
-                      Bone and Bone Marrow
-                    </h5>
-                    <p className="text-xs leading-relaxed mt-1">
-                      <strong>CDKN1a/p21 (Bone):</strong> Microgravity was found
-                      to halt the cell cycle of bone-forming osteoblasts by
-                      upregulating this gene, contributing to the inhibition of
-                      bone regeneration. (Experiment 2)
-                    </p>
-                    <p className="text-xs leading-relaxed mt-2">
-                      <strong>VEGFA & BMP-2 (Bone):</strong> Long-duration
-                      spaceflight (30 days) dramatically increased the
-                      expression of VEGFA (15-fold) and BMP-2 (11-fold) in the
-                      skull, suggesting that cephalad fluid shift in
-                      microgravity triggers angiogenic and bone-growing
-                      responses in non-weight-bearing bones. (Experiment 216)
-                    </p>
-                    <p className="text-xs leading-relaxed mt-2">
-                      <strong>MMPs (Bone):</strong> Spaceflight triggered
-                      osteocytic osteolysis, evidenced by the significant
-                      upregulation of matrix metalloproteinases MMP1, MMP3, and
-                      MMP10. (Experiment 2)
-                    </p>
-                    <p className="text-xs leading-relaxed mt-2">
-                      <strong>Trp53 (Bone):</strong> The apoptosis-inducing gene
-                      Trp53 was downregulated during spaceflight, possibly
-                      linked to the survival-promoting role of CDKN1a/p21.
-                      (Experiment 2)
-                    </p>
-                    <p className="text-xs leading-relaxed mt-2">
-                      <strong>
-                        Catalase, Gadd45, Rankl, Mcp1, Tnf (Bone Marrow):
-                      </strong>{" "}
-                      Ionizing radiation causes a rapid and persistent increase
-                      in RANKL within bone marrow, initiating a cascade that
-                      leads to radiation-induced bone deterioration.
-                      (Experiments 7, 187)
-                    </p>
-                  </div>
+        {/* Impacts Section Below */}
+        <div className="mt-8 rounded-xl p-6 border-white border">
+          <div className="mb-4">
+            <h4 className="text-2xl font-semibold text-blue-600">Impacts According To Researches</h4>
+          </div>
+          <div className="max-h-64 overflow-y-auto pr-2" style={{
+            scrollbarWidth: 'thin',
+            scrollbarColor: '#4a5568 #1a202c'
+          }}>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm text-gray-300">
+            {/* Bone and Bone Marrow */}
+            <div>
+              <h5 className="font-semibold text-blue-700">
+                Bone and Bone Marrow
+              </h5>
+              <p className="text-xs leading-relaxed mt-1">
+                <strong>CDKN1a/p21 (Bone):</strong> Microgravity was found
+                to halt the cell cycle of bone-forming osteoblasts by
+                upregulating this gene, contributing to the inhibition of
+                bone regeneration. (Experiment 2)
+              </p>
+              <p className="text-xs leading-relaxed mt-2">
+                <strong>VEGFA & BMP-2 (Bone):</strong> Long-duration
+                spaceflight (30 days) dramatically increased the
+                expression of VEGFA (15-fold) and BMP-2 (11-fold) in the
+                skull, suggesting that cephalad fluid shift in
+                microgravity triggers angiogenic and bone-growing
+                responses in non-weight-bearing bones. (Experiment 216)
+              </p>
+              <p className="text-xs leading-relaxed mt-2">
+                <strong>MMPs (Bone):</strong> Spaceflight triggered
+                osteocytic osteolysis, evidenced by the significant
+                upregulation of matrix metalloproteinases MMP1, MMP3, and
+                MMP10. (Experiment 2)
+              </p>
+              <p className="text-xs leading-relaxed mt-2">
+                <strong>Trp53 (Bone):</strong> The apoptosis-inducing gene
+                Trp53 was downregulated during spaceflight, possibly
+                linked to the survival-promoting role of CDKN1a/p21.
+                (Experiment 2)
+              </p>
+              <p className="text-xs leading-relaxed mt-2">
+                <strong>
+                  Catalase, Gadd45, Rankl, Mcp1, Tnf (Bone Marrow):
+                </strong>{" "}
+                Ionizing radiation causes a rapid and persistent increase
+                in RANKL within bone marrow, initiating a cascade that
+                leads to radiation-induced bone deterioration.
+                (Experiments 7, 187)
+              </p>
+            </div>
 
-                  {/* Heart */}
-                  <div>
-                    <h5 className="font-semibold text-blue-700">Heart</h5>
-                    <p className="text-xs leading-relaxed mt-1">
-                      <strong>Tnf, Nox1, Myc, Nfe2l2, Ptgs2:</strong>{" "}
-                      Spaceflight alters key cardiac genes. Nox1 (oxidative
-                      stress) and Myc (cell cycle) are upregulated, while the
-                      protective transcription factor Nfe2l2 is downregulated,
-                      suggesting mechanisms for cardiac dysfunction. (Experiment
-                      6)
-                    </p>
-                    <p className="text-xs leading-relaxed mt-2">
-                      <strong>IL-6:</strong> Vaccination on the ISS can
-                      stimulate heightened cardiac inflammation via NF-κB
-                      signaling, leading to the release of IL-6. (Experiment
-                      592)
-                    </p>
-                    <p className="text-xs leading-relaxed mt-2">
-                      <strong>SM1, rpS6:</strong> Aging impairs coronary
-                      arteriole contractile function, shifting vascular smooth
-                      muscle toward a proliferative, noncontractile state.
-                      Exercise training can reverse this dysfunction, restoring
-                      a youthful phenotype. (Experiment 128)
-                    </p>
-                    <p className="text-xs leading-relaxed mt-2">
-                      <strong>Tet2 (Heart & Lung):</strong> After a 37-day
-                      spaceflight, mRNA expression of cytoskeletal components
-                      was altered despite stable protein levels, linked to
-                      increased genome methylation and decreased Tet2
-                      expression. (Experiment 81)
-                    </p>
-                  </div>
+            {/* Heart */}
+            <div>
+              <h5 className="font-semibold text-blue-700">Heart</h5>
+              <p className="text-xs leading-relaxed mt-1">
+                <strong>Tnf, Nox1, Myc, Nfe2l2, Ptgs2:</strong>{" "}
+                Spaceflight alters key cardiac genes. Nox1 (oxidative
+                stress) and Myc (cell cycle) are upregulated, while the
+                protective transcription factor Nfe2l2 is downregulated,
+                suggesting mechanisms for cardiac dysfunction. (Experiment
+                6)
+              </p>
+              <p className="text-xs leading-relaxed mt-2">
+                <strong>IL-6:</strong> Vaccination on the ISS can
+                stimulate heightened cardiac inflammation via NF-κB
+                signaling, leading to the release of IL-6. (Experiment
+                592)
+              </p>
+              <p className="text-xs leading-relaxed mt-2">
+                <strong>SM1, rpS6:</strong> Aging impairs coronary
+                arteriole contractile function, shifting vascular smooth
+                muscle toward a proliferative, noncontractile state.
+                Exercise training can reverse this dysfunction, restoring
+                a youthful phenotype. (Experiment 128)
+              </p>
+              <p className="text-xs leading-relaxed mt-2">
+                <strong>Tet2 (Heart & Lung):</strong> After a 37-day
+                spaceflight, mRNA expression of cytoskeletal components
+                was altered despite stable protein levels, linked to
+                increased genome methylation and decreased Tet2
+                expression. (Experiment 81)
+              </p>
+            </div>
 
-                  {/* Immune System */}
-                  <div>
-                    <h5 className="font-semibold text-blue-700">
-                      Immune System
-                    </h5>
-                    <p className="text-xs leading-relaxed mt-1">
-                      <strong>IFN-γ & IL-17 (Immune Cells):</strong> Spaceflight
-                      impairs immune tolerance, leading to an excessive
-                      inflammatory response with a 5-fold increase in IFN-γ and
-                      10-fold increase in IL-17. (Experiment 239)
-                    </p>
-                    <p className="text-xs leading-relaxed mt-2">
-                      <strong>miR-21 (Immune Cells):</strong> Spaceflight
-                      suppressed the normal upregulation of microRNA miR-21
-                      during T-cell activation, revealing a new epigenetic
-                      mechanism for immune dysfunction. (Experiment 238)
-                    </p>
-                  </div>
+            {/* Immune System */}
+            <div>
+              <h5 className="font-semibold text-blue-700">
+                Immune System
+              </h5>
+              <p className="text-xs leading-relaxed mt-1">
+                <strong>IFN-γ & IL-17 (Immune Cells):</strong> Spaceflight
+                impairs immune tolerance, leading to an excessive
+                inflammatory response with a 5-fold increase in IFN-γ and
+                10-fold increase in IL-17. (Experiment 239)
+              </p>
+              <p className="text-xs leading-relaxed mt-2">
+                <strong>miR-21 (Immune Cells):</strong> Spaceflight
+                suppressed the normal upregulation of microRNA miR-21
+                during T-cell activation, revealing a new epigenetic
+                mechanism for immune dysfunction. (Experiment 238)
+              </p>
+            </div>
 
-                  {/* Other Tissues */}
-                  <div>
-                    <h5 className="font-semibold text-blue-700">
-                      Other Tissues
-                    </h5>
-                    <p className="text-xs leading-relaxed mt-1">
-                      <strong>Uck2 & san (Hemocytes & Fat Body):</strong> The
-                      bacterium <em>Ehrlichia chaffeensis</em> replicates in
-                      hemocytes and fat body. Suppressing Uck2 or san in these
-                      tissues inhibited bacterial growth, clarifying tissue
-                      tropism in an invertebrate model. (Experiment 89)
-                    </p>
-                    <p className="text-xs leading-relaxed mt-2">
-                      <strong>Amy1, Aqp5, Ano1 (Salivary Gland):</strong> Lunar
-                      gravity (1/6 g) exposure induced expression of salivary
-                      amylase (Amy1) but not water secretion genes (Aqp5, Ano1),
-                      making Amy1 a potential biomarker for lunar stress.
-                      (Experiment 327)
-                    </p>
-                    <p className="text-xs leading-relaxed mt-2">
-                      <strong>
-                        EndoG, Dysferlin, nNOS (Plantaris Muscle):
-                      </strong>{" "}
-                      Lifelong exercise and caloric restriction attenuate
-                      age-related muscle wasting, protect membranes, preserve
-                      nNOS, and reduce nuclear translocation of EndoG.
-                      (Experiments 270, 271)
-                    </p>
-                    <p className="text-xs leading-relaxed mt-2">
-                      <strong>AHA2 & FERONIA (Seedling):</strong> Space-grown
-                      Arabidopsis seedlings showed unique cell wall adaptations,
-                      with AHA2 and FERONIA identified as central regulators.
-                      (Experiment 571)
-                    </p>
-                  </div>
+            {/* Other Tissues */}
+            <div>
+              <h5 className="font-semibold text-blue-700">
+                Other Tissues
+              </h5>
+              <p className="text-xs leading-relaxed mt-1">
+                <strong>Uck2 & san (Hemocytes & Fat Body):</strong> The
+                bacterium <em>Ehrlichia chaffeensis</em> replicates in
+                hemocytes and fat body. Suppressing Uck2 or san in these
+                tissues inhibited bacterial growth, clarifying tissue
+                tropism in an invertebrate model. (Experiment 89)
+              </p>
+              <p className="text-xs leading-relaxed mt-2">
+                <strong>Amy1, Aqp5, Ano1 (Salivary Gland):</strong> Lunar
+                gravity (1/6 g) exposure induced expression of salivary
+                amylase (Amy1) but not water secretion genes (Aqp5, Ano1),
+                making Amy1 a potential biomarker for lunar stress.
+                (Experiment 327)
+              </p>
+              <p className="text-xs leading-relaxed mt-2">
+                <strong>
+                  EndoG, Dysferlin, nNOS (Plantaris Muscle):
+                </strong>{" "}
+                Lifelong exercise and caloric restriction attenuate
+                age-related muscle wasting, protect membranes, preserve
+                nNOS, and reduce nuclear translocation of EndoG.
+                (Experiments 270, 271)
+              </p>
+              <p className="text-xs leading-relaxed mt-2">
+                <strong>AHA2 & FERONIA (Seedling):</strong> Space-grown
+                Arabidopsis seedlings showed unique cell wall adaptations,
+                with AHA2 and FERONIA identified as central regulators.
+                (Experiment 571)
+              </p>
+            </div>
             </div>
           </div>
         </div>
       </div>
     </section>
+    
   );
 }

@@ -333,7 +333,7 @@ export default function DNAHelixViz() {
           <h2 className=" text-blue-600 mb-4 font-[family-name:var(--font-montserrat)] text-2xl font-black text-foreground md:text-4xl">
             DNA Helix of Stress & Adaptation
           </h2>
-          <p className=" text-blue-900 mx-auto max-w-2xl text-lg text-muted-foreground">
+          <p className=" text-whites mx-auto max-w-2xl text-lg text-muted-foreground">
             Explore how spaceflight stressors affect genetic code at the
             molecular level
           </p>
@@ -363,10 +363,10 @@ export default function DNAHelixViz() {
 
           <div className="w-full bg-[#11182c] rounded-xl overflow-hidden">
             <Card className="p-6 h-[640px] flex flex-col">
-              <h3 className="mb-4 font-[family-name:var(--font-montserrat)] text-2xl font-black text-white">
+              <h3 className="mb-4 font-[family-name:var(--font-montserrat)] text-2xl font-black text-blue-600">
                 Stress Simulations
               </h3>
-              <p className="mb-6 text-sm text-blue-900">
+              <p className="mb-6 text-sm text-white">
                 Click DNA segments or trigger radiation events to explore
                 spaceflight stressors affect genetic code at the molecular level
               </p>
@@ -383,7 +383,7 @@ export default function DNAHelixViz() {
               </div>
 
               <div className="mt-6 border-t border-border pt-6 flex-1 min-h-0">
-                <div className="h-full overflow-y-auto pr-2 space-y-4" style={{scrollbarWidth:"thin"}}>
+                <div className="h-full overflow-y-auto pr-2 space-y-4">
                   {infoType && (
                     <div>
                       <h4 className="mb-2 font-semibold text-pink-400">
@@ -400,13 +400,13 @@ export default function DNAHelixViz() {
 
                   <h4 className="mt-2 mb-2 font-semibold text-blue-600">Impacts on DNA According To Researches</h4>
 
-                  <div className="space-y-6 text-sm text-blue-900">
+                  <div className="space-y-6 text-sm text-blue-600">
                     {/* DNA Damage & Radiation */}
                     <div>
-                      <h5 className="font-semibold text-cyan-400">
+                      <h5 className="font-semibold  text-blue-600">
                         DNA Damage & Radiation
                       </h5>
-                      <p className="text-xs text-gray-200 leading-relaxed">
+                      <p className="text-xs text-gray-300 leading-relaxed">
                         Exposure to the space radiation environment, which
                         includes galactic cosmic rays and solar particle events,
                         poses a significant threat to the integrity of
@@ -415,7 +415,7 @@ export default function DNAHelixViz() {
                         lesions, most notably double-strand breaks, which are
                         particularly difficult for cells to repair accurately.
                       </p>
-                      <p className="text-xs text-gray-200 leading-relaxed">
+                      <p className="text-xs text-gray-300 leading-relaxed">
                         The cumulative impact of this DNA damage is a primary
                         concern for long-term space travel, as it is directly
                         linked to an increased lifetime risk of developing
@@ -434,10 +434,10 @@ export default function DNAHelixViz() {
 
                     {/* Gene Expression */}
                     <div>
-                      <h5 className="font-semibold text-blue-700">
+                      <h5 className="font-semibold  text-blue-600">
                         Gene Expression
                       </h5>
-                      <p className="text-xs leading-relaxed">
+                      <p className="text-xs text-gray-300 leading-relaxed">
                         The absence of Earth's gravity triggers a cascade of
                         changes in gene expression, affecting a vast array of
                         cellular functions. Studies on astronauts and model
@@ -445,7 +445,7 @@ export default function DNAHelixViz() {
                         reprogramming of the transcriptome, altering thousands
                         of genes and impacting critical biological processes.
                       </p>
-                      <p className="text-xs leading-relaxed mt-2">
+                      <p className="text-xs leading-relaxed text-gray-300 mt-2">
                         These changes are linked to muscle atrophy, bone density
                         loss, and immune dysregulation. Furthermore, circadian
                         rhythm—the normal 24-hour rhythmic expression of
@@ -459,10 +459,10 @@ export default function DNAHelixViz() {
 
                     {/* Epigenetics & RNA */}
                     <div>
-                      <h5 className="font-semibold text-blue-700">
+                      <h5 className="font-semibold text-blue-600 ">
                         Epigenetics & RNA
                       </h5>
-                      <p className="text-xs leading-relaxed">
+                      <p className="text-xs text-gray-300 leading-relaxed">
                         The space environment leaves its mark on the epigenome,
                         the chemical modifications that regulate gene expression
                         without altering DNA sequence. These include DNA
@@ -470,7 +470,7 @@ export default function DNAHelixViz() {
                         long-lasting and even heritable effects on cellular
                         function.
                       </p>
-                      <p className="text-xs leading-relaxed mt-2">
+                      <p className="text-xs text-gray-300 leading-relaxed mt-2">
                         Spaceflight has also been shown to alter the expression
                         of RNA molecules, such as microRNAs, that fine-tune gene
                         activity. These epigenetic and RNA modifications
@@ -485,10 +485,10 @@ export default function DNAHelixViz() {
 
                     {/* Mitochondrial Stress */}
                     <div>
-                      <h5 className="font-semibold text-blue-700">
+                      <h5 className="font-semibold text-blue-600 ">
                         Mitochondrial Stress
                       </h5>
-                      <p className="text-xs leading-relaxed">
+                      <p className="text-xs  text-gray-300 leading-relaxed">
                         Mitochondria—the powerhouses of our cells—are profoundly
                         affected by spaceflight. The lack of gravity leads to
                         mitochondrial dysfunction, characterized by reduced
@@ -496,7 +496,7 @@ export default function DNAHelixViz() {
                         oxygen species (ROS). This imbalance creates oxidative
                         stress, damaging DNA, proteins, and lipids.
                       </p>
-                      <p className="text-xs leading-relaxed mt-2">
+                      <p className="text-xs text-gray-300 leading-relaxed mt-2">
                         Mitochondrial stress acts as a central hub for many
                         negative health effects of space travel, including
                         cardiovascular deconditioning, immune dysfunction, and

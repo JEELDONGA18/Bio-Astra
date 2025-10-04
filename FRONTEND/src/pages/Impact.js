@@ -7,12 +7,14 @@ import GeneExpression from "../components/IMPACT/GeneExpression";
 const Impact = () => {
 
   return (
-    <div className="min-h-screen bg-gray-900 overflow-x-hidden">
+    <div className="min-h-screen bg-gray-900 overflow-x-hidden universal-scrollbar">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Header */}
         <div className="text-center mb-14">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          <span className="bg-cosmos-gradient bg-clip-text text-transparent">
             Impact & Metrics
+            </span>
           </h1>
           <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
             Measuring how Bio-Astra advances NASA Space Biology research and discovery.

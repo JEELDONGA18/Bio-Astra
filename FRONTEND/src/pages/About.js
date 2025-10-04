@@ -115,7 +115,9 @@ const About = () => {
         {/* Header */}
         <div className="text-center mb-16">
           <h1 className="text-4xl font-bold text-white mb-4">
+          <span className="bg-cosmos-gradient bg-clip-text text-transparent">
             About Bio-Astra Dashboard
+            </span>
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             Meet the team behind the Bio-Astra Dashboard and learn about our

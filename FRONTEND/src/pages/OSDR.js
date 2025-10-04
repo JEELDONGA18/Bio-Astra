@@ -5,7 +5,6 @@ import { Canvas } from "@react-three/fiber";
 import { Stars, OrbitControls } from "@react-three/drei";
 import OrganismChart from "../components/OSDR/OrganismChart";
 import GenericPieChart from "../components/OSDR/GenericPieChart";
-
 function SpaceBackground() {
   return (
     <>
@@ -329,7 +328,6 @@ const OSDR = () => {
           <p className="text-gray-300 text-center mb-4">Choose a label field to generate a pie chart.</p>
           <GenericPieChart />
         </div>
-        
         {/* Main Resources */}
         <div className="mb-16">
           <h2 className="text-3xl font-bold text-white mb-8 text-center">

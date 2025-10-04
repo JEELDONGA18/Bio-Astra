@@ -212,7 +212,7 @@ function FloatingLabel({ text, position, color, opacity }) {
   );
 }
 
-export default function ConstellationOfProgressViz({ animateIntro = false }) {
+export default function ConstellationOfProgressViz({ animateIntro = false, preSelectAll = false }) {
   const [rawPapers, setRawPapers] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -271,7 +271,7 @@ export default function ConstellationOfProgressViz({ animateIntro = false }) {
     return [...new Set(publicationsData.map((p) => p.Category))];
   }, [publicationsData]);
   const [visibleCategories, setVisibleCategories] = useState(
-    () => new Set(allCategories)
+    () => preSelectAll ? new Set(allCategories) : new Set(allCategories)
   );
 
   const yearRange = useMemo(() => {
@@ -288,6 +288,13 @@ export default function ConstellationOfProgressViz({ animateIntro = false }) {
     // Sync filter range when yearRange updates (e.g., after data load)
     setFilterYearRange([yearRange.min, yearRange.max]);
   }, [yearRange.min, yearRange.max]);
+
+  // Update visible categories when data loads and preSelectAll is true
+  useEffect(() => {
+    if (preSelectAll && allCategories.length > 0) {
+      setVisibleCategories(new Set(allCategories));
+    }
+  }, [allCategories, preSelectAll]);
 
   const toggleCategory = (category) => {
     setVisibleCategories((prev) => {
@@ -539,6 +546,7 @@ export default function ConstellationOfProgressViz({ animateIntro = false }) {
                     cursor: "pointer",
                   }}
                 />
+                <p>The difference between the two Sliders is the year range which will be displayed in the 3D visualization.</p>
               </div>
 
               {/* Category Filter */}
