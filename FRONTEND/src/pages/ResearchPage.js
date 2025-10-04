@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import Chatbot from '../components/Chatbot';
 import KnowledgeGraph from '../components/KnowledgeGraph';
+const API_BASE = "https://bio-astra-backend.onrender.com";
 
 const ResearchPage = () => {
   const { pmcid } = useParams();
@@ -22,7 +23,7 @@ const ResearchPage = () => {
   const fetchResearchData = async () => {
     try {
       setLoading(true);
-      const response = await fetch(`http://localhost:5000/api/research/${pmcid}`);
+      const response = await fetch(`${API_BASE}/api/research/${pmcid}`);
       const data = await response.json();
       
       if (data.success) {

@@ -157,6 +157,94 @@ const About = () => {
           </div>
         </div>
 
+        {/* Special Thanks Section */}
+        <div className="mb-16">
+          <div className="card p-8 bg-cosmos-gradient/20 border border-cosmos-cyan/40 rounded-2xl max-w-7xl mx-auto">
+            <h2 className="text-3xl font-bold text-white mb-6 text-center">
+              Special Thanks
+            </h2>
+            <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto text-center">
+              We gratefully acknowledge NASA resources and support that enabled us to build the Bio-Astra Dashboard:
+            </p>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {/* Resource 1 */}
+              <a
+                href="https://github.com/jgalazka/SB_publications/tree/main"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="card p-6 bg-cosmos-gradient/10 border border-cosmos-cyan/30 rounded-xl text-center hover:scale-105 transform transition duration-300"
+              >
+                <div className="text-3xl mb-3">📚</div>
+                <h3 className="text-lg font-semibold text-white mb-2">Open-Access Publications</h3>
+                <p className="text-gray-300 text-sm">
+                  608 Space Biology publications for research and analysis
+                </p>
+              </a>
+
+              {/* Resource 2 */}
+              <a
+                href="https://science.nasa.gov/biological-physical/data/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="card p-6 bg-cosmos-gradient/10 border border-cosmos-cyan/30 rounded-xl text-center hover:scale-105 transform transition duration-300"
+              >
+                <div className="text-3xl mb-3">🛰️</div>
+                <h3 className="text-lg font-semibold text-white mb-2">Open Science Data Repository</h3>
+                <p className="text-gray-300 text-sm">Biological & physical datasets for space research</p>
+              </a>
+
+              {/* Resource 3 */}
+              <a
+                href="https://public.ksc.nasa.gov/nslsl/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="card p-6 bg-cosmos-gradient/10 border border-cosmos-cyan/30 rounded-xl text-center hover:scale-105 transform transition duration-300"
+              >
+                <div className="text-3xl mb-3">🔬</div>
+                <h3 className="text-lg font-semibold text-white mb-2">Space Life Sciences Library</h3>
+                <p className="text-gray-300 text-sm">Comprehensive life sciences research resources</p>
+              </a>
+
+              {/* Resource 4 */}
+              <a
+                href="https://taskbook.nasaprs.com/tbp/welcome.cfm"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="card p-6 bg-cosmos-gradient/10 border border-cosmos-cyan/30 rounded-xl text-center hover:scale-105 transform transition duration-300"
+              >
+                <div className="text-3xl mb-3">📋</div>
+                <h3 className="text-lg font-semibold text-white mb-2">NASA Task Book</h3>
+                <p className="text-gray-300 text-sm">Database of NASA research tasks & projects</p>
+              </a>
+            </div>
+
+            {/* Additional Note */}
+            <div className="mt-8 text-center">
+              <div className="card p-8 bg-cosmos-gradient/20 border border-cosmos-cyan/40 rounded-2xl max-w-7xl mx-auto">
+                <p className="text-gray-200 text-lg mx-auto leading-relaxed">
+                  We sincerely thank NASA and the NASA Space Apps Challenge for providing these invaluable resources and support. 
+                  Your dedication to open science, data access, and empowering projects like ours inspires us to push the boundaries of space biology research. 
+                  We are truly grateful for the opportunity, including the generous provision of a free GoDaddy domain for one year.
+                </p>
+              </div>
+            </div>
+            {/* GoDaddy Free Domain Note */}
+            <div className="mt-4 p-4 bg-cosmos-gradient/20 border border-cosmos-cyan/40 rounded-xl max-w-3xl mx-auto text-center hover:scale-105 transform transition duration-300">
+              <div className="flex items-center justify-center mb-2">
+                <span className="text-white font-semibold text-lg">
+                  Free 1-Year Domain Provided by GoDaddy
+                </span>
+              </div>
+              <p className="text-gray-200 text-sm leading-relaxed max-w-xl mx-auto">
+                As part of NASA Space Apps Challenge support, we were generously provided with a free domain from GoDaddy for one year. 
+                This allowed us to deploy the Bio-Astra Dashboard and make it accessible to the global space biology community.
+              </p>
+            </div>
+          </div>
+        </div>
+
+
         {/* Mentor Section */}
         <div className="card mb-16 bg-cosmos-gradient/10 border-cosmos-cyan/30">
           <div className="text-center">

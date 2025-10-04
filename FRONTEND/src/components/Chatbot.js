@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+const API_BASE = "https://bio-astra-backend.onrender.com";
 
 const Chatbot = ({ paperContext = {} }) => {
   const [messages, setMessages] = useState([
@@ -31,7 +32,7 @@ const Chatbot = ({ paperContext = {} }) => {
 
     try {
       // Call Gemini API through backend
-      const response = await fetch('http://localhost:5000/api/chat', {
+      const response = await fetch(`${API_BASE}/api/chat`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -92,7 +93,7 @@ const Chatbot = ({ paperContext = {} }) => {
     setExportStatus('Preparing PDF export...');
 
     try {
-      const response = await fetch('http://localhost:5000/api/export-chat', {
+      const response = await fetch(`${API_BASE}/api/export-chat`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
