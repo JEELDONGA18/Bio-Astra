@@ -209,7 +209,7 @@ const FindYourInterest = () => {
       let isMounted = true;
       const fetchOverview = async () => {
         try {
-          const resp = await fetch(`http://localhost:5000/api/research/${pmcid}`);
+          const resp = await fetch(`${API_BASE}/api/research/${pmcid}`);
           const data = await resp.json();
           if (data && data.success && isMounted) {
             const payload = data.data || {};
