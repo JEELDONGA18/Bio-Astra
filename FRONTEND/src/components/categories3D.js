@@ -4,9 +4,7 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, Text, Html, Stars } from "@react-three/drei";
 import * as THREE from "three";
 // Fetch research paper data from backend instead of importing local JSON
-const API_BASE_URL =
-  (typeof process !== "undefined" && process.env && process.env.REACT_APP_API_BASE_URL) ||
-  "http://localhost:5000";
+const API_BASE = "https://bio-astra-backend.onrender.com";
 
 const categoryConfig = {
   "Animal Studies": { color: "#93c5fd", x: -20 },

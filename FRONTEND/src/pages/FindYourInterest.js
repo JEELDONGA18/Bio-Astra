@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
+const API_BASE = "https://bio-astra-backend.onrender.com";
 
 const FindYourInterest = () => {
   const navigate = useNavigate();
@@ -94,7 +95,7 @@ const FindYourInterest = () => {
     setIsSearching(true);
     
     try {
-      const response = await fetch('http://localhost:5000/api/search', {
+      const response = await fetch(`${API_BASE}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
