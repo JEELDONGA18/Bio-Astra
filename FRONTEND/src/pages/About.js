@@ -41,42 +41,42 @@ const About = () => {
       name: "Jeel Donga",
       role: "Full Stack Developer",
       bio: "Jeel specializes in backend development and API systems for the dashboard. He has extensive experience in database design, with a focus on handling large-scale scientific datasets.",
-      image: "👨‍💻",
+      image: "/images/jeel.jpeg", 
       link: "https://www.linkedin.com/in/jeel-hasmukhbhai-donga-226441290/",
     },
         {
       name: "Meet Paladiya",
       role: "Full Stack Developer",
-      bio: "Meet specializes in React.js development and user experience design. He's passionate about creating intuitive interfaces for scientific data visualization.",
-      image: "👨‍💻",
+      bio: "Meet specializes in React.js development and user experience design. He's passionate about creating intuitive interfaces for scientific data visualization, with a strong focus on data integration, cleaning, and meaningful insight generation.",
+      image: "/images/meetp.jpeg",
       link: "https://www.linkedin.com/in/meet-paladiya-953052271/",
     },
     {
       name: "Vishal Shingala",
       role: "Full Stack Developer",
       bio: "Vishal handles data pipeline development and integration with NASA databases. He ensures data quality and implements automated processing workflows for real-time data updates.",
-      image: "👨‍🔧",
+      image: "/images/vishal.jpeg", 
       link: "https://www.linkedin.com/in/vishal-shingala-382a20295/",
     },
     {
       name: "Dhyey Desai",
       role: "Research & Storytelling Strategist",
       bio: "Dhyey provides domain expertise by researching NASA content and crafting clear narratives to connect complex scientific data with end users. He ensures the information presented is accurate and accessible to the target audience.",
-      image: "👨‍🔬",
+      image: "/images/dhyey.jpeg", 
       link: "https://www.linkedin.com/in/dhyey-desai-625256286/",
     },
     {
       name: "Dhrumil Khatiwala",
       role: "Quality & Reliability Champion",
       bio: "Dhrumil ensures the quality and reliability of every feature by rigorously testing and refining the application, delivering a smooth and user-friendly experience for hackathon judges. He brings extensive expertise in software testing and quality assurance.",
-      image: "🕵️‍♂️",
+      image: "/images/dhrumil.jpeg", 
       link: "https://www.linkedin.com/in/dhrumil-khatiwala-4b55322b6",
     },
     {
       name: "Parth Gevariya",
       role: "Project Representation & Documentation Lead",
       bio: "Parth ensures the project is well-presented online via GitHub README, project website, and documentation, highlighting features and impact.",
-      image: "👨‍💼",
+      image: "/images/parth.jpeg", 
       link: "https://www.linkedin.com/in/parth-gevariya-3b2a592aa/",
     },
   ];
@@ -85,7 +85,7 @@ const About = () => {
     name: "Prof. (Dr.) Bintu Kadhiwala",
     role: "Program Leadership",
     bio: "Dr. Bintu Kadhiwala is an Assistant Professor of Computer Engineering at SCET, Surat, with over 19 years of experience. He holds a Ph.D. from SVNIT, Surat, specializing in data mining, privacy-preserving data publishing, algorithms, and information security.",
-    image: "👨‍🏫",
+    image: "/images/bintusir.jpeg",
     link: "https://www.linkedin.com/in/prof-dr-bintu-kadhiwala-69729782/",
     expertise: [
       "Domain Expertise",
@@ -171,7 +171,12 @@ const About = () => {
                 title={`Open LinkedIn: ${mentor.name}`}
                 className="inline-block"
               >
-                <div className="text-6xl mb-6">{mentor.image}</div>
+           <img
+                src={mentor.image}
+                alt={mentor.name}
+                className="w-24 h-24 rounded-full mx-auto mb-4 object-cover border-2 border-[#6366f1]"
+            />
+
               </a>
               <h3 className="text-2xl font-semibold text-white mb-2">
                 <a
@@ -184,7 +189,7 @@ const About = () => {
                   {mentor.name}
                 </a>
               </h3>
-              <div className="text-cosmos-cyan font-medium mb-2">{mentor.role}</div>
+              <div className="text-[#6366f1] font-medium mb-2">{mentor.role}</div>
               <div className="text-gray-400 text-sm mb-4">
                 {mentor.affiliation}
               </div>
@@ -193,7 +198,7 @@ const About = () => {
                 {mentor.expertise.map((skill, index) => (
                   <span
                     key={index}
-                    className="bg-cosmos-cyan/20 text-cosmos-cyan px-3 py-1 rounded-full text-sm font-medium"
+                    className="bg-[#6366f1]/20 text-[#6366f1] px-3 py-1 rounded-full text-sm font-medium"
                   >
                     {skill}
                   </span>
@@ -218,22 +223,22 @@ const About = () => {
                   title={`Open profile: ${member.name}`}
                   className="inline-block"
                 >
-                  <div className="text-6xl mb-4">{member.image}</div>
+               <img
+                    src={member.image}
+                    alt={member.name}
+                    className="w-24 h-24 rounded-full mx-auto mb-4 object-cover border-2 border-[#6366f1]"
+                  />
                 </a>
-                <h3 className="text-xl font-semibold text-white mb-2">
-                  <a
-                    href={member.link}
-                    target={member.link?.startsWith('http') ? "_blank" : undefined}
-                    rel={member.link?.startsWith('http') ? "noopener noreferrer" : undefined}
-                    title={`Open profile: ${member.name}`}
-                    className="hover:underline"
-                  >
-                    {member.name}
-                  </a>
-                </h3>
-                <div className="text-cosmos-cyan font-medium mb-4">
-                  {member.role}
-                </div>
+                <br />
+                <a
+                  href={member.link}
+                  target={member.link?.startsWith('http') ? "_blank" : undefined}
+                  rel={member.link?.startsWith('http') ? "noopener noreferrer" : undefined}
+                  title={`Open profile: ${member.name}`}
+                  className="inline-block"
+                > <h3 className="text-xl font-semibold text-white mb-2">{member.name}</h3> </a>
+               
+                <div className="text-[#6366f1] font-medium mb-4">{member.role}</div>
                 <p className="text-gray-300 text-sm mb-4 leading-relaxed">
                   {member.bio}
                 </p>

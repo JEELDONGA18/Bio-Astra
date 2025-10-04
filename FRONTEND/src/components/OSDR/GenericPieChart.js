@@ -125,10 +125,10 @@ export default function GenericPieChart() {
             <Tooltip 
               cursor={{ fill: 'rgba(74,85,104,0.3)' }}
               contentStyle={{ 
-                backgroundColor: '#1a202c', 
+                backgroundColor: '#9e9e9e', 
                 border: '1px solid #4a5568', 
                 borderRadius: '8px',
-                color: '#e2e8f0'
+                color: '#6366f1'
               }}
             />
           </PieChart>

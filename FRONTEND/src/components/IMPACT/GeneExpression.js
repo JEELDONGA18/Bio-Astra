@@ -215,11 +215,10 @@ export default function GeneExpression() {
     <section className="relative min-h-screen bg-gradient-to-b from-slate-950 to-background py-10">
       <div className="mb-5 text-center">
           <h2 className=" text-blue-600 mb-4 font-[family-name:var(--font-montserrat)] text-2xl font-black text-foreground md:text-4xl">
-            DNA Helix of Stress & Adaptation
+          Gene Expression Matrix
           </h2>
           <p className=" text-white mx-auto max-w-2xl text-lg text-muted-foreground">
-            Explore how spaceflight stressors affect genetic code at the
-            molecular level
+          3D heatmap showing gene expression changes across tissues
           </p>
         </div>
       <div className="mb-10 ml-10 mr-10 p-6 rounded-xl text-blue-600 border-white border text-base leading-relaxed shadow">

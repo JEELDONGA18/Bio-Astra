@@ -16,32 +16,6 @@ function Card({ children, className = "" }) {
   );
 }
 
-// ✅ Inline Slider component
-function Slider({
-  value,
-  onValueChange,
-  min = 0,
-  max = 100,
-  step = 1,
-  className = "",
-}) {
-  const handleChange = (e) => {
-    const newValue = [Number(e.target.value)];
-    onValueChange(newValue);
-  };
-
-  return (
-    <input
-      type="range"
-      value={value[0]}
-      min={min}
-      max={max}
-      step={step}
-      onChange={handleChange}
-      className={`w-full cursor-pointer ${className}`}
-    />
-  );
-}
 
 function BoneModel({ morphValue }) {
   const groupRef = useRef(null);
@@ -297,7 +271,6 @@ export default function GravitySliderViz() {
         {/* Detailed Research Section - Below the slider */}
         <div className="mt-8">
           <Card className="p-6">
-            <div className="space-y-4 border-t border-border pt-6">
               <div>
                 <h4 className="mb-2 font-semibold text-blue-600">Impacts on Bone & Muscle According to Researches</h4>
 
@@ -353,7 +326,6 @@ export default function GravitySliderViz() {
 
                 </div>
               </div>
-            </div>
           </Card>
         </div>
       </div>

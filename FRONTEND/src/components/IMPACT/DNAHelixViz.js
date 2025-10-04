@@ -1,4 +1,4 @@
-ß"use client";
+"use client";
 
 import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, PerspectiveCamera } from "@react-three/drei";
@@ -366,7 +366,7 @@ export default function DNAHelixViz() {
             <h3 className="mb-4 font-[family-name:var(--font-montserrat)] text-2xl font-black text-white">
               Stress Simulations
             </h3>
-            <p className="mb-6 text-sm text-blue-900">
+            <p className="mb-6 text-sm text-blue-700">
               Click DNA segments or trigger radiation events to explore
               spaceflight stressors affect genetic code at the molecular level
             </p>
@@ -442,7 +442,7 @@ export default function DNAHelixViz() {
 
                     {/* Gene Expression */}
                     <div>
-                      <h5 className="font-semibold text-cyan-400">
+                      <h5 className="font-semibold text-blue-600">
                         Gene Expression
                       </h5>
                       <p className="text-xs text-gray-200 leading-relaxed">
@@ -467,7 +467,7 @@ export default function DNAHelixViz() {
 
                     {/* Epigenetics & RNA */}
                     <div>
-                      <h5 className="font-semibold text-cyan-400">
+                      <h5 className="font-semibold text-blue-600">
                         Epigenetics & RNA
                       </h5>
                       <p className="text-xs text-gray-200 leading-relaxed">
@@ -493,7 +493,7 @@ export default function DNAHelixViz() {
 
                     {/* Mitochondrial Stress */}
                     <div>
-                      <h5 className="font-semibold text-cyan-400">
+                      <h5 className="font-semibold text-blue-600">
                         Mitochondrial Stress
                       </h5>
                       <p className="text-xs text-gray-200 leading-relaxed">
