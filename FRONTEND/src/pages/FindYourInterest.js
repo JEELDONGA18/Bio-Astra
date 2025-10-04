@@ -95,7 +95,7 @@ const FindYourInterest = () => {
     setIsSearching(true);
     
     try {
-      const response = await fetch(`${API_BASE}`, {
+      const response = await fetch(`${API_BASE}/api/search`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
