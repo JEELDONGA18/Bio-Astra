@@ -223,7 +223,7 @@ export default function ConstellationOfProgressViz({ animateIntro = false, preSe
     async function load() {
       try {
         setIsLoading(true);
-        const res = await fetch(`${API_BASE_URL}/api/research-papers`);
+        const res = await fetch(`${API_BASE}/api/research-papers`);
         const json = await res.json();
         if (!res.ok || json.success === false) {
           throw new Error(json.error || `Failed to load research papers`);
