@@ -4,12 +4,12 @@
 - [Overview](#overview)
 - [Project Structure](#project-structure)
 - [Frontend Flow](#frontend-flow)
+- [Router Pages](#router-pages)
 - [Backend Flow](#backend-flow)
 - [How to Run the Project](#how-to-run-the-project)
 - [API Endpoints](#api-endpoints)
 - [Technologies Used](#technologies-used)
 - [Future Enhancements](#future-enhancements)
-- [Router Pages](#router-pages)
 
 ## Overview
 Bio-Astra is a web application designed to provide insights into research papers, trends, and data visualization. It consists of a **frontend** built with React and a **backend** powered by Python.
@@ -52,7 +52,6 @@ The frontend is built using React and is responsible for rendering the user inte
    - Provides an interactive assistant for user queries.
 
 ## Router Pages
-
 The application includes the following router pages, each serving a specific purpose:
 
 ### 1. Home Page ([Home.js](FRONTEND/src/pages/Home.js))
@@ -98,9 +97,8 @@ The application includes the following router pages, each serving a specific pur
 - **Features**:
   - Displays organism-related research data and visualizations.
 
----
-
 This README provides a detailed understanding of the project flow and structure. Use the bookmarks in the Table of Contents to navigate quickly.
+---
 
 ## Backend Flow
 The backend is built using Python and Flask. It handles data processing, API requests, and serves the frontend.
