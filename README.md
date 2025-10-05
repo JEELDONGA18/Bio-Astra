@@ -120,20 +120,30 @@ With our comprehensive dashboard, we aim to:
 
 ```bash
 git clone https://github.com/JEELDONGA18/Bio-Astra.git
+```
+```
 cd bio-astra
 ```
 
 - *Backend Setup:*
 ```bash
 cd BACKEND
+```
+```
 pip install -r requirements.txt
+```
+```
 python app.py
 ```
 
 - *Frontend Setup:*
 ```bash
 cd FRONTEND
+```
+```
 npm install
+```
+```
 npm run dev
 ```
 
@@ -241,9 +251,9 @@ https://github.com/user-attachments/assets/5f221303-fa96-48ad-8a88-a715ba37ac0b
 
 This flowchart represents the architecture of the Bio-Astra Dashboard application with a focus on the interaction between the frontend, backend, and data sources.
 
-1. *Frontend (React + Vite on Vercel)*
-    - The frontend is built using React and Vite, deployed on Vercel.
-It handles user interactions, data visualization, and API communication.React +Vite Project on Vercel (Frontend)
+1. *Frontend (React on Vercel)*
+    - The frontend is built using React, deployed on Vercel.
+It handles user interactions, data visualization, and API communication. React Project on Vercel (Frontend)
     - The frontend framework handles user inputs and sends API requests to the backend for search, chat, and data retrieval operations.
 
 2. *Backend (Python Flask on Render)*
@@ -271,6 +281,7 @@ External NASA Resources
     - Data flows between the frontend, backend, and data sources through API requests.
 Flow of Data
     - User interactions trigger API requests from frontend to backend, backend processes data and AI responses, retrieves from JSON data sources and external NASA APIs, then returns processed results to frontend for visualization.
+<img width="1024" height="1024" alt="Gemini_Generated_Image_sx4hi1sx4hi1sx4h" src="https://github.com/user-attachments/assets/68f2bca0-a611-42a1-9a38-21b5d6155a55" />
 
 
 ### Flowchart 2: Backend API Request Handling
@@ -281,32 +292,29 @@ This flowchart outlines how backend API requests are processed in the Bio-Astra 
    - Flask server receives HTTP requests from frontend
    - Request parsing and validation
 
-2. *Authentication & Session Management*
-   - User session creation and management
-   - Chat history tracking and persistence
-
-3. *Data Processing*
+2. *Data Processing*
    - Search queries processed against research databases
    - Filter application and result ranking
    - Data formatting for frontend consumption
 
-4. *AI Chat Processing*
+3. *AI Chat Processing*
    - Gemini API integration for intelligent responses
    - Context building from research paper data
    - Response formatting and markdown processing
 
-5. *Response Generation*
+4. *Response Generation*
    - JSON response creation with success/error handling
    - Data serialization and optimization
 
-6. *Export Functionality*
+5. *Export Functionality*
    - PDF generation for chat conversations
    - File streaming and download handling
 
-7. *Error Handling & Logging*
+6. *Error Handling & Logging*
    - Comprehensive error catching and logging
    - Graceful failure responses
    - Performance monitoring and debugging
+<img width="1024" height="1024" alt="Gemini_Generated_Image_4sji364sji364sji" src="https://github.com/user-attachments/assets/dd0bab89-4423-4011-a3c8-c869a4503763" />
 
 ---
 
