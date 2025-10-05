@@ -1,6 +1,7 @@
 from flask import Flask, request, jsonify, render_template, send_file, session
 from flask_cors import CORS
 from flask_session import Session
+from flask.sessions import SecureCookieSessionInterface
 import json
 import os
 import sys
@@ -40,25 +41,69 @@ app.config.update(
 Session(app)
 
 # --- SAFETY PATCH for Flask-Session bytes bug (Python 3.13 + Werkzeug) ---
-from flask.sessions import SessionInterface
+from flask.sessions import SecureCookieSessionInterface
 
-class SafeSessionInterface(SessionInterface):
+from flask import Flask, request, jsonify, render_template, send_file, session
+from flask_cors import CORS
+from flask_session import Session
+from flask.sessions import SecureCookieSessionInterface  # ✅ use Flask’s built-in interface
+import json
+import os
+import sys
+from datetime import datetime
+import google.generativeai as genai
+from dotenv import load_dotenv
+import re
+from reportlab.lib.pagesizes import letter, A4
+from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, PageBreak
+from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
+from reportlab.lib.units import inch
+from reportlab.lib import colors
+import tempfile
+import io
+import uuid
+import hashlib
+
+# Load environment variables
+load_dotenv()
+
+app = Flask(__name__)
+CORS(app, supports_credentials=True, origins="https://www.bio-astra.spaceappschallanges.study")
+
+# Session configuration
+app.secret_key = os.getenv('SECRET_KEY', 'bio-astra-dashboard-secret-key-2025')
+app.config.update(
+    SECRET_KEY=os.getenv("SECRET_KEY", "bio-astra-dashboard-secret-key-2025"),
+    SESSION_TYPE="filesystem",
+    SESSION_FILE_DIR="/tmp/flask_sessions",
+    SESSION_PERMANENT=False,
+    PERMANENT_SESSION_LIFETIME=900,
+    SESSION_USE_SIGNER=True,
+    SESSION_COOKIE_SAMESITE="None",
+    SESSION_COOKIE_SECURE=True
+)
+
+# Initialize Flask-Session
+Session(app)
+
+# --- SAFETY PATCH for Python 3.13 / Werkzeug bytes bug ---
+class SafeSessionInterface(SecureCookieSessionInterface):
     """Ensure session IDs are always strings to avoid Werkzeug TypeError."""
     def _generate_sid(self):
         sid = super()._generate_sid()
         if isinstance(sid, bytes):
-            sid = sid.decode('utf-8', errors='ignore')
+            sid = sid.decode("utf-8", errors="ignore")
         return sid
 
     def save_session(self, app, session, response):
-        # Make sure session.sid is a string before saving
-        if hasattr(session, 'sid') and isinstance(session.sid, bytes):
-            session.sid = session.sid.decode('utf-8', errors='ignore')
+        if hasattr(session, "sid") and isinstance(session.sid, bytes):
+            session.sid = session.sid.decode("utf-8", errors="ignore")
         return super().save_session(app, session, response)
 
-# Apply the safe session interface globally
+# Apply patched interface
 app.session_interface = SafeSessionInterface()
 # --- END PATCH ---
+
 
 # In-memory storage for user sessions (in production, use Redis or database)
 user_sessions = {}
