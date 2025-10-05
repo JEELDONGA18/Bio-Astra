@@ -97,7 +97,6 @@ The application includes the following router pages, each serving a specific pur
 - **Features**:
   - Displays organism-related research data and visualizations.
 
-This README provides a detailed understanding of the project flow and structure. Use the bookmarks in the Table of Contents to navigate quickly.
 ---
 
 ## Backend Flow
