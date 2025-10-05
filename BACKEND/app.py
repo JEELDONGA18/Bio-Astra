@@ -22,7 +22,7 @@ import hashlib
 load_dotenv()
 
 app = Flask(__name__)
-CORS(app, supports_credentials=True, origins=["https://www.bio-astra.spaceappschallanges.study"])
+CORS(app, supports_credentials=True, origins="https://www.bio-astra.spaceappschallanges.study")
 
 # Set secret key for sessions
 app.secret_key = os.getenv('SECRET_KEY', 'bio-astra-dashboard-secret-key-2025')
@@ -32,6 +32,7 @@ app.config.update(
     SESSION_TYPE="filesystem",
     SESSION_FILE_DIR="/tmp/flask_sessions",
     SESSION_PERMANENT=False,
+    PERMANENT_SESSION_LIFETIME=900,
     SESSION_USE_SIGNER=True,
     SESSION_COOKIE_SAMESITE="None",
     SESSION_COOKIE_SECURE=True
@@ -165,21 +166,36 @@ def clean_html_for_pdf(html_text):
 
 def get_or_create_user_session():
     """
-    Get or create a user session to prevent chat mixing between users
+    Get or create a user session to prevent chat mixing between users.
+    Includes a defensive fix to ensure user_id is a string, preventing
+    TypeError with recent Werkzeug versions.
     """
+    
+    # Check if user_id exists in the session
     if 'user_id' not in session:
         # Create new user session
         user_id = str(uuid.uuid4())
         session['user_id'] = user_id
-        user_sessions[user_id] = {
-            'created_at': datetime.now(),
-            'chat_history': [],
-            'last_activity': datetime.now()
-        }
-    
+        
     user_id = session['user_id']
-    
-    # Initialize session if not exists
+
+    # --- Defensive Fix for Werkzeug/Flask-Session Incompatibility ---
+    # The session data might be returned as bytes by the session interface,
+    # causing an error later when setting the cookie. We explicitly decode it.
+    if isinstance(user_id, bytes):
+        try:
+            # Decode the user ID to a standard Python string
+            user_id = user_id.decode('utf-8')
+            # Update the session with the decoded string value
+            session['user_id'] = user_id
+        except UnicodeDecodeError:
+            # If decoding fails (shouldn't happen for UUID), log and generate a new session
+            print("🚨 ERROR: Failed to decode user_id from session. Generating new ID.")
+            user_id = str(uuid.uuid4())
+            session['user_id'] = user_id
+    # -----------------------------------------------------------------
+
+    # Initialize in-memory session if not exists (handling for server restart)
     if user_id not in user_sessions:
         user_sessions[user_id] = {
             'created_at': datetime.now(),

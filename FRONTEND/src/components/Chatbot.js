@@ -196,7 +196,7 @@ const Chatbot = ({ paperContext = {} }) => {
                   : 'bg-gray-600 text-gray-100'
               }`}
             >
-              <p className="text-sm">{message.text}</p>
+              <p className="text-sm" dangerouslySetInnerHTML={{ __html: message.text }} />
               <p className="text-xs opacity-70 mt-1">
                 {message.timestamp.toLocaleTimeString()}
               </p>
