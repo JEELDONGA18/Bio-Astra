@@ -1,5 +1,6 @@
 from flask import Flask, request, jsonify, render_template, send_file, session
 from flask_cors import CORS
+from flask_session import Session
 import json
 import os
 import sys
@@ -21,10 +22,21 @@ import hashlib
 load_dotenv()
 
 app = Flask(__name__)
-CORS(app, supports_credentials=True)
+CORS(app, supports_credentials=True, origins=["https://www.bio-astra.spaceappschallanges.study"])
 
 # Set secret key for sessions
-app.secret_key = os.getenv('SECRET_KEY', 'bio-astra-dashboard-secret-key-2024')
+app.secret_key = os.getenv('SECRET_KEY', 'bio-astra-dashboard-secret-key-2025')
+
+app.config.update(
+    SECRET_KEY=os.getenv("SECRET_KEY", "bio-astra-dashboard-secret-key-2025"),
+    SESSION_TYPE="filesystem",
+    SESSION_FILE_DIR="/tmp/flask_sessions",
+    SESSION_PERMANENT=False,
+    SESSION_USE_SIGNER=True,
+    SESSION_COOKIE_SAMESITE="None",
+    SESSION_COOKIE_SECURE=True
+)
+Session(app)
 
 # In-memory storage for user sessions (in production, use Redis or database)
 user_sessions = {}
