@@ -3,9 +3,8 @@ import ResourceCard from "../components/ResourceCard";
 import { Link } from "react-router-dom";
 import { Canvas } from "@react-three/fiber";
 import { Stars, OrbitControls } from "@react-three/drei";
-import OrganismChart from "../components/OrganismChart";
-import GenericPieChart from "../components/GenericPieChart";
-
+import OrganismChart from "../components/OSDR/OrganismChart";
+import GenericPieChart from "../components/OSDR/GenericPieChart";
 function SpaceBackground() {
   return (
     <>
@@ -181,7 +180,7 @@ const OSDR = () => {
               enableZoom={false}
               enablePan={false}
               autoRotate
-              autoRotateSpeed={0.5}
+              autoRotateSpeed={0.2}
             />
           </Canvas>
         </div>
@@ -259,6 +258,15 @@ const OSDR = () => {
         ></div>
       </section>
 
+      <div className="mb-5 mt-9 text-center">
+  <h1 className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-600 drop-shadow-[0_0_10px_rgba(0,200,255,0.6)]">
+    Number of Studies : 227 
+  </h1>
+  <div className="mt-2 h-[2px] w-80 mx-auto bg-gradient-to-r from-cyan-400 to-purple-600 rounded-full"></div>
+</div>
+
+
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Overview Section */}
         <div className="card mb-12">
@@ -314,7 +322,7 @@ const OSDR = () => {
           </div>
         </div>
 
-
+    
 
         {/* OSDR Studies Overview */}
         <div className="mb-16">
@@ -329,7 +337,6 @@ const OSDR = () => {
           <p className="text-gray-300 text-center mb-4">Choose a label field to generate a pie chart.</p>
           <GenericPieChart />
         </div>
-        
         {/* Main Resources */}
         <div className="mb-16">
           <h2 className="text-3xl font-bold text-white mb-8 text-center">

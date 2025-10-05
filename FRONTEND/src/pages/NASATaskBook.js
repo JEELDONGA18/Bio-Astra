@@ -203,7 +203,7 @@ const NASATaskBook = () => {
               enableZoom={false}
               enablePan={false}
               autoRotate
-              autoRotateSpeed={0.5}
+              autoRotateSpeed={0.2}
             />
           </Canvas>
         </div>

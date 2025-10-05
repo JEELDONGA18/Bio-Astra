@@ -2,6 +2,7 @@ from flask import Flask, request, jsonify, render_template, send_file, session
 from flask_cors import CORS
 import json
 import os
+import sys
 from datetime import datetime
 import google.generativeai as genai
 from dotenv import load_dotenv
@@ -536,6 +537,40 @@ def test_data():
         "available_categories": list(set(paper.get('category', '') for paper in research_data.values() if paper.get('category')))
     })
 
+@app.route('/api/research-papers')
+def list_research_papers():
+    """
+    Return a list of research papers in a shape compatible with the frontend's
+    previous JSON import. Each item includes keys such as:
+    "Experiment No.", "Title", "Link", "PMCId", "Category", "Study Year", "Abstract".
+    """
+    try:
+        papers = []
+        for idx, (pmcid, paper) in enumerate(research_data.items()):
+            # Construct legacy-compatible structure
+            item = {
+                "Experiment No.": idx + 1,
+                "Title": paper.get('title', ''),
+                "Link": next((x.get('url') for x in paper.get('explore_more', []) if isinstance(x, dict) and x.get('title', '').lower().startswith('ncbi')), ''),
+                "PMCId": paper.get('pmcid', pmcid),
+                "Category": paper.get('category', ''),
+                "Study Year": paper.get('year', 2020),
+                "Abstract": paper.get('abstract', ''),
+                "Summary": paper.get('summary', ''),
+            }
+            papers.append(item)
+
+        return jsonify({
+            "success": True,
+            "total": len(papers),
+            "data": papers
+        })
+    except Exception as e:
+        return jsonify({
+            "success": False,
+            "error": str(e)
+        }), 500
+
 @app.route('/api/search', methods=['POST'])
 def search():
     try:
@@ -743,13 +778,6 @@ def get_categories():
         "categories": sorted(list(categories))
     })
 
-@app.route('/api/category-counts')
-def get_category_counts():
-    """
-    Return a mapping of category -> count of papers.
-    """
-    return jsonify(_CATEGORY_COUNTS_CACHE)
-
 @app.route('/api/years')
 def get_years():
     years = set()
@@ -954,5 +982,6 @@ def clear_chat():
             "error": f"Failed to clear chat: {str(e)}"
         }), 500
 
-if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0', port=5000)
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port, debug=True)

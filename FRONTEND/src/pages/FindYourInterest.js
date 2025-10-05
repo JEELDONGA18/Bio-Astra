@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import TrendChart from '../components/TrendChart';
+const API_BASE = "https://bio-astra-backend.onrender.com";
 
 const FindYourInterest = () => {
   const navigate = useNavigate();
@@ -95,7 +95,7 @@ const FindYourInterest = () => {
     setIsSearching(true);
     
     try {
-      const response = await fetch('http://localhost:5000/api/search', {
+      const response = await fetch(`${API_BASE}/api/search`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -209,7 +209,7 @@ const FindYourInterest = () => {
       let isMounted = true;
       const fetchOverview = async () => {
         try {
-          const resp = await fetch(`http://localhost:5000/api/research/${pmcid}`);
+          const resp = await fetch(`${API_BASE}/api/research/${pmcid}`);
           const data = await resp.json();
           if (data && data.success && isMounted) {
             const payload = data.data || {};
@@ -237,7 +237,9 @@ const FindYourInterest = () => {
         {/* Header */}
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-white mb-4">
+          <span className="bg-cosmos-gradient bg-clip-text text-transparent">
             Find Your Interest
+            </span>
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             Discover NASA Space Biology publications through advanced search and filtering. 

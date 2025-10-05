@@ -1,10 +1,10 @@
 import React, { useMemo, useState } from 'react';
 import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer } from 'recharts';
-import dataSource from '../data/osdr_studies.json';
+import dataSource from '../OSDR/osdr_studies.json';
 
 const COLORS = [
   '#6366f1',
-  '#14b8a6',
+  '#14b8a6',  
   '#3b82f6',
   '#06b6d4',
   '#8b5cf6',
@@ -19,11 +19,14 @@ const COLORS = [
 
 const labelOptions = ['OSD', 'Title', 'Assay', 'Organism', 'Tissue', 'Factor'];
 
-function CustomLegend({ items }) {
+function CustomLegend({ items, showAll, onToggle }) {
+  const displayItems = showAll ? items : items.slice(0, 10);
+  const hasMore = items.length > 10;
+
   return (
-    <div className="mt-4 border border-gray-700 rounded p-3 bg-gray-900/60">
+    <div className="mt-4 border border-gray-600 rounded-lg p-4 bg-gradient-to-r from-gray-900 to-slate-800 backdrop-blur-sm">
       <div className="flex flex-wrap gap-x-4 gap-y-2">
-        {items.map((item, idx) => (
+        {displayItems.map((item, idx) => (
           <div key={idx} className="flex items-center text-sm text-gray-200">
             <span
               className="inline-block w-3 h-3 rounded-full mr-2"
@@ -33,13 +36,28 @@ function CustomLegend({ items }) {
             <span className="text-gray-400">({item.count})</span>
           </div>
         ))}
-      </div>
-    </div>
+        
+        </div>
+{hasMore && (
+  <a
+    href="#"
+    onClick={(e) => {
+      e.preventDefault(); // prevent page scroll/reload
+      onToggle();         // trigger your existing toggle function
+    }}
+    className="mt-3 inline-block text-sm text-blue-600 hover:text-blue-300 underline transition-colors duration-200"
+  >
+    {showAll ? 'Show Less' : 'Show More'}
+  </a>
+)}
+</div>
+
   );
 }
 
 export default function GenericPieChart() {
   const [labelField, setLabelField] = useState('Organism');
+  const [showAllLegend, setShowAllLegend] = useState(false);
 
   const { chartData, legendItems } = useMemo(() => {
     const counts = {};
@@ -71,19 +89,20 @@ export default function GenericPieChart() {
   }, [labelField]);
 
   return (
-    <div className="bg-gray-800 rounded-lg p-6 m-4 shadow-xl border border-gray-700">
-      <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-4">
+    <div className="bg-gradient-to-br from-slate-900 to-gray-800 rounded-xl p-6 m-4 shadow-2xl border border-gray-600 backdrop-blur-sm">
+      <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-6">
         <div>
-          <h2 className="text-2xl font-semibold text-white">Generate pie chart by fields</h2>
-          <p className="text-gray-300 text-sm">➡️ Choose a field to generate a pie chart.</p>
-          <p className="text-gray-300 text-sm">➡️ Hover over pie chart to get Infor of area of the pie chart.</p>
-
+          <h2 className="text-2xl font-bold bg-cosmos-gradient bg-clip-text text-transparent mb-2">Generate Pie Chart by Fields</h2>
+          <div className="text-sm space-y-1">
+            <p className="text-gray-300">✨ Choose a field to generate a pie chart</p>
+            <p className="text-gray-300">🖱️ Hover over pie chart to get detailed information</p>
+          </div>
         </div>
-        <div className="flex flex-col sm:flex-row gap-4">
+        <div className="flex flex-col sm:flex-row gap-4 mt-4 md:mt-0">
           <div>
-            <label className="block text-gray-300 text-sm mb-1">Fields</label>
+            <label className="block text-gray-300 text-sm mb-2 font-medium">Fields</label>
             <select
-              className="bg-gray-900 border border-gray-700 rounded px-3 py-2 text-gray-200"
+              className="bg-gray-900 border border-gray-600 rounded-lg px-4 py-2 text-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
               value={labelField}
               onChange={(e) => setLabelField(e.target.value)}
             >
@@ -103,12 +122,24 @@ export default function GenericPieChart() {
                 <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
               ))}
             </Pie>
-            <Tooltip cursor={{ fill: 'rgba(55,65,81,0.3)' }} />
+            <Tooltip 
+              cursor={{ fill: 'rgba(74,85,104,0.3)' }}
+              contentStyle={{ 
+                backgroundColor: '#9e9e9e', 
+                border: '1px solid #4a5568', 
+                borderRadius: '8px',
+                color: '#6366f1'
+              }}
+            />
           </PieChart>
         </ResponsiveContainer>
       </div>
 
-      <CustomLegend items={legendItems} />
+      <CustomLegend 
+        items={legendItems} 
+        showAll={showAllLegend} 
+        onToggle={() => setShowAllLegend(!showAllLegend)} 
+      />
     </div>
   );
 }

@@ -3,16 +3,8 @@ import React, { Suspense, useMemo, useRef, useState, useEffect } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, Text, Html, Stars } from "@react-three/drei";
 import * as THREE from "three";
-import researchPaperData from "../data/Research_Paper_Data.json";
-
-const publicationsData = researchPaperData.map((item, idx) => ({
-  "Experiment No.": item["Experiment No."] || idx + 1,
-  Title: item.Title || item.Summary?.slice(0, 60) || "Untitled",
-  Link: item.Link || "",
-  PMCId: item.PMCId || "",
-  Category: item.Category || "Unknown",
-  "Study Year": item["Study Year"] || 2020,
-}));
+// Fetch research paper data from backend instead of importing local JSON
+const API_BASE = "https://bio-astra-backend.onrender.com";
 
 const categoryConfig = {
   "Animal Studies": { color: "#93c5fd", x: -20 },
@@ -31,7 +23,7 @@ function CanvasLoader() {
   );
 }
 
-function Star({ data, hovered, selected, onHover, onClick, isSelected }) {
+function Star({ data, hovered, selected, onHover, onClick, isSelected, abstractMap }) {
   const meshRef = useRef();
   const time = useRef(Math.random() * 100);
 
@@ -47,16 +39,8 @@ function Star({ data, hovered, selected, onHover, onClick, isSelected }) {
   const scale = hovered ? 1.5 : 1;
   const color = selected ? "#ffffff" : data.color;
 
-  // Find the matching publication by experiment number
-  const publication = researchPaperData.find(
-    (item) =>
-      item["Experiment No."] === data.id ||
-      item["Experiment No."] === Number(data.id)
-  );
-  const abstract =
-    publication && publication.Abstract
-      ? publication.Abstract
-      : "No abstract available.";
+  // Lookup abstract from fetched map
+  const abstract = abstractMap?.[data.id] || "No abstract available.";
 
   return (
     <group
@@ -226,27 +210,89 @@ function FloatingLabel({ text, position, color, opacity }) {
   );
 }
 
-export default function ConstellationOfProgressViz({ animateIntro = false }) {
+export default function ConstellationOfProgressViz({ animateIntro = false, preSelectAll = false }) {
+  const [rawPapers, setRawPapers] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null);
   const [hoveredStarId, setHoveredStarId] = useState(null);
   const [selectedNodeId, setSelectedNodeId] = useState(null);
   const [selectedCategory, setSelectedCategory] = useState(null);
 
-  const allCategories = useMemo(
-    () => [...new Set(publicationsData.map((p) => p.Category))],
-    []
+  useEffect(() => {
+    let isMounted = true;
+    async function load() {
+      try {
+        setIsLoading(true);
+        const res = await fetch(`${API_BASE}/api/research-papers`);
+        const json = await res.json();
+        if (!res.ok || json.success === false) {
+          throw new Error(json.error || `Failed to load research papers`);
+        }
+        if (isMounted) {
+          setRawPapers(Array.isArray(json.data) ? json.data : []);
+        }
+      } catch (e) {
+        if (isMounted) setError(e.message || String(e));
+      } finally {
+        if (isMounted) setIsLoading(false);
+      }
+    }
+    load();
+    return () => {
+      isMounted = false;
+    };
+  }, []);
+
+  const publicationsData = useMemo(
+    () =>
+      rawPapers.map((item, idx) => ({
+        "Experiment No.": item["Experiment No."] || idx + 1,
+        Title: item.Title || item.Summary?.slice(0, 60) || "Untitled",
+        Link: item.Link || "",
+        PMCId: item.PMCId || "",
+        Category: item.Category || "Unknown",
+        "Study Year": item["Study Year"] || 2020,
+      })),
+    [rawPapers]
   );
+
+  const abstractMap = useMemo(() => {
+    const map = {};
+    rawPapers.forEach((item, idx) => {
+      const id = item["Experiment No."] || idx + 1;
+      map[id] = item.Abstract || "";
+    });
+    return map;
+  }, [rawPapers]);
+
+  const allCategories = useMemo(() => {
+    return [...new Set(publicationsData.map((p) => p.Category))];
+  }, [publicationsData]);
   const [visibleCategories, setVisibleCategories] = useState(
-    () => new Set(allCategories)
+    () => preSelectAll ? new Set(allCategories) : new Set(allCategories)
   );
 
   const yearRange = useMemo(() => {
-    const years = publicationsData.map((p) => p["Study Year"]);
+    const years = publicationsData.map((p) => p["Study Year"]).filter(Boolean);
+    if (!years.length) return { min: 2000, max: 2000 };
     return { min: Math.min(...years), max: Math.max(...years) };
-  }, []);
+  }, [publicationsData]);
   const [filterYearRange, setFilterYearRange] = useState([
     yearRange.min,
     yearRange.max,
   ]);
+
+  useEffect(() => {
+    // Sync filter range when yearRange updates (e.g., after data load)
+    setFilterYearRange([yearRange.min, yearRange.max]);
+  }, [yearRange.min, yearRange.max]);
+
+  // Update visible categories when data loads and preSelectAll is true
+  useEffect(() => {
+    if (preSelectAll && allCategories.length > 0) {
+      setVisibleCategories(new Set(allCategories));
+    }
+  }, [allCategories, preSelectAll]);
 
   const toggleCategory = (category) => {
     setVisibleCategories((prev) => {
@@ -350,7 +396,7 @@ export default function ConstellationOfProgressViz({ animateIntro = false }) {
   return (
     <div
       style={{
-        width: "100vw",
+        width: "100%",
         height: "100vh",
         position: "relative",
         overflow: "hidden",
@@ -358,6 +404,16 @@ export default function ConstellationOfProgressViz({ animateIntro = false }) {
         color: "white",
       }}
     >
+      {isLoading && (
+        <div style={{ position: "absolute", inset: 0, display: "flex", alignItems: "center", justifyContent: "center", zIndex: 2 }}>
+          <div style={{ background: "rgba(0,0,0,0.6)", padding: "12px 16px", borderRadius: 8 }}>Loading research papers...</div>
+        </div>
+      )}
+      {error && (
+        <div style={{ position: "absolute", inset: 0, display: "flex", alignItems: "center", justifyContent: "center", zIndex: 2 }}>
+          <div style={{ background: "rgba(120,0,0,0.8)", padding: "12px 16px", borderRadius: 8 }}>Failed to load data: {error}</div>
+        </div>
+      )}
       {/* Only the rotating stars background */}
       <div style={{ position: "absolute", inset: 0, zIndex: 0 }}>
         <Canvas camera={{ position: [0, 0, 1] }}>
@@ -366,7 +422,7 @@ export default function ConstellationOfProgressViz({ animateIntro = false }) {
             enableZoom={false}
             enablePan={false}
             autoRotate
-            autoRotateSpeed={0.5}
+            autoRotateSpeed={0.2}
           />
         </Canvas>
       </div>
@@ -402,36 +458,42 @@ export default function ConstellationOfProgressViz({ animateIntro = false }) {
           {/* --- CONTROLS PANEL --- */}
           <div
             style={{
-              width: "260px", // Reduced from 280px
-              minWidth: "220px",
-              padding: "16px",
-              background: "rgba(1, 4, 25, 0.7)",
-              backdropFilter: "blur(5px)",
-              borderRight: "1px solid #202b50",
+              width: "300px",
+              minWidth: "260px",
+              padding: "18px 16px",
+              background: "rgba(11, 18, 32, 0.65)",
+              backdropFilter: "blur(10px)",
+              borderRight: "1px solid #1f2a44",
               overflowY: "auto",
               zIndex: 10,
               display: "flex",
               flexDirection: "column",
             }}
           >
-            <div style={{ flexGrow: 1 }}>
+            <div style={{ flexGrow: 1}}>
               <h3
                 style={{
                   marginTop: 0,
-                  borderBottom: "1px solid #202b50",
+                  borderBottom: "1px solid #1f2a44",
                   paddingBottom: "10px",
+                  letterSpacing: "0.02em",
+                  textTransform: "uppercase",
+                  fontSize: "12px",
+                  color: "#9fb3c8",
                 }}
               >
                 Filters
               </h3>
 
               {/* Year Filter */}
-              <div style={{ marginBottom: "25px" }}>
+              <div style={{ marginBottom: "24px", marginTop:"15px"}}>
                 <label
                   style={{
                     display: "block",
                     marginBottom: "10px",
-                    fontWeight: "bold",
+                    fontWeight: 700,
+                    color: "#e6eef7",
+                    fontSize: "14px",
                   }}
                 >
                   Study Year
@@ -440,7 +502,9 @@ export default function ConstellationOfProgressViz({ animateIntro = false }) {
                   style={{
                     display: "flex",
                     justifyContent: "space-between",
-                    marginBottom: "5px",
+                    marginBottom: "10px",
+                    color: "#a9bdd4",
+                    fontSize: "12px",
                   }}
                 >
                   <span>{filterYearRange[0]}</span>
@@ -457,7 +521,11 @@ export default function ConstellationOfProgressViz({ animateIntro = false }) {
                       filterYearRange[1],
                     ])
                   }
-                  style={{ width: "100%" }}
+                  style={{
+                    width: "100%",
+                    accentColor: "#22d3ee",
+                    cursor: "pointer",
+                  }}
                 />
                 <input
                   type="range"
@@ -470,73 +538,71 @@ export default function ConstellationOfProgressViz({ animateIntro = false }) {
                       parseInt(e.target.value),
                     ])
                   }
-                  style={{ width: "100%" }}
+                  style={{
+                    width: "100%",
+                    accentColor: "#a78bfa",
+                    cursor: "pointer",
+                  }}
                 />
+                <p>The difference between the two Sliders is the year range which will be displayed in the 3D visualization.</p>
               </div>
 
               {/* Category Filter */}
               <div>
-                <h4 style={{ marginBottom: "10px", fontWeight: "bold" }}>
+                <h4 style={{ marginBottom: "10px", fontWeight: 700, color: "#e6eef7", fontSize: "14px" }}>
                   Categories
                 </h4>
-                {allCategories.map((cat) => (
-                  <div
-                    key={cat}
-                    style={{
-                      display: "flex",
-                      alignItems: "center",
-                      marginBottom: "8px",
-                    }}
-                  >
-                    <input
-                      type="checkbox"
-                      id={cat}
-                      checked={visibleCategories.has(cat)}
-                      onChange={() => toggleCategory(cat)}
-                      style={{ marginRight: "10px" }}
-                    />
-                    <label
-                      htmlFor={cat}
-                      style={{
-                        display: "flex",
-                        alignItems: "center",
-                        cursor: "pointer",
-                      }}
-                    >
-                      <span
+                <div style={{ display: "flex", flexWrap: "wrap", gap: "8px" }}>
+                  {allCategories.map((cat) => {
+                    const active = visibleCategories.has(cat);
+                    const color = categoryConfig[cat]?.color || "#94a3b8";
+                    return (
+                      <button
+                        key={cat}
+                        type="button"
+                        onClick={() => toggleCategory(cat)}
                         style={{
-                          width: "12px",
-                          height: "12px",
-                          backgroundColor: categoryConfig[cat]?.color || "#fff",
-                          borderRadius: "50%",
-                          marginRight: "8px",
+                          display: "inline-flex",
+                          alignItems: "center",
+                          gap: "8px",
+                          padding: "8px 12px",
+                          borderRadius: "9999px",
+                          border: `1px solid ${active ? color : "#24324d"}`,
+                          background: active ? "rgba(34, 211, 238, 0.08)" : "rgba(15, 23, 42, 0.6)",
+                          color: "#dce7f3",
+                          boxShadow: active ? `0 0 0 2px rgba(34, 211, 238, 0.12)` : "none",
+                          cursor: "pointer",
+                          transition: "all 150ms ease",
                         }}
-                      ></span>
-                      {cat}
-                    </label>
-                  </div>
-                ))}
+                      >
+                        <span
+                          style={{
+                            width: "10px",
+                            height: "10px",
+                            backgroundColor: color,
+                            borderRadius: "50%",
+                          }}
+                        />
+                        <span style={{ fontSize: "12px" }}>{cat}</span>
+                      </button>
+                    );
+                  })}
+                </div>
               </div>
 
               <div
                 style={{
                   marginTop: "auto",
-                  paddingTop: "20px",
-                  borderTop: "1px solid #202b50",
-                  fontSize: "14px",
-                  color: "#ffffff",
-                  lineHeight: "1.5",
+                  paddingTop: "16px",
+                  borderTop: "1px solid #1f2a44",
+                  fontSize: "12px",
+                  color: "#a9bdd4",
+                  lineHeight: "1.6",
                 }}
               >
-                <p style={{ marginTop: "8px" }}>
-                  🖱️ <b>Hover</b> over a node to see the abstract.
-                </p>
-                <p style={{ marginTop: "8px" }}>
-                  ➡️ <b>click</b> on a node to scroll the information.
-                </p>
-                <p style={{ marginTop: "8px" }}>
-                  You can rotate the model by dragging it.
-                </p>
+                <p style={{ marginTop: "6px" }}>Hover to preview abstracts.</p>
+                <p style={{ marginTop: "6px" }}>Click a node to open details.</p>
+                <p style={{ marginTop: "6px" }}>Drag to rotate. Scroll to zoom.</p>
               </div>
             </div>
 
@@ -548,8 +614,9 @@ export default function ConstellationOfProgressViz({ animateIntro = false }) {
             style={{
               flex: 1,
               position: "relative",
-              maxWidth: "calc(100vw - 320px)",
+              width: "100%",
               minWidth: 0,
+              overflow: "hidden",
             }}
           >
             <Canvas
@@ -595,6 +662,7 @@ export default function ConstellationOfProgressViz({ animateIntro = false }) {
                     onHover={setHoveredStarId}
                     onClick={setSelectedNodeId}
                     isSelected={selectedNodeId === starData.id}
+                    abstractMap={abstractMap}
                   />
                 ))}
 
@@ -639,32 +707,7 @@ export default function ConstellationOfProgressViz({ animateIntro = false }) {
                 maxPolarAngle={(3 * Math.PI) / 4}
               />
             </Canvas>
-            {selectedCategory && (
-              <div
-                style={{
-                  position: "absolute",
-                  bottom: "20px",
-                  left: "50%",
-                  transform: "translateX(-50%)",
-                  padding: "10px 20px",
-                  background: "rgba(0, 10, 20, 0.8)",
-                  border: `1px solid ${
-                    categoryConfig[selectedCategory]?.color || "#fff"
-                  }`,
-                  borderRadius: "8px",
-                  color: categoryConfig[selectedCategory]?.color || "#fff",
-                  fontWeight: "bold",
-                  pointerEvents: "none",
-                }}
-              >
-                Selected: {selectedCategory} (
-                {
-                  filteredData.filter((d) => d.category === selectedCategory)
-                    .length
-                }{" "}
-                publications)
-              </div>
-            )}
+            {/* Removed bottom selected-category bar to keep layout clean */}
           </div>
         </div>
       </div>
