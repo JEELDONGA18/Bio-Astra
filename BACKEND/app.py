@@ -40,7 +40,7 @@ app.config.update(
 Session(app)
 
 # --- SAFETY PATCH for Flask-Session bytes bug (Python 3.13 + Werkzeug) ---
-from flask_session.sessions import SessionInterface
+from flask.sessions import SessionInterface
 
 class SafeSessionInterface(SessionInterface):
     """Ensure session IDs are always strings to avoid Werkzeug TypeError."""
