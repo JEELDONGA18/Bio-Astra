@@ -21,10 +21,7 @@ const About = () => {
   };
 
   const handleContactClick = () => {
-    const mailto = buildMailto(
-      "Bio-Astra Contact",
-      "Hello Bio-Astra Team,"
-    );
+    const mailto = buildMailto("Bio-Astra Contact", "Hello Bio-Astra Team,");
     window.location.href = mailto;
   };
 
@@ -41,10 +38,10 @@ const About = () => {
       name: "Jeel Donga",
       role: "Full Stack Developer",
       bio: "Jeel specializes in backend development and API systems for the dashboard. He has extensive experience in database design, with a focus on handling large-scale scientific datasets.",
-      image: "/images/jeel.jpeg", 
+      image: "/images/jeel.jpeg",
       link: "https://www.linkedin.com/in/jeel-hasmukhbhai-donga-226441290/",
     },
-        {
+    {
       name: "Meet Paladiya",
       role: "Full Stack Developer",
       bio: "Meet specializes in React.js development and user experience design. He's passionate about creating intuitive interfaces for scientific data visualization, with a strong focus on data integration, cleaning, and meaningful insight generation.",
@@ -55,28 +52,28 @@ const About = () => {
       name: "Vishal Shingala",
       role: "Full Stack Developer",
       bio: "Vishal handles data pipeline development and integration with NASA databases. He ensures data quality and implements automated processing workflows for real-time data updates.",
-      image: "/images/vishal.jpeg", 
+      image: "/images/vishal.jpeg",
       link: "https://www.linkedin.com/in/vishal-shingala-382a20295/",
     },
     {
       name: "Dhyey Desai",
       role: "Research & Storytelling Strategist",
       bio: "Dhyey provides domain expertise by researching NASA content and crafting clear narratives to connect complex scientific data with end users. He ensures the information presented is accurate and accessible to the target audience.",
-      image: "/images/dhyey.jpeg", 
+      image: "/images/dhyey.jpeg",
       link: "https://www.linkedin.com/in/dhyey-desai-625256286/",
     },
     {
       name: "Dhrumil Khatiwala",
       role: "Quality & Reliability Champion",
       bio: "Dhrumil ensures the quality and reliability of every feature by rigorously testing and refining the application, delivering a smooth and user-friendly experience for hackathon judges. He brings extensive expertise in software testing and quality assurance.",
-      image: "/images/dhrumil.jpeg", 
+      image: "/images/dhrumil.jpeg",
       link: "https://www.linkedin.com/in/dhrumil-khatiwala-4b55322b6",
     },
     {
       name: "Parth Gevariya",
       role: "Project Representation & Documentation Lead",
       bio: "Parth ensures the project is well-presented online via GitHub README, project website, and documentation, highlighting features and impact.",
-      image: "/images/parth.jpeg", 
+      image: "/images/parth.jpeg",
       link: "https://www.linkedin.com/in/parth-gevariya-3b2a592aa/",
     },
   ];
@@ -103,8 +100,8 @@ const About = () => {
     { name: "Tailwind CSS", category: "Styling" },
     { name: "Python Flask", category: "Backend" },
     { name: "Python", category: "Data Processing" },
-    { name: "Chart.js", category: "Visualization" },
-    { name: "NASA APIs", category: "Data Sources" },
+    { name: "Chart.js & Three.js", category: "Visualization" },
+    { name: "NASA Resources", category: "Data Sources" },
     { name: "Gemini APIs", category: "ChatBot" },
     { name: "Vercel & Render", category: "Deployment" },
   ];
@@ -115,8 +112,8 @@ const About = () => {
         {/* Header */}
         <div className="text-center mb-16">
           <h1 className="text-4xl font-bold text-white mb-4">
-          <span className="bg-cosmos-gradient bg-clip-text text-transparent">
-            About Bio-Astra Dashboard
+            <span className="bg-cosmos-gradient bg-clip-text text-transparent">
+              About Bio-Astra Dashboard
             </span>
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
@@ -160,11 +157,24 @@ const About = () => {
         {/* Special Thanks Section */}
         <div className="mb-16">
           <div className="card p-8 bg-cosmos-gradient/20 border border-cosmos-cyan/40 rounded-2xl max-w-7xl mx-auto">
+            <div className="flex items-center justify-center mb-8">
+              <div
+                className="w-[5rem] h-[5rem] rounded-full flex items-center justify-center shadow-lg"
+                style={{
+                  background:
+                    "linear-gradient(135deg, #7f3bf7 0%, #16a0ff 100%)",
+                }}
+              >
+                <img src="/namaste.png" alt="Hands"/>
+              </div>
+            </div>
+
             <h2 className="text-3xl font-bold text-white mb-6 text-center">
               Special Thanks
             </h2>
             <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto text-center">
-              We gratefully acknowledge NASA resources and support that enabled us to build the Bio-Astra Dashboard:
+              We gratefully acknowledge NASA resources and support that enabled
+              us to build the Bio-Astra Dashboard:
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -176,7 +186,9 @@ const About = () => {
                 className="card p-6 bg-cosmos-gradient/10 border border-cosmos-cyan/30 rounded-xl text-center hover:scale-105 transform transition duration-300"
               >
                 <div className="text-3xl mb-3">📚</div>
-                <h3 className="text-lg font-semibold text-white mb-2">Open-Access Publications</h3>
+                <h3 className="text-lg font-semibold text-white mb-2">
+                  Open-Access Publications
+                </h3>
                 <p className="text-gray-300 text-sm">
                   608 Space Biology publications for research and analysis
                 </p>
@@ -190,8 +202,12 @@ const About = () => {
                 className="card p-6 bg-cosmos-gradient/10 border border-cosmos-cyan/30 rounded-xl text-center hover:scale-105 transform transition duration-300"
               >
                 <div className="text-3xl mb-3">🛰️</div>
-                <h3 className="text-lg font-semibold text-white mb-2">Open Science Data Repository</h3>
-                <p className="text-gray-300 text-sm">Biological & physical datasets for space research</p>
+                <h3 className="text-lg font-semibold text-white mb-2">
+                  Open Science Data Repository
+                </h3>
+                <p className="text-gray-300 text-sm">
+                  Biological & physical datasets for space research
+                </p>
               </a>
 
               {/* Resource 3 */}
@@ -202,8 +218,12 @@ const About = () => {
                 className="card p-6 bg-cosmos-gradient/10 border border-cosmos-cyan/30 rounded-xl text-center hover:scale-105 transform transition duration-300"
               >
                 <div className="text-3xl mb-3">🔬</div>
-                <h3 className="text-lg font-semibold text-white mb-2">Space Life Sciences Library</h3>
-                <p className="text-gray-300 text-sm">Comprehensive life sciences research resources</p>
+                <h3 className="text-lg font-semibold text-white mb-2">
+                  Space Life Sciences Library
+                </h3>
+                <p className="text-gray-300 text-sm">
+                  Comprehensive life sciences research resources
+                </p>
               </a>
 
               {/* Resource 4 */}
@@ -214,8 +234,12 @@ const About = () => {
                 className="card p-6 bg-cosmos-gradient/10 border border-cosmos-cyan/30 rounded-xl text-center hover:scale-105 transform transition duration-300"
               >
                 <div className="text-3xl mb-3">📋</div>
-                <h3 className="text-lg font-semibold text-white mb-2">NASA Task Book</h3>
-                <p className="text-gray-300 text-sm">Database of NASA research tasks & projects</p>
+                <h3 className="text-lg font-semibold text-white mb-2">
+                  NASA Task Book
+                </h3>
+                <p className="text-gray-300 text-sm">
+                  Database of NASA research tasks & projects
+                </p>
               </a>
             </div>
 
@@ -223,27 +247,30 @@ const About = () => {
             <div className="mt-8 text-center">
               <div className="card p-8 bg-cosmos-gradient/20 border border-cosmos-cyan/40 rounded-2xl max-w-7xl mx-auto">
                 <p className="text-gray-200 text-lg mx-auto leading-relaxed">
-                  We sincerely thank NASA and the NASA Space Apps Challenge for providing these invaluable resources and support. 
-                  Your dedication to open science, data access, and empowering projects like ours inspires us to push the boundaries of space biology research. 
-                  We are truly grateful for the opportunity, including the generous provision of a free GoDaddy domain for one year.
+                  We sincerely thank NASA and the NASA Space Apps Challenge for
+                  providing these invaluable resources and support. Your
+                  dedication to open science, data access, and empowering
+                  projects like ours inspires us to push the boundaries of space
+                  biology research. We are truly grateful for the opportunity.
                 </p>
               </div>
             </div>
             {/* GoDaddy Free Domain Note */}
-            <div className="mt-4 p-4 bg-cosmos-gradient/20 border border-cosmos-cyan/40 rounded-xl max-w-3xl mx-auto text-center hover:scale-105 transform transition duration-300">
+            <div className="mt-8 p-4 max-w-6xl bg-cosmos-gradient/20 border border-cosmos-cyan/40 rounded-xl mx-auto text-center transform transition duration-300">
               <div className="flex items-center justify-center mb-2">
-                <span className="text-white font-semibold text-lg">
-                  Free 1-Year Domain Provided by GoDaddy
+                <span className="text-gray-100 font-semibold text-2xl "> 
+                  Free 1-Year Domain Provided by NASA  from GoDaddy
                 </span>
               </div>
-              <p className="text-gray-200 text-sm leading-relaxed max-w-xl mx-auto">
-                As part of NASA Space Apps Challenge support, we were generously provided with a free domain from GoDaddy for one year. 
-                This allowed us to deploy the Bio-Astra Dashboard and make it accessible to the global space biology community.
+              <p className="text-gray-200 text-md leading-relaxed max-w-3xl mx-auto">
+                As part of NASA Space Apps Challenge support, we were generously
+                provided with a free domain from GoDaddy for one year. This
+                allowed us to deploy the Bio-Astra Dashboard and make it
+                accessible to the global space biology community.
               </p>
             </div>
           </div>
         </div>
-
 
         {/* Mentor Section */}
         <div className="card mb-16 bg-cosmos-gradient/10 border-cosmos-cyan/30">
@@ -259,12 +286,11 @@ const About = () => {
                 title={`Open LinkedIn: ${mentor.name}`}
                 className="inline-block"
               >
-           <img
-                src={mentor.image}
-                alt={mentor.name}
-                className="w-24 h-24 rounded-full mx-auto mb-4 object-cover border-2 border-[#6366f1]"
-            />
-
+                <img
+                  src={mentor.image}
+                  alt={mentor.name}
+                  className="w-24 h-24 rounded-full mx-auto mb-4 object-cover border-2 border-[#6366f1]"
+                />
               </a>
               <h3 className="text-2xl font-semibold text-white mb-2">
                 <a
@@ -277,7 +303,9 @@ const About = () => {
                   {mentor.name}
                 </a>
               </h3>
-              <div className="text-[#6366f1] font-medium mb-2">{mentor.role}</div>
+              <div className="text-[#6366f1] font-medium mb-2">
+                {mentor.role}
+              </div>
               <div className="text-gray-400 text-sm mb-4">
                 {mentor.affiliation}
               </div>
@@ -306,12 +334,18 @@ const About = () => {
               <div key={index} className="card text-center">
                 <a
                   href={member.link}
-                  target={member.link?.startsWith('http') ? "_blank" : undefined}
-                  rel={member.link?.startsWith('http') ? "noopener noreferrer" : undefined}
+                  target={
+                    member.link?.startsWith("http") ? "_blank" : undefined
+                  }
+                  rel={
+                    member.link?.startsWith("http")
+                      ? "noopener noreferrer"
+                      : undefined
+                  }
                   title={`Open profile: ${member.name}`}
                   className="inline-block"
                 >
-               <img
+                  <img
                     src={member.image}
                     alt={member.name}
                     className="w-24 h-24 rounded-full mx-auto mb-4 object-cover border-2 border-[#6366f1]"
@@ -320,13 +354,26 @@ const About = () => {
                 <br />
                 <a
                   href={member.link}
-                  target={member.link?.startsWith('http') ? "_blank" : undefined}
-                  rel={member.link?.startsWith('http') ? "noopener noreferrer" : undefined}
+                  target={
+                    member.link?.startsWith("http") ? "_blank" : undefined
+                  }
+                  rel={
+                    member.link?.startsWith("http")
+                      ? "noopener noreferrer"
+                      : undefined
+                  }
                   title={`Open profile: ${member.name}`}
                   className="inline-block"
-                > <h3 className="text-xl font-semibold text-white mb-2">{member.name}</h3> </a>
-               
-                <div className="text-[#6366f1] font-medium mb-4">{member.role}</div>
+                >
+                  {" "}
+                  <h3 className="text-xl font-semibold text-white mb-2">
+                    {member.name}
+                  </h3>{" "}
+                </a>
+
+                <div className="text-[#6366f1] font-medium mb-4">
+                  {member.role}
+                </div>
                 <p className="text-gray-300 text-sm mb-4 leading-relaxed">
                   {member.bio}
                 </p>
