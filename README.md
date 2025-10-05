@@ -330,6 +330,7 @@ We are Third Year Computer Engineering students from SCET, Surat.
 ### Special Thanks:
 
 - Special thanks to *NASA* for providing access to Space Biology research data and resources and Domain From Godday.
+- Special thanks to *Gemini* for providing Gemini API Key for the Chatbot Integration.
 
 ---
 
