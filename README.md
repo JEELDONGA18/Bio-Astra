@@ -1,4 +1,4 @@
-<h1 align="center" style="font-size: 100px; font-family: 'Arial';"><strong> Team: Bio-Astra Explorers </strong></h1>
+<h1 align="center" style="font-size: 100px; font-family: 'Arial';"><strong> Team: Bio-Astra DashBoard</strong></h1>
 
 ---
 
