@@ -149,7 +149,7 @@ npm run dev
 - Publications by Time(Trend analysis) charts and Publications by Category(data) insights
 - Key Features and Call-to-Action sections for exploration
 
-![Home Page](https://github.com/user-attachments/assets/home-screenshot-placeholder)
+https://github.com/user-attachments/assets/6f852260-a3ec-426e-915c-2a67aeb265e5
 
 ### Find Your Interest Page:
 
@@ -159,6 +159,11 @@ npm run dev
 - Direct access to detailed paper views
 - Direct Link For specific Research Paper and Related Research Paper
 - AI chatbot Intigrated To get direct Info About Individual Research Paper
+
+
+
+https://github.com/user-attachments/assets/811cad2b-d5bb-4a0a-822b-424c51de5424
+
 
 ### Impact Page:
 
@@ -171,6 +176,12 @@ npm run dev
 - *Gravity & Bone Morphology*: Interactive gravity slider demonstrating bone density loss at different gravity levels (Earth, Mars, Moon, Microgravity)
 
 - *Gene Expression Matrix*: 3D heatmap visualization of gene expression changes across tissues, with filtering and detailed research insights
+
+
+
+https://github.com/user-attachments/assets/aa972e0f-e7a7-4c6d-9aa0-f5b43d16a1b7
+
+
 ### OSDR Page:
 
 - Open Science Data Repository:
@@ -179,6 +190,11 @@ NASA's comprehensive repository for space biology data, including experimental r
 
 - Direct links to full research Pages(Open Science Data Repository,GeneLab Data System,Space Biology Data Standards,Research Data API)
 
+
+
+https://github.com/user-attachments/assets/41e259fb-4adf-47c7-9aff-9c19764d4193
+
+
 ### NSLSL Page:
 
 - Comprehensive digital library containing NASA's space life sciences publications, research reports, and technical documents spanning decades of space biology research.
@@ -186,12 +202,22 @@ NASA's comprehensive repository for space biology data, including experimental r
 - Searchable database of peer-reviewed publications, conference proceedings, and technical papers from NASA space biology research programs and collaborations.
 - Educational materials, tutorials, and learning resources for students, educators, and researchers interested in space life sciences and NASA research.
 
+
+
+https://github.com/user-attachments/assets/e697de50-81cf-4043-95dd-2ab019fd44a4
+
+
 ### NASA Task Book Page:
 
 - Comprehensive database of NASA-funded research projects, including project descriptions, principal investigators, funding amounts, and research outcomes across all NASA programs.
 - Research program studying how microgravity, radiation, and spaceflight environments affect living systems including microbes, plants, animals, and humans.
 - Database of NASA-funded human health and performance research to mitigate risks to astronauts during space exploration missions.
 - Collection of NASA-funded research projects in biological and physical sciences to advance fundamental knowledge and support future space missions.
+
+
+
+https://github.com/user-attachments/assets/cc26ff22-fa1c-41c9-9b08-75c64cbc768c
+
 
 ### About Page:
 
@@ -202,6 +228,10 @@ NASA's comprehensive repository for space biology data, including experimental r
 - Technology stack overview
 - Project impact and vision statements
 - Contact and collaboration opportunities
+
+
+https://github.com/user-attachments/assets/5f221303-fa96-48ad-8a88-a715ba37ac0b
+
 
 ---
 
