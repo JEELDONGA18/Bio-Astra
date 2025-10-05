@@ -1,4 +1,4 @@
-<h1 align="center" style="font-size: 100px; font-family: 'Arial';"><strong> Team: Bio-Astra DashBoard</strong></h1>
+<h1 align="center" style="font-size: 100px; font-family: 'Arial';"><strong> Bio-Astra DashBoard</strong></h1>
 
 ---
 
@@ -91,10 +91,10 @@ With our comprehensive dashboard, we aim to:
 
 ## Tools We Use
 
-- *Frontend*: React.js + Vite, Tailwind CSS, Three.js, Chart.js/Recharts
-- *Backend*: Python-Flask, Gemini AI APIs,Node.js
+- *Frontend*: React.js, Tailwind CSS, Three.js, Chart.js/Recharts
+- *Backend*: Python-Flask, Gemini AI APIs, Node.js
 - *Data Processing*: Python, JSON data handling
-- *Deployment*: Vercel (Frontend), Render (Backend),GoDaddy Free Domain
+- *Deployment*: Vercel (Frontend), Render (Backend), GoDaddy Free Domain
 - *Version Control*: Git, GitHub
 - *AI/ML*: Google Gemini for intelligent chat assistance
 - *Visualization*: Custom 3D components, interactive charts
