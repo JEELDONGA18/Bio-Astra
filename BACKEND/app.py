@@ -39,6 +39,27 @@ app.config.update(
 )
 Session(app)
 
+# --- SAFETY PATCH for Flask-Session bytes bug (Python 3.13 + Werkzeug) ---
+from flask.sessions import SessionInterface
+
+class SafeSessionInterface(SessionInterface):
+    """Ensure session IDs are always strings to avoid Werkzeug TypeError."""
+    def _generate_sid(self):
+        sid = super()._generate_sid()
+        if isinstance(sid, bytes):
+            sid = sid.decode('utf-8', errors='ignore')
+        return sid
+
+    def save_session(self, app, session, response):
+        # Make sure session.sid is a string before saving
+        if hasattr(session, 'sid') and isinstance(session.sid, bytes):
+            session.sid = session.sid.decode('utf-8', errors='ignore')
+        return super().save_session(app, session, response)
+
+# Apply the safe session interface globally
+app.session_interface = SafeSessionInterface()
+# --- END PATCH ---
+
 # In-memory storage for user sessions (in production, use Redis or database)
 user_sessions = {}
 
