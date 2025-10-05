@@ -57,15 +57,14 @@ Our project transforms this challenge into an opportunity by developing Bio-Astr
 
 ## Impact
 
-With our interactive, easy-to-use tools, we aim to:
 
-- *3D Astronaut Anatomy Viewer*: Interactive 3D model of human body showing spaceflight impacts on different organs and systems
+With our comprehensive dashboard, we aim to:
 
-- *DNA Helix of Stress & Adaptation*: 3D DNA visualization with radiation simulation, showing genetic damage and gene expression changes
-
-- *Gravity & Bone Morphology*: Interactive gravity slider demonstrating bone density loss at different gravity levels (Earth, Mars, Moon, Microgravity)
-
-- *Gene Expression Matrix*: 3D heatmap visualization of gene expression changes across tissues, with filtering and detailed research insights
+- **Accelerate Research Discovery**: Enable faster access to relevant space biology publications and studies
+- **Foster Scientific Collaboration**: Connect researchers worldwide through shared data and insights
+- **Enhance Education**: Make complex space biology concepts accessible to students and educators
+- **Drive Innovation**: Support the development of new space biology research and applications
+- **Promote Interdisciplinary Work**: Bridge gaps between space science, biology, and related fields
 
 ---
 
@@ -117,28 +116,26 @@ With our interactive, easy-to-use tools, we aim to:
 
 ## Installation and Setup
 
-- Clone the Repository:
+- *Clone the Repository:*
 
-bash
+```bash
 git clone https://github.com/JEELDONGA18/Bio-Astra.git
 cd bio-astra
+```
 
-
-- Backend Setup:
-
-bash
+- *Backend Setup:*
+```bash
 cd BACKEND
 pip install -r requirements.txt
 python app.py
+```
 
-
-- Frontend Setup:
-
-bash
+- *Frontend Setup:*
+```bash
 cd FRONTEND
 npm install
 npm run dev
-
+```
 
 ---
 
@@ -302,7 +299,7 @@ We are Third Year Computer Engineering students from SCET, Surat.
 
 ### Special Thanks:
 
-- Special thanks to *NASA* for providing access to Space Biology research data and resources.
+- Special thanks to *NASA* for providing access to Space Biology research data and resources and Domain From Godday.
 
 ---
 
